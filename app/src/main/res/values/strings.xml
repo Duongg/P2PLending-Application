@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">P2PLendingApplication</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_overview">Tổng quan</string>
+    <string name="menu_information_user">Thông tin khách hàng</string>
+    <string name="menu_list_invested_company">Danh sách DN đã đầu tư</string>
+    <string name="menu_list_company">Đầu tư doanh nghiệp</string>
+    <string name="menu_notification">Thông báo</string>
+
+
+    <string name="menu_Notification">Thông báo</string>
+    <string name="menu_OverInformation">Tổng quan</string>
+    <string name="menu_Information">Thông tin khách hàng</string>
+    <string name="menu_InvestedCompany">Danh sách công ty đã đầu tư</string>
+    <string name="menu_ListCompany">Đầu tư doanh nghiệp</string>
+    <string name="menu_ListCalledInvestment">Danh sách kêu gọi đầu tư</string>
+    <string name="menu_Statistic">Thống kê</string>
+    <string name="menu_Contact">Thông tin liên hệ</string>
+    <string name="menu_Logout">Đăng xuất</string>
+    <string name="forgot">Quên tài khoản ?</string>
+    <string name="register">Đăng ký tài khoản</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
