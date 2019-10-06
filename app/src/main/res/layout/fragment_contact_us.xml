@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/myBackground"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thông tin về P2P Lending"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:textColor="@color/myTextColor"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="30dp">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:singleLine="true"
+                    android:text="Tên công ty"
+                    android:textColor="@color/myTextColor"
+                    android:textSize="16dp" />
+
+                <EditText
+                    android:layout_marginLeft="20dp"
+                    android:text="P2PLending"
+                    android:textColor="@color/myTextColor"
+                    android:backgroundTint="@color/myTextColor"
+                    android:textSize="16dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:text="Địa chỉ"
+                    android:textColor="@color/myTextColor"
+                    android:textSize="16dp" />
+
+                <EditText
+                    android:layout_marginLeft="20dp"
+                    android:backgroundTint="@color/myTextColor"
+                    android:text="Khu công nghệ cao quận 9"
+                    android:textColor="@color/myTextColor"
+                    android:textSize="16dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:text="Số điện thoại"
+                    android:textColor="@color/myTextColor"
+                    android:textSize="16dp" />
+
+                <EditText
+                    android:layout_marginLeft="20dp"
+                    android:backgroundTint="@color/myTextColor"
+                    android:text="0987654321"
+                    android:textColor="@color/myTextColor"
+                    android:textSize="16dp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:text="Email"
+                    android:textColor="@color/myTextColor"
+                    android:textSize="16dp" />
+
+                <EditText
+                    android:layout_marginLeft="20dp"
+                    android:backgroundTint="@color/myTextColor"
+                    android:singleLine="true"
+                    android:text="p2plending@lending.com"
+                    android:textColor="@color/myTextColor"
+                    android:textSize="16dp" />
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+</LinearLayout>
