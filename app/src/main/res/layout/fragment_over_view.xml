@@ -28,7 +28,8 @@
                 android:layout_marginLeft="30dp"/>
 
             <TextView
-                android:text="ABC"
+
+                android:id="@+id/txtInvestorID"
                 android:textColor="@color/myTextColor"
                 android:textSize="16dp"
                 android:layout_marginLeft="50dp"/>
@@ -41,7 +42,8 @@
                 android:layout_marginLeft="30dp"/>
 
             <TextView
-                android:text="ABC"
+
+                android:id="@+id/txtName"
                 android:textColor="@color/myTextColor"
                 android:textSize="16dp"
                 android:layout_marginLeft="50dp"/>
@@ -67,7 +69,8 @@
                 android:layout_marginLeft="30dp"/>
 
             <TextView
-                android:text="ABC"
+
+                android:id="@+id/txtTotalAsset"
                 android:textColor="@color/myTextColor"
                 android:textSize="16dp"
                 android:layout_marginLeft="50dp"/>
@@ -80,7 +83,8 @@
                 android:layout_marginLeft="30dp"/>
 
             <TextView
-                android:text="ABC"
+
+                android:id="@+id/txtInvested"
                 android:textColor="@color/myTextColor"
                 android:textSize="16dp"
                 android:layout_marginLeft="50dp"/>
@@ -93,7 +97,8 @@
                 android:layout_marginLeft="30dp"/>
 
             <TextView
-                android:text="ABC"
+
+                android:id="@+id/txtLoan"
                 android:textColor="@color/myTextColor"
                 android:textSize="16dp"
                 android:layout_marginLeft="50dp"/>
