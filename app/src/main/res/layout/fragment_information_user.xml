@@ -39,7 +39,7 @@
                 <TextView
                     android:layout_marginLeft="20dp"
                     android:id="@+id/investorCode"
-                    android:text="12345"
+
                     android:textColor="@color/myTextColor"
                     android:textSize="16dp" />
             </TableRow>
@@ -57,7 +57,7 @@
                 <EditText
                     android:layout_marginLeft="20dp"
                     android:backgroundTint="@color/myTextColor"
-                    android:text="Đinh Đức Dương"
+
                     android:id="@+id/investorName"
                     android:textColor="@color/myTextColor"
                     android:textSize="16dp" />
@@ -76,7 +76,7 @@
                 <EditText
                     android:layout_marginLeft="20dp"
                     android:backgroundTint="@color/myTextColor"
-                    android:text="1234567890"
+
                     android:id="@+id/investorPhone"
                     android:textColor="@color/myTextColor"
                     android:textSize="16dp" />
@@ -96,7 +96,6 @@
                     android:layout_marginLeft="20dp"
                     android:backgroundTint="@color/myTextColor"
                     android:singleLine="true"
-                    android:text="example@gmail.com"
                     android:id="@+id/investorEmail"
                     android:textColor="@color/myTextColor"
                     android:textSize="16dp" />
@@ -107,40 +106,40 @@
                 android:layout_height="match_parent"
                 android:layout_margin="10dp">
 
-                <TextView
-                    android:text="Mật khẩu"
-                    android:textColor="@color/myTextColor"
-                    android:textSize="16dp" />
+<!--                <TextView-->
+<!--                    android:text="Mật khẩu"-->
+<!--                    android:textColor="@color/myTextColor"-->
+<!--                    android:textSize="16dp" />-->
 
-                <EditText
-                    android:layout_marginLeft="20dp"
-                    android:backgroundTint="@color/myTextColor"
-                    android:inputType="textPassword"
-                    android:singleLine="true"
-                    android:text="1234"
-                    android:textColor="@color/myTextColor"
-                    android:textSize="16dp" />
+<!--                <EditText-->
+<!--                    android:layout_marginLeft="20dp"-->
+<!--                    android:backgroundTint="@color/myTextColor"-->
+<!--                    android:inputType="textPassword"-->
+<!--                    android:singleLine="true"-->
+<!--                    android:text="1234"-->
+<!--                    android:textColor="@color/myTextColor"-->
+<!--                    android:textSize="16dp" />-->
             </TableRow>
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp">
+<!--            <TableRow-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_margin="10dp">-->
 
-                <TextView
-                    android:text="Nhập lại mật khẩu"
-                    android:textColor="@color/myTextColor"
-                    android:textSize="16dp" />
+<!--                <TextView-->
+<!--                    android:text="Nhập lại mật khẩu"-->
+<!--                    android:textColor="@color/myTextColor"-->
+<!--                    android:textSize="16dp" />-->
 
-                <EditText
-                    android:layout_marginLeft="20dp"
-                    android:backgroundTint="@color/myTextColor"
-                    android:inputType="textPassword"
-                    android:singleLine="true"
-                    android:text="12344"
-                    android:textColor="@color/myTextColor"
-                    android:textSize="16dp" />
-            </TableRow>
+<!--                <EditText-->
+<!--                    android:layout_marginLeft="20dp"-->
+<!--                    android:backgroundTint="@color/myTextColor"-->
+<!--                    android:inputType="textPassword"-->
+<!--                    android:singleLine="true"-->
+<!--                    android:text="12344"-->
+<!--                    android:textColor="@color/myTextColor"-->
+<!--                    android:textSize="16dp" />-->
+<!--            </TableRow>-->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="100dp">
