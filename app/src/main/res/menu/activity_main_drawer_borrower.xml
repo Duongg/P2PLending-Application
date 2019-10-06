@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
-<group android:checkableBehavior="single">
+    <group android:checkableBehavior="single">
 
         <item android:title="Tài khoản cá nhân">
             <item
@@ -19,18 +19,15 @@
 
         <item android:title="Tra cứu">
             <item
-            android:id="@+id/nav_list_invested_company"
-            android:title="@string/menu_list_invested_company" />
-            <item
-            android:id="@+id/nav_list_company"
-            android:title="@string/menu_list_company" />
+                android:id="@+id/nav_list_invested_company"
+                android:title="@string/menu_ListCalledInvestment" />
             <item
                 android:id="@+id/nav_statistic"
                 android:title="@string/menu_Statistic" />
         </item>
         <item android:title="Thông tin liên hệ"/>
         <item android:title="Đăng xuất"/>
-</group>
+    </group>
 
 
 </menu>
