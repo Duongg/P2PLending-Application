@@ -45,8 +45,10 @@ public class ListCompanyFragment extends Fragment implements ListInvestmentCompa
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position,
                                     long id) {
-                Intent intent = new Intent(getActivity().getBaseContext(), MainActivity.class);
+                Intent intent = new Intent(getActivity().getBaseContext(), DetailCompanyActivity.class);
                 intent.putExtra("investment", (Serializable) listInvestmentCompanies.get(position));
+                intent.putExtra("TOKEN", token);
+                startActivity(intent);
             }
         });
         return view;

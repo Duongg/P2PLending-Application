@@ -24,7 +24,6 @@
         android:id="@+id/txtInvestMoney"
         android:textColor="@color/myTextColor"
         android:textSize="14dp"
-        android:maxLength="10"
         android:gravity="center"
         android:layout_weight="1"></TextView>
     <TextView
