@@ -4,17 +4,99 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/myBackground"
+    android:background="@color/myBackgroundColor"
     android:orientation="vertical">
-
-    <TextView
-        android:layout_marginTop="15dp"
-        android:gravity="center"
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24dp"
-        android:textStyle="bold"
-        android:textColor="@color/myTextColor"/>
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp">
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="74dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Ngày nhận"
+                android:textColor="@color/myTextColor"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="117dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Tiền gốc còn lại (VND)"
+                android:textColor="@color/myTextColor"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="99dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Tiền lãi (VND)"
+                android:textColor="@color/myTextColor"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Tiền nhận được (VND)"
+                android:textColor="@color/myTextColor"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+        </TableRow>
+
+        <TableRow   android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="11-11-23"
+                android:textSize="14dp"
+                android:textColor="@color/myTextColor"
+                android:gravity="center"
+                android:layout_weight="1"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1.000.000.000"
+                android:textSize="14dp"
+                android:textColor="@color/myTextColor"
+                android:gravity="center"
+                android:layout_weight="1"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="200.000.000"
+                android:textSize="14dp"
+                android:textColor="@color/myTextColor"
+                android:gravity="center"
+                android:layout_weight="1"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="500.000.000"
+                android:textSize="14dp"
+                android:textColor="@color/myTextColor"
+                android:gravity="center"
+                android:layout_weight="1"/>
+        </TableRow>
+    </TableLayout>
+
+
+
 
     <ListView
         android:id="@+id/lvListInvested"

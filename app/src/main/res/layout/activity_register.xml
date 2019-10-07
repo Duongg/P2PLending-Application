@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/myBackground"
+    android:background="@color/myBackgroundColor"
     tools:context=".LoginActivity">
 
     <ImageView
@@ -28,20 +28,7 @@
         android:layout_height="35dp"
         android:background="@color/myTextColor"
         android:layout_gravity="center"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Tên người liên lạc"
-        android:textSize="20dp"
-        android:textColor="@color/myTextColor"
-        android:layout_marginLeft="10dp"
-        android:padding="7dp"/>
-    <EditText
-        android:id="@+id/edtNameUser"
-        android:layout_width="380dp"
-        android:layout_height="35dp"
-        android:background="@color/myTextColor"
-        android:layout_gravity="center"/>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -70,11 +57,42 @@
         android:layout_height="35dp"
         android:background="@color/myTextColor"
         android:layout_gravity="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mật khẩu"
+        android:textSize="20dp"
+        android:textColor="@color/myTextColor"
+        android:layout_marginLeft="10dp"
+        android:padding="7dp"/>
+    <EditText
+        android:id="@+id/edtPassword"
+        android:layout_width="380dp"
+        android:layout_height="35dp"
+        android:background="@color/myTextColor"
+        android:layout_gravity="center"
+        android:inputType="textPassword"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nhập lại mật khẩu"
+        android:textSize="20dp"
+        android:textColor="@color/myTextColor"
+        android:layout_marginLeft="10dp"
+        android:padding="7dp"/>
+    <EditText
+        android:id="@+id/edtConfirmPassword"
+        android:layout_width="380dp"
+        android:layout_height="35dp"
+        android:background="@color/myTextColor"
+        android:layout_gravity="center"
+        android:inputType="textPassword"/>
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="150dp"
-        android:layout_height="45dp"
+        android:layout_height="40dp"
         android:background="@color/myButtonColor"
+        android:textColor="@color/myTextColor"
         android:layout_marginTop="35dp"
         android:layout_gravity="center"
         android:text="Đăng ký"/>
