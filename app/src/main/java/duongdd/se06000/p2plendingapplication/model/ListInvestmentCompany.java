@@ -2,9 +2,10 @@ package duongdd.se06000.p2plendingapplication.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class ListInvestmentCompany {
+public class ListInvestmentCompany implements Serializable {
 
     @SerializedName("investmentCompanyID")
     private int investmentCompanyID;

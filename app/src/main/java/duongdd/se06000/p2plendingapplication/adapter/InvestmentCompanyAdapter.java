@@ -9,6 +9,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import duongdd.se06000.p2plendingapplication.R;
+import duongdd.se06000.p2plendingapplication.formatter.FormatDecimal;
 import duongdd.se06000.p2plendingapplication.model.ListInvestmentCompany;
 
 public class InvestmentCompanyAdapter extends BaseAdapter {
@@ -45,7 +46,7 @@ public class InvestmentCompanyAdapter extends BaseAdapter {
         TextView txtInvestMoney = convertView.findViewById(R.id.txtInvestMoney);
         TextView txtProfit = convertView.findViewById(R.id.txtProfit);
         txtName.setText(company.getName());
-        txtInvestMoney.setText(company.getInvestMoney() + "");
+        txtInvestMoney.setText(FormatDecimal.formatBigDecimal(company.getInvestMoney()));
         txtProfit.setText(company.getInterestRateInvestor() + "%");
         return convertView;
     }
