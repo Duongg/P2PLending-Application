@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".DetailInvestedCompanyActivity"
     android:orientation="vertical"
-    android:background="@color/myBackground">
+    android:background="@color/myBackgroundColor">
     <TextView
         android:gravity="center"
         android:textColor="@color/myTextColor"
@@ -20,7 +20,8 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="20dp"
+        android:paddingTop="20dp">
         <TableRow
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -31,7 +32,7 @@
                 android:textColor="@color/TextViewColor"
                 android:textSize="16dp"/>
             <TextView
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="40dp"
                 android:text="ABC"
                 android:textSize="16dp"
                 android:textColor="@color/myTextColor"/>
@@ -46,7 +47,7 @@
                 android:textColor="@color/TextViewColor"
                 android:textSize="16dp"/>
             <TextView
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="40dp"
                 android:text="ABC"
                 android:textSize="16dp"
                 android:textColor="@color/myTextColor"/>
@@ -61,7 +62,7 @@
                 android:textColor="@color/TextViewColor"
                 android:textSize="16dp"/>
             <TextView
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="40dp"
                 android:text="ABC"
                 android:textSize="16dp"
                 android:textColor="@color/myTextColor"/>
@@ -76,7 +77,7 @@
                 android:textColor="@color/TextViewColor"
                 android:textSize="16dp"/>
             <TextView
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="40dp"
                 android:text="ABC"
                 android:textSize="16dp"
                 android:textColor="@color/myTextColor"/>
@@ -91,7 +92,7 @@
                 android:textColor="@color/TextViewColor"
                 android:textSize="16dp"/>
             <TextView
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="40dp"
                 android:text="ABC"
                 android:textSize="16dp"
                 android:textColor="@color/myTextColor"/>
@@ -106,7 +107,7 @@
                 android:textColor="@color/TextViewColor"
                 android:textSize="16dp"/>
             <TextView
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="40dp"
                 android:text="ABC"
                 android:textSize="16dp"
                 android:textColor="@color/myTextColor"/>
@@ -121,7 +122,7 @@
                 android:textColor="@color/TextViewColor"
                 android:textSize="16dp"/>
             <TextView
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="40dp"
                 android:text="ABC"
                 android:textSize="16dp"
                 android:textColor="@color/myTextColor"/>
@@ -136,7 +137,7 @@
                 android:textColor="@color/TextViewColor"
                 android:textSize="16dp"/>
             <TextView
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="40dp"
                 android:text="ABC"
                 android:textSize="16dp"
                 android:textColor="@color/myTextColor"/>
@@ -151,7 +152,7 @@
                 android:textColor="@color/TextViewColor"
                 android:textSize="16dp"/>
             <TextView
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="40dp"
                 android:text="ABC"
                 android:textSize="16dp"
                 android:textColor="@color/myTextColor"/>

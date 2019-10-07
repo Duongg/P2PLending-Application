@@ -4,9 +4,11 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="myBackground">#105E92</color>
+    <color name="myToolBarColor">#010133</color>
+    <color name="myBackgroundColor">#05051f</color>
+    <color name="myBigTextColor">#2889ae</color>
     <color name="myTextColor">#FFFFFF</color>
-    <color name="myButtonColor">#16D1BB</color>
+    <color name="myButtonColor">#2a92b7</color>
     <color name="colorMenu">#FFFFFF</color>
     <color name="TextViewColor">#16D1BB</color>
 </resources>

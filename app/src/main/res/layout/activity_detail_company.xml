@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".DetailCompanyActivity"
-    android:background="@color/myBackground"
+    android:background="@color/myBackgroundColor"
     android:orientation="vertical">
 
     <TextView
@@ -21,7 +21,7 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="400dp"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="40dp">
         <TableRow
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -159,7 +159,7 @@
         </TableRow>
     </TableLayout>
     <EditText
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="10dp"
         android:layout_gravity="center"
         android:layout_width="250dp"
         android:layout_height="30dp"
@@ -167,9 +167,10 @@
         android:hint="Nhập số tiền đầu tư"/>
     <Button
         android:layout_marginTop="45dp"
-        android:layout_width="100dp"
+        android:layout_width="150dp"
         android:layout_height="40dp"
         android:background="@color/myButtonColor"
+        android:textColor="@color/myTextColor"
         android:text="Đầu tư"
         android:layout_gravity="center"/>
 

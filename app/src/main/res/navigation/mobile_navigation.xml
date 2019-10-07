@@ -30,11 +30,18 @@
     <fragment
         android:id="@+id/nav_list_company"
         android:name="duongdd.se06000.p2plendingapplication.ListCompanyFragment"
+        android:label="@string/menu_list_company"
         tools:layout="@layout/fragment_list_company" />
 
     <fragment
         android:id="@+id/nav_statistic"
         android:name="duongdd.se06000.p2plendingapplication.StatisticFragment"
+        android:label="@string/menu_Statistic"
         tools:layout="@layout/fragment_statistic" />
+    <fragment
+        android:id="@+id/nav_list_investment_calling"
+        android:name="duongdd.se06000.p2plendingapplication.ListInvestmentCallingFragment"
+        android:label="@string/menu_ListCalledInvestment"
+        tools:layout="@layout/fragment_list_investment_calling"/>
 
 </navigation>
