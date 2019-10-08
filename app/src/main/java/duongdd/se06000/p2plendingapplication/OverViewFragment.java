@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 
 import duongdd.se06000.p2plendingapplication.formatter.FormatDecimal;
+import duongdd.se06000.p2plendingapplication.model.ListInvestmentCompany;
 import duongdd.se06000.p2plendingapplication.model.WalletInformation;
 import duongdd.se06000.p2plendingapplication.presenters.WalletInformationPresenters;
 import duongdd.se06000.p2plendingapplication.view.WalletInformationView;
@@ -51,8 +52,11 @@ public class OverViewFragment extends Fragment implements WalletInformationView 
         txtLoan.setText(FormatDecimal.formatBigDecimal(walletInformation.getLoan()));
         //onMoveNextFragment.onClick(walletInformation.getAccountID());
         Intent intent = new Intent(getActivity().getBaseContext(), MainActivity.class);
-        intent.putExtra("accountID", walletInformation.getAccountID());
-        intent.putExtra("TOKEN", token);
+       // String account = String.valueOf(walletInformation.getAccountID());
+        Bundle bundle = new Bundle();
+        bundle.putString("TOKEN", token);
+        bundle.putInt("INVESTOR_ID", walletInformation.getAccountID());
+        intent.putExtras(bundle);
         //getActivity().startActivity(intent);
     }
 

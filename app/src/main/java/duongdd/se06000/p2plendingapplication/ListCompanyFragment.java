@@ -31,6 +31,7 @@ public class ListCompanyFragment extends Fragment implements ListInvestmentCompa
     private TextView txtName, txtInvestMoney, txtProfit;
     private List<ListInvestmentCompany> listInvestmentCompanies;
     private String token = "";
+    int accountID;
     private InvestmentCompanyAdapter adapter;
     private ListView listView;
 
@@ -46,16 +47,26 @@ public class ListCompanyFragment extends Fragment implements ListInvestmentCompa
             public void onItemClick(AdapterView<?> parent, View view, int position,
                                     long id) {
                 Intent intent = new Intent(getActivity().getBaseContext(), DetailCompanyActivity.class);
-                intent.putExtra("investment", (Serializable) listInvestmentCompanies.get(position));
-                intent.putExtra("TOKEN", token);
+                Bundle bundle = new Bundle();
+                bundle.putString("TOKEN", token);
+                bundle.putInt("INVESTOR_ID", accountID);
+                bundle.putSerializable("investment", (Serializable) listInvestmentCompanies.get(position));
+//                intent.putExtra("investment", (Serializable) listInvestmentCompanies.get(position));
+//                intent.putExtra("INVESTOR_ID", accountID);
+//                intent.putExtra("TOKEN", token);
+                intent.putExtras(bundle);
                 startActivity(intent);
             }
         });
         return view;
     }
     private void initData(){
-        Intent intent = getActivity().getIntent();
-        token = intent.getStringExtra("TOKEN");
+        //Intent intent = getActivity().getIntent();
+        Bundle bundle = getActivity().getIntent().getExtras();
+        token = bundle.getString("TOKEN");
+        accountID = bundle.getInt("INVESTOR_ID");
+//        token = intent.getStringExtra("TOKEN");
+//        accountID = intent.getIntExtra("INVESTOR_ID", 3);
         listInvestmentCompanyPresenters.getListInvestmentCompany(token, 1);
     }
 

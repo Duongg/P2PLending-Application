@@ -3,7 +3,7 @@ package duongdd.se06000.p2plendingapplication.util;
 public class ConfigApi {
 
     public static final String BASE_URL = "https://lending-app-fu.herokuapp.com";
-
+   // public static final String BASE_URL = "http://10.0.2.3:8080";
     public interface Api{
         //account
         String LOGIN = "/api/account/login";
@@ -19,6 +19,7 @@ public class ConfigApi {
         //investor detail
         String VIEW_INVESTOR_DETAIL = "/api/investor-detail/information-detail";
         String INVESTOR_INVEST = "/api/investor-detail/investor-invest";
+        String LIST_INVESTED = "/api/investor-detail/list-invested-company";
         //company disbursement
         String CALLING_INVESTMENT_DETAIL = "/api/company-disbursement/calling-investment-detail";
         String INFO_MONEY_INVESTMENT = "/api/company-disbursement/information_money_investment";
