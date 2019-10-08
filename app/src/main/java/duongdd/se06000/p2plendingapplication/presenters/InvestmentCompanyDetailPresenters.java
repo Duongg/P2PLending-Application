@@ -16,8 +16,8 @@ public class InvestmentCompanyDetailPresenters {
         this.lendingRepository = new LendingRepositoryImp();
     }
 
-    public void getInvestmentCompanyDetail(String token, int investorID, int investmentCompanyID ){
-        lendingRepository.getInvestmentCompanyDetail(token, investorID, investmentCompanyID, new CallBackData<InvestmentCompanyDetail>() {
+    public void getInvestmentCompanyDetail(String token, int investmentCompanyID ){
+        lendingRepository.getInvestmentCompanyDetail(token, investmentCompanyID, new CallBackData<InvestmentCompanyDetail>() {
             @Override
             public void onSuccess(InvestmentCompanyDetail investmentCompanyDetail) {
                 investmentCompanyDetailView.onSuccess(investmentCompanyDetail);

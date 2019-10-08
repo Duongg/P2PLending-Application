@@ -23,9 +23,9 @@
 
     <fragment
         android:id="@+id/nav_list_invested_company"
-        android:name="duongdd.se06000.p2plendingapplication.ListInvestedCompanyFragment"
+        android:name="duongdd.se06000.p2plendingapplication.ListInvestedCompanyDetailsFragment"
         android:label="@string/menu_list_invested_company"
-        tools:layout="@layout/fragment_list_invested_company" />
+        tools:layout="@layout/fragment_list_invested_company_details" />
 
     <fragment
         android:id="@+id/nav_list_company"

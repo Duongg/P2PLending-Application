@@ -8,7 +8,11 @@ import org.json.JSONObject;
 
 import java.lang.reflect.Type;
 import java.math.BigDecimal;
+import java.sql.Date;
 import java.util.List;
+
+import duongdd.se06000.p2plendingapplication.model.InvestorInvest;
+import duongdd.se06000.p2plendingapplication.model.ListInvestedCompany;
 import duongdd.se06000.p2plendingapplication.repository.LendingService;
 import duongdd.se06000.p2plendingapplication.model.CompanyDisbursement;
 import duongdd.se06000.p2plendingapplication.model.InvestmentCompanyDetail;
@@ -70,36 +74,6 @@ public class LendingRepositoryImp implements LendingRepository{
         });
     }
 
-//    @Override
-//    public void login(String username, String password, final CallBackData<Login> callBackData) {
-//        ClientApi clientApi = new ClientApi();
-//        Call<ResponseBody> call = clientApi.LendingService().login(username, password);
-//        call.enqueue(new Callback<ResponseBody>() {
-//            @Override
-//            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-//                if(response.code() == 200){
-//                    try {
-//                        String body = response.body().string();
-//                        Type type = new TypeToken<Login>(){}.getType();
-//                        Login login = new Gson().fromJson(body,type);
-//                        if(login != null){
-//                            callBackData.onSuccess(login);
-//                        }else{
-//                            callBackData.onFail("Nhập sai tài khoản hoặc mật khẩu");
-//                        }
-//                    }catch (Exception e){
-//                        callBackData.onFail("Nhập sai tài khoản hoặc mật khẩu");
-//                    }
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<ResponseBody> call, Throwable t) {
-//                callBackData.onFail("Nhập sai tài khoản hoặc mật khẩu");
-//            }
-//        });
-//
-//    }
 
     @Override
     public void getWalletInfo(String token,final CallBackData<WalletInformation> callBackData) {
@@ -194,9 +168,9 @@ public class LendingRepositoryImp implements LendingRepository{
     }
 
     @Override
-    public void getInvestmentCompanyDetail(String token, int investorID, int investmentCompanyID, final CallBackData<InvestmentCompanyDetail> callBackData) {
+    public void getInvestmentCompanyDetail(String token, int investmentCompanyID, final CallBackData<InvestmentCompanyDetail> callBackData) {
         ClientApi clientApi = new ClientApi();
-        Call<ResponseBody> call = clientApi.LendingService().getInvestmentCompanyDetail(token, investorID, investmentCompanyID);
+        Call<ResponseBody> call = clientApi.LendingService().getInvestmentCompanyDetail(token, investmentCompanyID);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
@@ -371,6 +345,67 @@ public class LendingRepositoryImp implements LendingRepository{
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
                 callBackData.onFail("Thương vụ không tồn tại");
+            }
+        });
+    }
+
+    @Override
+    public void investorInvest(String token, int borrowerID, int investmentCompanyID, BigDecimal money,final CallBackData<InvestorInvest> callBackData) {
+        ClientApi clientApi = new ClientApi();
+        Call<ResponseBody> call = clientApi.LendingService().investorInvest(token, borrowerID, investmentCompanyID, money);
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if(response.code() == 200){
+                    try {
+                        String body = response.body().string();
+                        Type type = new TypeToken<InvestorInvest>(){}.getType();
+                        InvestorInvest investorInvest = new Gson().fromJson(body,type);
+                        if(investorInvest != null){
+                            callBackData.onSuccess(investorInvest);
+                        }else{
+                            callBackData.onFail("Số tiền không hợp lệ");
+                        }
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                callBackData.onFail("Số tiền không hợp lệ");
+            }
+        });
+    }
+
+    @Override
+    public void getListInvestedCompany(String token, int page,final CallBackData<List<ListInvestedCompany>> callBackData) {
+        ClientApi clientApi = new ClientApi();
+        Call<ResponseBody> call = clientApi.LendingService().getListInvested(token, page);
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if(response.code() == 200){
+                    try {
+                        String body = response.body().string();
+                        Type type = new TypeToken<List<ListInvestedCompany>>(){}.getType();
+                        List<ListInvestedCompany> listInvestedCompanies = new Gson().fromJson(body,type);
+
+                        if(listInvestedCompanies != null){
+                            callBackData.onSuccess(listInvestedCompanies);
+                        }else{
+                            callBackData.onFail("Không có đầu tư nào");
+                        }
+                    }catch (Exception e){
+                        callBackData.onFail("Không có đầu tư nào");
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                callBackData.onFail("Không có đầu tư nào");
             }
         });
     }

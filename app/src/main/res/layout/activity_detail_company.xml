@@ -163,6 +163,7 @@
         android:layout_gravity="center"
         android:layout_width="250dp"
         android:layout_height="30dp"
+        android:id="@+id/edtMoney"
         android:background="@color/myTextColor"
         android:hint="Nhập số tiền đầu tư"/>
     <Button
@@ -172,6 +173,8 @@
         android:background="@color/myButtonColor"
         android:textColor="@color/myTextColor"
         android:text="Đầu tư"
+        android:onClick="clickToInvest"
+        android:id="@+id/btnInvest"
         android:layout_gravity="center"/>
 
 </LinearLayout>
