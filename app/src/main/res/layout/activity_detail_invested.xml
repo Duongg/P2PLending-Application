@@ -57,42 +57,42 @@
                 android:textStyle="bold" />
         </TableRow>
 
-        <TableRow   android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="11-11-23"
-                android:textSize="14dp"
-                android:textColor="@color/myTextColor"
-                android:gravity="center"
-                android:layout_weight="1"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="1.000.000.000"
-                android:textSize="14dp"
-                android:textColor="@color/myTextColor"
-                android:gravity="center"
-                android:layout_weight="1"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="200.000.000"
-                android:textSize="14dp"
-                android:textColor="@color/myTextColor"
-                android:gravity="center"
-                android:layout_weight="1"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="500.000.000"
-                android:textSize="14dp"
-                android:textColor="@color/myTextColor"
-                android:gravity="center"
-                android:layout_weight="1"/>
-        </TableRow>
+        <!--        <TableRow   android:layout_width="wrap_content"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:layout_margin="10dp">-->
+        <!--            <TextView-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="11-11-23"-->
+        <!--                android:textSize="14dp"-->
+        <!--                android:textColor="@color/myTextColor"-->
+        <!--                android:gravity="center"-->
+        <!--                android:layout_weight="1"/>-->
+        <!--            <TextView-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="1.000.000.000"-->
+        <!--                android:textSize="14dp"-->
+        <!--                android:textColor="@color/myTextColor"-->
+        <!--                android:gravity="center"-->
+        <!--                android:layout_weight="1"/>-->
+        <!--            <TextView-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="200.000.000"-->
+        <!--                android:textSize="14dp"-->
+        <!--                android:textColor="@color/myTextColor"-->
+        <!--                android:gravity="center"-->
+        <!--                android:layout_weight="1"/>-->
+        <!--            <TextView-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="500.000.000"-->
+        <!--                android:textSize="14dp"-->
+        <!--                android:textColor="@color/myTextColor"-->
+        <!--                android:gravity="center"-->
+        <!--                android:layout_weight="1"/>-->
+        <!--        </TableRow>-->
     </TableLayout>
 
 
