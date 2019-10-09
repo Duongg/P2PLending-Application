@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PaymentDetailActivity"
+    android:background="@color/myBackgroundColor">
+
+    <TextView
+        android:layout_width="374dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="50dp"
+        android:gravity="right"
+        android:text="Chi tiết >>>"
+        android:textColor="@color/myBigTextColor"
+        android:textSize="24dp" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/cell_border">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:padding="5dp"
+                android:text="Tên dự án:"
+                android:background="@drawable/cell_border"
+                android:textColor="@color/myBigTextColor"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:text="example"
+                android:padding="5dp"
+                android:textColor="@color/myTextColor"
+                android:textSize="20dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/cell_border">
+
+            <TextView
+                android:layout_width="176dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cell_border"
+                android:gravity="left"
+                android:padding="5dp"
+                android:text="Số tiền cần trả tháng này:"
+                android:textColor="@color/myBigTextColor"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:padding="5dp"
+                android:text="example"
+                android:textColor="@color/myTextColor"
+                android:textSize="20dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/cell_border">
+
+            <TextView
+                android:layout_width="176dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cell_border"
+                android:gravity="left"
+                android:padding="5dp"
+                android:text="Số tiền nợ:"
+                android:textColor="@color/myBigTextColor"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:padding="5dp"
+                android:text="example"
+                android:textColor="@color/myTextColor"
+                android:textSize="20dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/cell_border">
+
+            <TextView
+                android:layout_width="151dp"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:padding="5dp"
+                android:text="Tổng số tiền cần trả:"
+                android:background="@drawable/cell_border"
+                android:textColor="@color/myBigTextColor"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:text="example"
+                android:padding="5dp"
+                android:textColor="@color/myTextColor"
+                android:textSize="20dp" />
+        </TableRow>
+    </TableLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp">
+    <EditText
+        android:id="@+id/edtMoney"
+        android:layout_width="245dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:background="@color/myTextColor"
+        android:hint="Nhập số tiền"
+        android:ems="10"
+        android:inputType="number" />
+    <Button
+        android:id="@+id/btnPay"
+        android:layout_width="80dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="20dp"
+        android:background="@color/myButtonColor"
+        android:text="Trả"
+        android:textColor="@color/myTextColor"
+        android:textSize="18dp"/>
+</LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp">
+    <CheckBox
+        android:id="@+id/cbPaybymonth"
+        android:layout_width="136dp"
+        android:layout_height="wrap_content"
+        android:buttonTint="#FFFFFF"
+        android:text="Trả tháng này"
+        android:textColor="@color/myTextColor"
+        android:textSize="16dp"
+        android:layout_marginLeft="30dp"
+        />
+
+    <CheckBox
+        android:id="@+id/cbPayAll"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:buttonTint="#FFFFFF"
+        android:text="Trả toàn bộ"
+        android:textColor="@color/myTextColor"
+        android:layout_marginLeft="30dp"
+        android:textSize="16dp" />
+</LinearLayout>
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/cell_border">
+
+            <TextView
+                android:layout_width="68dp"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Tháng"
+
+                android:textColor="@color/myBigTextColor"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="87dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cell_border"
+                android:gravity="left"
+                android:text="Số tiền tháng này"
+                android:textColor="@color/myBigTextColor"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="102dp"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Số tiền nợ"
+                android:textColor="@color/myBigTextColor"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="87dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cell_border"
+                android:gravity="left"
+                android:text="Tổng số tiền cần trả"
+                android:textColor="@color/myBigTextColor"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:textColor="@color/myBigTextColor"
+                android:textSize="20dp" />
+
+        </TableRow>
+
+
+    </TableLayout>
+</LinearLayout>

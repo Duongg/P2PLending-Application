@@ -18,39 +18,41 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp"
+        android:padding="5dp"
         >
-        <TableRow>
-            <TextView android:text="Mã khách hàng"
+        <TableRow
+            android:background="@drawable/cell_border">
+            <TextView
+                android:background="@drawable/cell_border"
+                android:text="Mã khách hàng"
                 android:textColor="@color/myTextColor"
                 android:padding="10dp"
-                android:textSize="16dp"
-                android:layout_width="170dp"
-                android:layout_marginLeft="10dp"/>
+                android:textSize="18dp"
+                android:layout_width="170dp"/>
 
             <TextView
-
                 android:id="@+id/txtInvestorID"
                 android:textColor="@color/myTextColor"
-                android:textSize="16dp"
-                android:layout_marginLeft="40dp"/>
+                android:textSize="18dp"
+               android:padding="10dp"/>
         </TableRow>
-        <TableRow>
+        <TableRow
+            android:background="@drawable/cell_border">
 
             <TextView
+                android:background="@drawable/cell_border"
                 android:layout_width="170dp"
-                android:layout_marginLeft="10dp"
                 android:padding="10dp"
                 android:text="Tên khách hàng"
                 android:textColor="@color/myTextColor"
-                android:textSize="16dp" />
+                android:textSize="18dp" />
 
             <TextView
 
                 android:id="@+id/txtName"
                 android:textColor="@color/myTextColor"
-                android:textSize="16dp"
-                android:layout_marginLeft="40dp"/>
+                android:textSize="18dp"
+                android:padding="10dp"/>
         </TableRow>
     </TableLayout>
     <TextView
@@ -64,53 +66,57 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp">
-        <TableRow>
+        android:padding="5dp">
+        <TableRow
+            android:background="@drawable/cell_border">
 
             <TextView
-                android:layout_marginLeft="10dp"
+                android:background="@drawable/cell_border"
                 android:padding="10dp"
                 android:text="Tổng tài sản"
                 android:layout_width="170dp"
                 android:textColor="@color/myTextColor"
-                android:textSize="16dp" />
+                android:textSize="18dp" />
 
             <TextView
 
                 android:id="@+id/txtTotalAsset"
                 android:textColor="@color/myTextColor"
-                android:textSize="16dp"
-                android:layout_marginLeft="40dp"/>
+                android:textSize="18dp"
+                android:padding="10dp"/>
         </TableRow>
-        <TableRow>
+        <TableRow
+            android:background="@drawable/cell_border">
             <TextView android:text="Số dư đã đầu tư"
                 android:textColor="@color/myTextColor"
                 android:layout_width="170dp"
                 android:padding="10dp"
-                android:textSize="16dp"
-                android:layout_marginLeft="10dp"/>
+                android:textSize="18dp"
+                android:background="@drawable/cell_border"
+                />
 
             <TextView
 
                 android:id="@+id/txtInvested"
                 android:textColor="@color/myTextColor"
-                android:textSize="16dp"
-                android:layout_marginLeft="40dp"/>
+                android:textSize="18dp"
+                android:padding="10dp"/>
         </TableRow>
-        <TableRow>
+        <TableRow
+            android:background="@drawable/cell_border">
             <TextView android:text="Lợi tức đã nhận được"
                 android:textColor="@color/myTextColor"
                 android:layout_width="170dp"
                 android:padding="10dp"
-                android:textSize="16dp"
-                android:layout_marginLeft="10dp"/>
+                android:textSize="18dp"
+                android:background="@drawable/cell_border"/>
 
             <TextView
 
                 android:id="@+id/txtLoan"
                 android:textColor="@color/myTextColor"
-                android:textSize="16dp"
-                android:layout_marginLeft="40dp"/>
+                android:textSize="18dp"
+                android:padding="10dp"/>
         </TableRow>
     </TableLayout>
 </LinearLayout>

@@ -23,9 +23,9 @@
 
     <fragment
         android:id="@+id/nav_list_invested_company"
-        android:name="duongdd.se06000.p2plendingapplication.ListInvestedCompanyDetailsFragment"
+        android:name="duongdd.se06000.p2plendingapplication.ListInvestedCompanyFragment"
         android:label="@string/menu_list_invested_company"
-        tools:layout="@layout/fragment_list_invested_company_details" />
+        tools:layout="@layout/fragment_list_invested_company" />
 
     <fragment
         android:id="@+id/nav_list_company"
@@ -43,5 +43,9 @@
         android:name="duongdd.se06000.p2plendingapplication.ListInvestmentCallingFragment"
         android:label="@string/menu_ListCalledInvestment"
         tools:layout="@layout/fragment_list_investment_calling"/>
-
+    <fragment
+        android:id="@+id/nav_contact"
+        android:name="duongdd.se06000.p2plendingapplication.ContactUsFragment"
+        android:label="@string/menu_Contact"
+        tools:layout="@layout/fragment_contact_us"/>
 </navigation>

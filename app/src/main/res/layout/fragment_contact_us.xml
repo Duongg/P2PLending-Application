@@ -18,7 +18,7 @@
         android:textColor="@color/myTextColor"/>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <TableLayout
             android:layout_width="match_parent"
@@ -34,14 +34,13 @@
                     android:singleLine="true"
                     android:text="Tên công ty"
                     android:textColor="@color/myTextColor"
-                    android:textSize="16dp" />
+                    android:textSize="18dp" />
 
-                <EditText
+                <TextView
                     android:layout_marginLeft="20dp"
                     android:text="P2PLending"
                     android:textColor="@color/myTextColor"
-                    android:backgroundTint="@color/myTextColor"
-                    android:textSize="16dp" />
+                    android:textSize="18dp" />
             </TableRow>
 
             <TableRow
@@ -52,14 +51,13 @@
                 <TextView
                     android:text="Địa chỉ"
                     android:textColor="@color/myTextColor"
-                    android:textSize="16dp" />
+                    android:textSize="18dp" />
 
-                <EditText
+                <TextView
                     android:layout_marginLeft="20dp"
-                    android:backgroundTint="@color/myTextColor"
-                    android:text="Khu công nghệ cao quận 9"
                     android:textColor="@color/myTextColor"
-                    android:textSize="16dp" />
+                    android:text="Khu công nghệ cao quận 9"
+                    android:textSize="18dp" />
             </TableRow>
 
             <TableRow
@@ -70,14 +68,13 @@
                 <TextView
                     android:text="Số điện thoại"
                     android:textColor="@color/myTextColor"
-                    android:textSize="16dp" />
+                    android:textSize="18dp" />
 
-                <EditText
+                <TextView
                     android:layout_marginLeft="20dp"
-                    android:backgroundTint="@color/myTextColor"
                     android:text="0987654321"
                     android:textColor="@color/myTextColor"
-                    android:textSize="16dp" />
+                    android:textSize="18dp" />
             </TableRow>
 
             <TableRow
@@ -88,15 +85,14 @@
                 <TextView
                     android:text="Email"
                     android:textColor="@color/myTextColor"
-                    android:textSize="16dp" />
+                    android:textSize="18dp" />
 
-                <EditText
+                <TextView
                     android:layout_marginLeft="20dp"
-                    android:backgroundTint="@color/myTextColor"
                     android:singleLine="true"
-                    android:text="p2plending@lending.com"
+                    android:text="example@gmail.com"
                     android:textColor="@color/myTextColor"
-                    android:textSize="16dp" />
+                    android:textSize="18dp" />
             </TableRow>
 
         </TableLayout>

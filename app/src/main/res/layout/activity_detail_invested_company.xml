@@ -12,149 +12,156 @@
         android:textColor="@color/myTextColor"
         android:textStyle="bold"
         android:textSize="24dp"
-        android:layout_marginTop="10dp"
+        android:padding="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Chi tiết DN đã đầu tư" />
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_marginTop="20dp"
-        android:paddingTop="20dp">
+        android:layout_height="wrap_content">
         <TableRow
+            android:background="@drawable/cell_border"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp">
+            android:layout_height="match_parent">
             <TextView
-                android:layout_marginLeft="20dp"
                 android:text="Tên doanh nghiệp"
                 android:textColor="@color/TextViewColor"
-                android:textSize="16dp"/>
+                android:textSize="18dp"
+                android:background="@drawable/cell_border"
+                android:padding="20dp"/>
             <TextView
-                android:layout_marginLeft="40dp"
+                android:padding="20dp"
                 android:text="ABC"
-                android:textSize="16dp"
+                android:textSize="18dp"
                 android:textColor="@color/myTextColor"/>
         </TableRow>
         <TableRow
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="10dp">
+            android:background="@drawable/cell_border">
             <TextView
-                android:layout_marginLeft="20dp"
+                android:background="@drawable/cell_border"
+                android:padding="20dp"
                 android:text="Tên dự án"
                 android:textColor="@color/TextViewColor"
-                android:textSize="16dp"/>
+                android:textSize="18dp"/>
             <TextView
-                android:layout_marginLeft="40dp"
+                android:padding="20dp"
                 android:text="ABC"
-                android:textSize="16dp"
+                android:textSize="18dp"
                 android:textColor="@color/myTextColor"/>
         </TableRow>
         <TableRow
+            android:background="@drawable/cell_border"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp">
+            android:layout_height="match_parent">
             <TextView
-                android:layout_marginLeft="20dp"
+                android:background="@drawable/cell_border"
                 android:text="Ngành nghề"
                 android:textColor="@color/TextViewColor"
-                android:textSize="16dp"/>
+                android:padding="20dp"
+                android:textSize="18dp"/>
             <TextView
-                android:layout_marginLeft="40dp"
+                android:padding="20dp"
                 android:text="ABC"
-                android:textSize="16dp"
+                android:textSize="18dp"
                 android:textColor="@color/myTextColor"/>
         </TableRow>
         <TableRow
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="10dp">
+            android:background="@drawable/cell_border">
             <TextView
-                android:layout_marginLeft="20dp"
+                android:padding="20dp"
+                android:background="@drawable/cell_border"
                 android:text="Kỳ hạn"
                 android:textColor="@color/TextViewColor"
-                android:textSize="16dp"/>
+                android:textSize="18dp"/>
             <TextView
-                android:layout_marginLeft="40dp"
+                android:padding="20dp"
                 android:text="ABC"
-                android:textSize="16dp"
+                android:textSize="18dp"
                 android:textColor="@color/myTextColor"/>
         </TableRow>
         <TableRow
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="10dp">
+            android:background="@drawable/cell_border">
             <TextView
-                android:layout_marginLeft="20dp"
+                android:padding="20dp"
                 android:text="Lợi suất"
                 android:textColor="@color/TextViewColor"
-                android:textSize="16dp"/>
+                android:background="@drawable/cell_border"
+                android:textSize="18dp"/>
             <TextView
-                android:layout_marginLeft="40dp"
+                android:padding="20dp"
                 android:text="ABC"
-                android:textSize="16dp"
+                android:textSize="18dp"
                 android:textColor="@color/myTextColor"/>
         </TableRow>
         <TableRow
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="10dp">
+            android:background="@drawable/cell_border">
             <TextView
-                android:layout_marginLeft="20dp"
+                android:padding="20dp"
                 android:text="Số tiền đầu tư"
                 android:textColor="@color/TextViewColor"
-                android:textSize="16dp"/>
+                android:background="@drawable/cell_border"
+                android:textSize="18dp"/>
             <TextView
-                android:layout_marginLeft="40dp"
+                android:padding="20dp"
                 android:text="ABC"
-                android:textSize="16dp"
+                android:textSize="18dp"
                 android:textColor="@color/myTextColor"/>
         </TableRow>
         <TableRow
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="10dp">
+            android:background="@drawable/cell_border">
             <TextView
-                android:layout_marginLeft="20dp"
+                android:padding="20dp"
                 android:text="Ngày kêu gọi"
+                android:background="@drawable/cell_border"
                 android:textColor="@color/TextViewColor"
-                android:textSize="16dp"/>
+                android:textSize="18dp"/>
             <TextView
-                android:layout_marginLeft="40dp"
+                android:padding="20dp"
                 android:text="ABC"
-                android:textSize="16dp"
+                android:textSize="18dp"
                 android:textColor="@color/myTextColor"/>
         </TableRow>
         <TableRow
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="10dp">
+            android:background="@drawable/cell_border">
             <TextView
-                android:layout_marginLeft="20dp"
                 android:text="Số tiền kêu gọi"
+                android:padding="20dp"
                 android:textColor="@color/TextViewColor"
-                android:textSize="16dp"/>
+                android:background="@drawable/cell_border"
+                android:textSize="18dp"/>
             <TextView
-                android:layout_marginLeft="40dp"
+                android:padding="20dp"
                 android:text="ABC"
-                android:textSize="16dp"
+                android:textSize="18dp"
                 android:textColor="@color/myTextColor"/>
         </TableRow>
         <TableRow
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="10dp">
+            android:background="@drawable/cell_border">
             <TextView
-                android:layout_marginLeft="20dp"
+                android:padding="20dp"
                 android:text="Lợi nhuận thu được"
+                android:background="@drawable/cell_border"
                 android:textColor="@color/TextViewColor"
-                android:textSize="16dp"/>
+                android:textSize="18dp"/>
             <TextView
-                android:layout_marginLeft="40dp"
+                android:padding="20dp"
                 android:text="ABC"
-                android:textSize="16dp"
+                android:textSize="18dp"
                 android:textColor="@color/myTextColor"/>
         </TableRow>
     </TableLayout>
