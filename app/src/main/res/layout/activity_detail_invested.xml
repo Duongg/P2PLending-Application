@@ -33,14 +33,12 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="Ngày nhận"
-                android:id="@+id/txtDateReceive"
                 android:textColor="@color/myTextColor"
                 android:textSize="18dp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="117dp"
-                android:id="@+id/txtPrincipleMoney"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -51,7 +49,6 @@
 
             <TextView
                 android:layout_width="99dp"
-                android:id="@+id/txtLoan"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
@@ -65,7 +62,6 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:id="@+id/txtReceiveMoney"
                 android:text="Tiền nhận được (VND)"
                 android:textColor="@color/myTextColor"
                 android:textSize="16dp"
