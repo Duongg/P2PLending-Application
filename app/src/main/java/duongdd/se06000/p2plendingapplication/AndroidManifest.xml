@@ -26,6 +26,7 @@
         <activity android:name=".ListInvestedActivity" />
         <activity android:name=".DetailCompanyActivity" />
         <activity android:name=".ListCompanyActivity" />
+        <activity android:name=".InvestedDetailsActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

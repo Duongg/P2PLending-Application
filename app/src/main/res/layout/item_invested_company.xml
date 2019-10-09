@@ -16,16 +16,17 @@
         android:layout_height="wrap_content"
         android:id="@+id/txtInvestmentName"
         android:textColor="@color/myTextColor"
-        android:textSize="14dp"
+        android:textSize="17dp"
         android:layout_weight="1"
+        android:layout_marginLeft="10dp"
         android:maxLength="15"
-        android:paddingLeft="15dp"></TextView>
+        ></TextView>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/txtInvestedMoney"
         android:textColor="@color/myTextColor"
-        android:textSize="14dp"
+        android:textSize="17dp"
         android:gravity="center"
         android:layout_weight="1"></TextView>
     <TextView
@@ -33,10 +34,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/txtDate"
         android:textColor="@color/myTextColor"
-        android:textSize="14dp"
+        android:textSize="17dp"
         android:layout_weight="1"
-        android:maxLength="5"
-        android:layout_marginLeft="30dp"
         android:gravity="center"></TextView>
 </LinearLayout>
 

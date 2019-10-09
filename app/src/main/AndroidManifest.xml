@@ -14,6 +14,7 @@
         <activity android:name=".DetailInvestmentCallingActivity" />
         <activity android:name=".DetailInvestedCompanyActivity" />
         <activity android:name=".DetailCompanyActivity" />
+        <activity android:name=".InvestedDetailsActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -9,6 +9,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import duongdd.se06000.p2plendingapplication.R;
+import duongdd.se06000.p2plendingapplication.formatter.DateFormat;
 import duongdd.se06000.p2plendingapplication.formatter.FormatDecimal;
 import duongdd.se06000.p2plendingapplication.model.InvestorDetail;
 
@@ -46,7 +47,7 @@ public class InformationInvestedAdapter extends BaseAdapter {
         TextView txtPrincipleMoney = convertView.findViewById(R.id.txtPrincipleMoney);
         TextView txtLoan = convertView.findViewById(R.id.txtLoan);
         TextView txtReceiveMoney = convertView.findViewById(R.id.txtReceiveMoney);
-        txtDateReceive.setText((CharSequence) company.getDisbursementDate());
+        txtDateReceive.setText(DateFormat.formatDate(company.getDisbursementDate()));
         txtPrincipleMoney.setText(FormatDecimal.formatBigDecimal(company.getPrincipleMoneyLeft()));
         txtLoan.setText(FormatDecimal.formatBigDecimal(company.getInterestMoney()));
         txtReceiveMoney.setText(FormatDecimal.formatBigDecimal(company.getDisbursementMoney()));

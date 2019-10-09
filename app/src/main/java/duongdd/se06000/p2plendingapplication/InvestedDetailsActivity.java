@@ -14,6 +14,7 @@ import java.util.List;
 import duongdd.se06000.p2plendingapplication.R;
 import duongdd.se06000.p2plendingapplication.adapter.InformationInvestedAdapter;
 import duongdd.se06000.p2plendingapplication.model.InvestorDetail;
+import duongdd.se06000.p2plendingapplication.model.ListInvestedCompany;
 import duongdd.se06000.p2plendingapplication.presenters.InvestorDetailPresenters;
 import duongdd.se06000.p2plendingapplication.view.InvestorDetailView;
 
@@ -35,8 +36,8 @@ public class InvestedDetailsActivity extends AppCompatActivity implements Invest
     private void initData(){
         Bundle bundle = getIntent().getExtras();
         token = bundle.getString("TOKEN");
-        investorDetail = (InvestorDetail) bundle.getSerializable("invested");
-        investorDetailPresenters.investorDetailInformation(token, investorDetail.getInvestorDetailsID());
+        ListInvestedCompany listInvestedCompany = (ListInvestedCompany) bundle.getSerializable("invested");
+        investorDetailPresenters.investorDetailInformation(token, listInvestedCompany.getInvestorDetailsID());
     }
 
     @Override
@@ -55,9 +56,10 @@ public class InvestedDetailsActivity extends AppCompatActivity implements Invest
         Intent intent = new Intent(getApplicationContext(), DetailInvestedCompanyActivity.class);
         Bundle bundle = new Bundle();
         bundle.putString("TOKEN", token);
-        bundle.putSerializable("invested", investorDetail);
+        bundle.putSerializable("investorDetail", investorDetail);
         intent.putExtras(bundle);
         startActivity(intent);
+        finish();
 
     }
 }
