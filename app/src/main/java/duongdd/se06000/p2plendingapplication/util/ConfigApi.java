@@ -16,6 +16,7 @@ public class ConfigApi {
         String DETAIL_INVESTMENT = "/api/investment-company/detail-investment";
         String SEARCH_INVESTMENT = "/api/investment-company/search-investment";
         String LIST_CALLING_INVESTMENT = "/api/investment-company/list-calling-investment";
+        String DETAIL_INVESTED_INFORMATION = "/api/investment-company/detail-invested-information";
         //investor detail
         String VIEW_INVESTOR_DETAIL = "/api/investor-detail/information-detail";
         String INVESTOR_INVEST = "/api/investor-detail/investor-invest";

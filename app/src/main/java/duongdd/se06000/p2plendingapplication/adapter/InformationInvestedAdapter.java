@@ -16,8 +16,7 @@ import duongdd.se06000.p2plendingapplication.model.InvestorDetail;
 public class InformationInvestedAdapter extends BaseAdapter {
     private List<InvestorDetail> listInvestorDetails;
 
-
-    public void setListInvestedCompanies(List<InvestorDetail> listInvestorDetails) {
+    public void setListInvestorDetails(List<InvestorDetail> listInvestorDetails) {
         this.listInvestorDetails = listInvestorDetails;
     }
 

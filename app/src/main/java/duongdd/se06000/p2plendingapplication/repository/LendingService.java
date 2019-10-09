@@ -33,6 +33,9 @@ public interface LendingService {
     @GET(ConfigApi.Api.VIEW_INVESTOR_DETAIL)
     Call<ResponseBody> getInvestorDetail(@Header("Authorization") String authorization, @Query("investorDetailsID") int investorDetailsID);
 
+    @GET(ConfigApi.Api.DETAIL_INVESTED_INFORMATION)
+    Call<ResponseBody> getInvestedDetailInformation(@Header("Authorization") String authorization, @Query("investorDetailsID") int investorDetailsID);
+
     @GET(ConfigApi.Api.DETAIL_INVESTMENT)
     Call<ResponseBody> getInvestmentCompanyDetail(@Header("Authorization") String authorization,
                                                   @Query("investmentCompanyID") int investmentCompanyID);
