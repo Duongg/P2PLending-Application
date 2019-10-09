@@ -88,21 +88,6 @@
             android:layout_margin="10dp">
             <TextView
                 android:layout_marginLeft="20dp"
-                android:text="Lợi suất"
-                android:textColor="@color/TextViewColor"
-                android:textSize="16dp"/>
-            <TextView
-                android:layout_marginLeft="40dp"
-                android:id="@+id/txtProfit"
-                android:textSize="16dp"
-                android:textColor="@color/myTextColor"/>
-        </TableRow>
-        <TableRow
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp">
-            <TextView
-                android:layout_marginLeft="20dp"
                 android:text="Số tiền đầu tư"
                 android:textColor="@color/TextViewColor"
                 android:textSize="16dp"/>
@@ -118,12 +103,12 @@
             android:layout_margin="10dp">
             <TextView
                 android:layout_marginLeft="20dp"
-                android:text="Ngày kêu gọi"
+                android:text="Ngày đầu tư"
                 android:textColor="@color/TextViewColor"
                 android:textSize="16dp"/>
             <TextView
                 android:layout_marginLeft="40dp"
-                android:text="ABC"
+                android:id="@+id/txtStartDate"
                 android:textSize="16dp"
                 android:textColor="@color/myTextColor"/>
         </TableRow>
@@ -133,12 +118,12 @@
             android:layout_margin="10dp">
             <TextView
                 android:layout_marginLeft="20dp"
-                android:text="Số tiền kêu gọi"
+                android:text="Ngày kết thúc"
                 android:textColor="@color/TextViewColor"
                 android:textSize="16dp"/>
             <TextView
                 android:layout_marginLeft="40dp"
-                android:text="ABC"
+                android:id="@+id/txtEndDate"
                 android:textSize="16dp"
                 android:textColor="@color/myTextColor"/>
         </TableRow>
@@ -148,12 +133,27 @@
             android:layout_margin="10dp">
             <TextView
                 android:layout_marginLeft="20dp"
-                android:text="Lợi nhuận thu được"
+                android:text="Lợi nhuận dự kiến"
                 android:textColor="@color/TextViewColor"
                 android:textSize="16dp"/>
             <TextView
                 android:layout_marginLeft="40dp"
-                android:text="ABC"
+                android:id="@+id/txtLoan"
+                android:textSize="16dp"
+                android:textColor="@color/myTextColor"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
+            <TextView
+                android:layout_marginLeft="20dp"
+                android:text="Lợi nhuận đã nhận được"
+                android:textColor="@color/TextViewColor"
+                android:textSize="16dp"/>
+            <TextView
+                android:layout_marginLeft="40dp"
+                android:id="@+id/txtLoanReceive"
                 android:textSize="16dp"
                 android:textColor="@color/myTextColor"/>
         </TableRow>

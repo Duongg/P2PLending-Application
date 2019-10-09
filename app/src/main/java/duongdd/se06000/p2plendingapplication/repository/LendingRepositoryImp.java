@@ -10,6 +10,7 @@ import java.lang.reflect.Type;
 import java.math.BigDecimal;
 import java.util.List;
 
+import duongdd.se06000.p2plendingapplication.model.InvestedInformation;
 import duongdd.se06000.p2plendingapplication.model.InvestorInvest;
 import duongdd.se06000.p2plendingapplication.model.ListInvestedCompany;
 import duongdd.se06000.p2plendingapplication.model.CompanyDisbursement;
@@ -146,24 +147,56 @@ public class LendingRepositoryImp implements LendingRepository{
                     try {
                         String body = response.body().string();
                         Type type = new TypeToken<List<InvestorDetail>>(){}.getType();
-                        List<InvestorDetail> investorDetail = new Gson().fromJson(body,type);
-                        if(investorDetail != null){
-                            callBackData.onSuccess(investorDetail);
+                        List<InvestorDetail> listInvestmentCompanies = new Gson().fromJson(body,type);
+
+                        if(listInvestmentCompanies != null){
+                            callBackData.onSuccess(listInvestmentCompanies);
                         }else{
-                            callBackData.onFail("Tài khoản không tồn tại");
+                            callBackData.onFail("Không có đầu tư nào");
                         }
                     }catch (Exception e){
-                        callBackData.onFail("Tài khoản không tồn tại");
+                        callBackData.onFail("Không có đầu tư nào");
                     }
                 }
             }
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-                callBackData.onFail("Tài khoản không tồn tại");
+                callBackData.onFail("Không có đầu tư nào");
             }
         });
     }
+
+    @Override
+    public void getInvestedDetailInformation(String token, int investorDetailsID,final CallBackData<InvestedInformation> callBackData) {
+        ClientApi clientApi = new ClientApi();
+        Call<ResponseBody> call = clientApi.LendingService().getInvestedDetailInformation(token, investorDetailsID);
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if(response.code() == 200){
+                    try {
+                        String body = response.body().string();
+                        Type type = new TypeToken<InvestedInformation>(){}.getType();
+                        InvestedInformation investmentCompanyDetail = new Gson().fromJson(body,type);
+                        if(investmentCompanyDetail != null){
+                            callBackData.onSuccess(investmentCompanyDetail);
+                        }else{
+                            callBackData.onFail("Thương vụ không tồn tại");
+                        }
+                    }catch (Exception e){
+                        callBackData.onFail("Thương vụ không tồn tại");
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                callBackData.onFail("Thương vụ không tồn tại");
+            }
+        });
+    }
+
 
     @Override
     public void getInvestmentCompanyDetail(String token, int investmentCompanyID, final CallBackData<InvestmentCompanyDetail> callBackData) {

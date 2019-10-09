@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 import duongdd.se06000.p2plendingapplication.model.CompanyDisbursement;
+import duongdd.se06000.p2plendingapplication.model.InvestedInformation;
 import duongdd.se06000.p2plendingapplication.model.InvestmentCompanyDetail;
 import duongdd.se06000.p2plendingapplication.model.InvestorDetail;
 import duongdd.se06000.p2plendingapplication.model.InvestorInvest;
@@ -25,6 +26,8 @@ public interface LendingRepository {
     void getListInvestmentCompany(String token, int page, CallBackData<List<ListInvestmentCompany>> callBackData);
 
     void getInvestorDetail(String token, int investorDetailsID, CallBackData<List<InvestorDetail>> callBackData);
+
+    void getInvestedDetailInformation(String token, int investorDetailsID, CallBackData<InvestedInformation> callBackData);
 
     void getInvestmentCompanyDetail(String token, int investmentCompanyID, CallBackData<InvestmentCompanyDetail> callBackData);
 

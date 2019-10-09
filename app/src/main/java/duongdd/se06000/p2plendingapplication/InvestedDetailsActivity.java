@@ -21,7 +21,7 @@ import duongdd.se06000.p2plendingapplication.view.InvestorDetailView;
 public class InvestedDetailsActivity extends AppCompatActivity implements InvestorDetailView {
     private InvestorDetailPresenters investorDetailPresenters;
     private String token = "";
-    private InvestorDetail investorDetail;
+    private int investorDetailsID;
     private InformationInvestedAdapter adapter;
     private ListView listView;
 
@@ -30,6 +30,7 @@ public class InvestedDetailsActivity extends AppCompatActivity implements Invest
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_invested);
         investorDetailPresenters = new InvestorDetailPresenters(this);
+        listView = findViewById(R.id.lvListInvested);
         initData();
     }
 
@@ -42,8 +43,9 @@ public class InvestedDetailsActivity extends AppCompatActivity implements Invest
 
     @Override
     public void onSuccess(List<InvestorDetail> investorDetail) {
+        investorDetailsID = investorDetail.get(0).getInvestorDetailsID();
         adapter = new InformationInvestedAdapter();
-        adapter.setListInvestedCompanies(investorDetail);
+        adapter.setListInvestorDetails(investorDetail);
         listView.setAdapter(adapter);
     }
 
@@ -56,7 +58,7 @@ public class InvestedDetailsActivity extends AppCompatActivity implements Invest
         Intent intent = new Intent(getApplicationContext(), DetailInvestedCompanyActivity.class);
         Bundle bundle = new Bundle();
         bundle.putString("TOKEN", token);
-        bundle.putSerializable("investorDetail", investorDetail);
+        bundle.putInt("investorDetailsID", investorDetailsID);
         intent.putExtras(bundle);
         startActivity(intent);
         finish();
