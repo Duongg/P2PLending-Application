@@ -24,7 +24,7 @@ public interface LendingRepository {
 
     void getListInvestmentCompany(String token, int page, CallBackData<List<ListInvestmentCompany>> callBackData);
 
-    void getInvestorDetail(String token, int investorID, CallBackData<InvestorDetail> callBackData);
+    void getInvestorDetail(String token, int investorDetailsID, CallBackData<List<InvestorDetail>> callBackData);
 
     void getInvestmentCompanyDetail(String token, int investmentCompanyID, CallBackData<InvestmentCompanyDetail> callBackData);
 

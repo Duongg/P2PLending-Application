@@ -8,12 +8,10 @@ import org.json.JSONObject;
 
 import java.lang.reflect.Type;
 import java.math.BigDecimal;
-import java.sql.Date;
 import java.util.List;
 
 import duongdd.se06000.p2plendingapplication.model.InvestorInvest;
 import duongdd.se06000.p2plendingapplication.model.ListInvestedCompany;
-import duongdd.se06000.p2plendingapplication.repository.LendingService;
 import duongdd.se06000.p2plendingapplication.model.CompanyDisbursement;
 import duongdd.se06000.p2plendingapplication.model.InvestmentCompanyDetail;
 import duongdd.se06000.p2plendingapplication.model.InvestorDetail;
@@ -138,17 +136,17 @@ public class LendingRepositoryImp implements LendingRepository{
 
 
     @Override
-    public void getInvestorDetail(String token, int investorID, final CallBackData<InvestorDetail> callBackData) {
+    public void getInvestorDetail(String token, int investorDetailsID, final CallBackData<List<InvestorDetail>> callBackData) {
         ClientApi clientApi = new ClientApi();
-        Call<ResponseBody> call = clientApi.LendingService().getInvestorDetail(token, investorID);
+        Call<ResponseBody> call = clientApi.LendingService().getInvestorDetail(token, investorDetailsID);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if(response.code() == 200){
                     try {
                         String body = response.body().string();
-                        Type type = new TypeToken<InvestorDetail>(){}.getType();
-                        InvestorDetail investorDetail = new Gson().fromJson(body,type);
+                        Type type = new TypeToken<List<InvestorDetail>>(){}.getType();
+                        List<InvestorDetail> investorDetail = new Gson().fromJson(body,type);
                         if(investorDetail != null){
                             callBackData.onSuccess(investorDetail);
                         }else{
@@ -398,14 +396,14 @@ public class LendingRepositoryImp implements LendingRepository{
                             callBackData.onFail("Không có đầu tư nào");
                         }
                     }catch (Exception e){
-                        callBackData.onFail("Không có đầu tư nào");
+                        e.printStackTrace();
                     }
                 }
             }
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-                callBackData.onFail("Không có đầu tư nào");
+                t.printStackTrace();
             }
         });
     }

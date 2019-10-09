@@ -4,12 +4,15 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.sql.Date;
+import java.util.Date;
 
 public class ListInvestedCompany implements Serializable {
 
     @SerializedName("investorID")
     private int investorID;
+
+    @SerializedName("investorDetailsID")
+    private int investorDetailsID;
 
     @SerializedName("investmentCompanyID")
     private int investmentCompanyID;
@@ -41,10 +44,12 @@ public class ListInvestedCompany implements Serializable {
     public ListInvestedCompany() {
     }
 
-    public ListInvestedCompany(int investorID, int investmentCompanyID, String investmentName,
-                               int borrowerID, BigDecimal investMoney, BigDecimal investedMoney,
-                               float interestRateInvestor, String name, Date investedDate, BigDecimal profit) {
+    public ListInvestedCompany(int investorID, int investorDetailsID, int investmentCompanyID,
+                               String investmentName, int borrowerID, BigDecimal investMoney,
+                               BigDecimal investedMoney, float interestRateInvestor, String name,
+                               Date investedDate, BigDecimal profit) {
         this.investorID = investorID;
+        this.investorDetailsID = investorDetailsID;
         this.investmentCompanyID = investmentCompanyID;
         this.investmentName = investmentName;
         this.borrowerID = borrowerID;
@@ -56,6 +61,13 @@ public class ListInvestedCompany implements Serializable {
         this.profit = profit;
     }
 
+    public int getInvestorDetailsID() {
+        return investorDetailsID;
+    }
+
+    public void setInvestorDetailsID(int investorDetailsID) {
+        this.investorDetailsID = investorDetailsID;
+    }
 
     public int getInvestorID() {
         return investorID;

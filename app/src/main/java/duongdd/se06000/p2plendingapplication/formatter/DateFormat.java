@@ -1,7 +1,8 @@
 package duongdd.se06000.p2plendingapplication.formatter;
 
-import java.sql.Date;
+
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class DateFormat {
 

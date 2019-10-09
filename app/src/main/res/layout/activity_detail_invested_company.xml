@@ -33,7 +33,7 @@
                 android:textSize="16dp"/>
             <TextView
                 android:layout_marginLeft="40dp"
-                android:text="ABC"
+                android:id="@+id/txtName"
                 android:textSize="16dp"
                 android:textColor="@color/myTextColor"/>
         </TableRow>
@@ -48,7 +48,7 @@
                 android:textSize="16dp"/>
             <TextView
                 android:layout_marginLeft="40dp"
-                android:text="ABC"
+                android:id="@+id/txtInvestmentName"
                 android:textSize="16dp"
                 android:textColor="@color/myTextColor"/>
         </TableRow>
@@ -63,7 +63,7 @@
                 android:textSize="16dp"/>
             <TextView
                 android:layout_marginLeft="40dp"
-                android:text="ABC"
+                android:id="@+id/txtCareer"
                 android:textSize="16dp"
                 android:textColor="@color/myTextColor"/>
         </TableRow>
@@ -78,7 +78,7 @@
                 android:textSize="16dp"/>
             <TextView
                 android:layout_marginLeft="40dp"
-                android:text="ABC"
+                android:id="@+id/txtPeriod"
                 android:textSize="16dp"
                 android:textColor="@color/myTextColor"/>
         </TableRow>
@@ -93,7 +93,7 @@
                 android:textSize="16dp"/>
             <TextView
                 android:layout_marginLeft="40dp"
-                android:text="ABC"
+                android:id="@+id/txtProfit"
                 android:textSize="16dp"
                 android:textColor="@color/myTextColor"/>
         </TableRow>
@@ -108,7 +108,7 @@
                 android:textSize="16dp"/>
             <TextView
                 android:layout_marginLeft="40dp"
-                android:text="ABC"
+                android:id="@+id/txtInvestedMoney"
                 android:textSize="16dp"
                 android:textColor="@color/myTextColor"/>
         </TableRow>

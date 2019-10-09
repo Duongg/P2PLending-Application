@@ -14,14 +14,12 @@ import android.widget.Toast;
 
 import java.math.BigDecimal;
 
-import duongdd.se06000.p2plendingapplication.formatter.DateFormat;
 import duongdd.se06000.p2plendingapplication.formatter.FormatDecimal;
 import duongdd.se06000.p2plendingapplication.model.InvestmentCompanyDetail;
 import duongdd.se06000.p2plendingapplication.model.InvestorInvest;
 import duongdd.se06000.p2plendingapplication.model.ListInvestmentCompany;
 import duongdd.se06000.p2plendingapplication.presenters.InvestmentCompanyDetailPresenters;
 import duongdd.se06000.p2plendingapplication.presenters.InvestorInvestPresenters;
-import duongdd.se06000.p2plendingapplication.util.ConfigApi;
 import duongdd.se06000.p2plendingapplication.view.InvestmentCompanyDetailView;
 import duongdd.se06000.p2plendingapplication.view.InvestorInvestView;
 
@@ -78,10 +76,10 @@ public class DetailCompanyActivity extends AppCompatActivity implements Investme
         txtCareer.setText(investmentCompanyDetail.getCareer());
         txtPeriod.setText(investmentCompanyDetail.getPeriod() + "");
         txtProfit.setText(investmentCompanyDetail.getInterestRateInvestor() + "%");
-        txtInvestMoney.setText(FormatDecimal.formatBigDecimal(investmentCompanyDetail.getInvestMoney()));
+        txtInvestMoney.setText(FormatDecimal.formatBigDecimalVND(investmentCompanyDetail.getInvestMoney()));
         txtStartDate.setText((CharSequence) investmentCompanyDetail.getInvestedDate());
-        txtInvestorInvestMoney.setText(FormatDecimal.formatBigDecimal(investmentCompanyDetail.getInvestorInvestMoney()));
-        txtAvailableMoney.setText(FormatDecimal.formatBigDecimal(investmentCompanyDetail.getAvailableMoney()));
+        txtInvestorInvestMoney.setText(FormatDecimal.formatBigDecimalVND(investmentCompanyDetail.getInvestorInvestMoney()));
+        txtAvailableMoney.setText(FormatDecimal.formatBigDecimalVND(investmentCompanyDetail.getAvailableMoney()));
 
     }
 
