@@ -13,7 +13,6 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 
 import duongdd.se06000.p2plendingapplication.formatter.FormatDecimal;
-import duongdd.se06000.p2plendingapplication.model.ListInvestmentCompany;
 import duongdd.se06000.p2plendingapplication.model.WalletInformation;
 import duongdd.se06000.p2plendingapplication.presenters.WalletInformationPresenters;
 import duongdd.se06000.p2plendingapplication.view.WalletInformationView;
@@ -47,9 +46,9 @@ public class OverViewFragment extends Fragment implements WalletInformationView 
     public void loginSuccess(WalletInformation walletInformation) {
         txtInvestorID.setText(String.valueOf(walletInformation.getAccountID()));
         txtName.setText(walletInformation.getName());
-        txtTotalAsset.setText(FormatDecimal.formatBigDecimal(walletInformation.getAsset()));
-        txtInvested.setText(FormatDecimal.formatBigDecimal(walletInformation.getInvestedMoney()));
-        txtLoan.setText(FormatDecimal.formatBigDecimal(walletInformation.getLoan()));
+        txtTotalAsset.setText(FormatDecimal.formatBigDecimalVND(walletInformation.getAsset()));
+        txtInvested.setText(FormatDecimal.formatBigDecimalVND(walletInformation.getInvestedMoney()));
+        txtLoan.setText(FormatDecimal.formatBigDecimalVND(walletInformation.getLoan()));
         //onMoveNextFragment.onClick(walletInformation.getAccountID());
         Intent intent = new Intent(getActivity().getBaseContext(), MainActivity.class);
        // String account = String.valueOf(walletInformation.getAccountID());

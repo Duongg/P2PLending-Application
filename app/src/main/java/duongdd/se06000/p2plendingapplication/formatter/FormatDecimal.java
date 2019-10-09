@@ -8,12 +8,21 @@ import java.util.Locale;
 
 public class FormatDecimal {
 
-    public static String formatBigDecimal(BigDecimal money){
+    public static String formatBigDecimalVND(BigDecimal money){
         DecimalFormat formatter = (DecimalFormat) NumberFormat.getInstance(Locale.US);
         DecimalFormatSymbols symbols = formatter.getDecimalFormatSymbols();
 
         symbols.setGroupingSeparator(' ');
         formatter.setDecimalFormatSymbols(symbols);
         return formatter.format(money.longValue())  + " VND";
+    }
+
+    public static String formatBigDecimal(BigDecimal money){
+        DecimalFormat formatter = (DecimalFormat) NumberFormat.getInstance(Locale.US);
+        DecimalFormatSymbols symbols = formatter.getDecimalFormatSymbols();
+
+        symbols.setGroupingSeparator(' ');
+        formatter.setDecimalFormatSymbols(symbols);
+        return formatter.format(money.longValue());
     }
 }

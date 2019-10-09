@@ -4,12 +4,15 @@ import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.sql.Date;
+import java.util.Date;
 
 public class ListInvestedCompany implements Serializable {
 
     @SerializedName("investorID")
     private int investorID;
+
+    @SerializedName("investorDetailsID")
+    private int investorDetailsID;
 
     @SerializedName("investmentCompanyID")
     private int investmentCompanyID;

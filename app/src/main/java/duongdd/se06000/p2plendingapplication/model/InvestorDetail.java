@@ -2,13 +2,20 @@ package duongdd.se06000.p2plendingapplication.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class InvestorDetail {
+public class InvestorDetail implements Serializable {
 
     @SerializedName("investedMoney")
     private BigDecimal investedMoney;
+
+    @SerializedName("investmentCompanyID")
+    private int investmentCompanyID;
+
+    @SerializedName("investorDetailsID")
+    private int investorDetailsID;
 
     @SerializedName("startDate")
     private Date startDate;
@@ -46,11 +53,13 @@ public class InvestorDetail {
     public InvestorDetail() {
     }
 
-    public InvestorDetail(BigDecimal investedMoney, Date startDate, String investmentName,
-                          int period, float interestRateInvestor, Date investedDate, String career,
-                          Date disbursementDate, BigDecimal principleMoneyLeft, BigDecimal interestMoney,
-                          BigDecimal disbursementMoney, String status) {
+    public InvestorDetail(BigDecimal investedMoney, int investmentCompanyID, int investorDetailsID,
+                          Date startDate, String investmentName, int period, float interestRateInvestor,
+                          Date investedDate, String career, Date disbursementDate, BigDecimal principleMoneyLeft,
+                          BigDecimal interestMoney, BigDecimal disbursementMoney, String status) {
         this.investedMoney = investedMoney;
+        this.investmentCompanyID = investmentCompanyID;
+        this.investorDetailsID = investorDetailsID;
         this.startDate = startDate;
         this.investmentName = investmentName;
         this.period = period;
@@ -62,6 +71,22 @@ public class InvestorDetail {
         this.interestMoney = interestMoney;
         this.disbursementMoney = disbursementMoney;
         this.status = status;
+    }
+
+    public int getInvestmentCompanyID() {
+        return investmentCompanyID;
+    }
+
+    public void setInvestmentCompanyID(int investmentCompanyID) {
+        this.investmentCompanyID = investmentCompanyID;
+    }
+
+    public int getInvestorDetailsID() {
+        return investorDetailsID;
+    }
+
+    public void setInvestorDetailsID(int investorDetailsID) {
+        this.investorDetailsID = investorDetailsID;
     }
 
     public BigDecimal getInvestedMoney() {

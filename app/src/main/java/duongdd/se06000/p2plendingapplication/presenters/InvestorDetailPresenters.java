@@ -1,5 +1,7 @@
 package duongdd.se06000.p2plendingapplication.presenters;
 
+import java.util.List;
+
 import duongdd.se06000.p2plendingapplication.model.InvestorDetail;
 import duongdd.se06000.p2plendingapplication.repository.LendingRepository;
 import duongdd.se06000.p2plendingapplication.repository.LendingRepositoryImp;
@@ -16,10 +18,10 @@ public class InvestorDetailPresenters {
         this.lendingRepository = new LendingRepositoryImp();
     }
 
-    public void investorDetailInformation(String token, int investorID){
-        lendingRepository.getInvestorDetail(token, investorID, new CallBackData<InvestorDetail>() {
+    public void investorDetailInformation(String token, int investorDetailsID){
+        lendingRepository.getInvestorDetail(token, investorDetailsID, new CallBackData<List<InvestorDetail>>() {
             @Override
-            public void onSuccess(InvestorDetail investorDetail) {
+            public void onSuccess(List<InvestorDetail> investorDetail) {
                 investorDetailView.onSuccess(investorDetail);
             }
 
