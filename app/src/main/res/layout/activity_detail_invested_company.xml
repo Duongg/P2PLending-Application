@@ -88,6 +88,21 @@
             android:layout_margin="10dp">
             <TextView
                 android:layout_marginLeft="20dp"
+                android:text="Lợi suất"
+                android:textColor="@color/TextViewColor"
+                android:textSize="16dp"/>
+            <TextView
+                android:layout_marginLeft="40dp"
+                android:id="@+id/txtProfit"
+                android:textSize="16dp"
+                android:textColor="@color/myTextColor"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
+            <TextView
+                android:layout_marginLeft="20dp"
                 android:text="Số tiền đầu tư"
                 android:textColor="@color/TextViewColor"
                 android:textSize="16dp"/>

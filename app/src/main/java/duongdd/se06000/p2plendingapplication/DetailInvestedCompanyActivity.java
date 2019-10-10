@@ -15,7 +15,7 @@ import duongdd.se06000.p2plendingapplication.view.InvestedInformationView;
 public class DetailInvestedCompanyActivity extends AppCompatActivity implements InvestedInformationView {
     private InvestedInformationPresenters investedInformationPresenters;
     private TextView txtName, txtInvestmentName, txtCareer, txtPeriod, txtInvestedMoney,
-            txtStartDate, txtEndDate, txtLoan, txtLoanReceive;
+            txtStartDate, txtEndDate, txtLoan, txtLoanReceive, txtProfit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +31,7 @@ public class DetailInvestedCompanyActivity extends AppCompatActivity implements 
         txtEndDate = findViewById(R.id.txtEndDate);
         txtLoan = findViewById(R.id.txtLoan);
         txtLoanReceive = findViewById(R.id.txtLoanReceive);
+        txtProfit = findViewById(R.id.txtProfit);
 
         initData();
     }
@@ -48,6 +49,7 @@ public class DetailInvestedCompanyActivity extends AppCompatActivity implements 
         txtInvestmentName.setText(investedInformation.getInvestmentName());
         txtCareer.setText(investedInformation.getCareer());
         txtPeriod.setText(String.valueOf(investedInformation.getPeriod()));
+        txtProfit.setText(investedInformation.getInterestRateInvestor() + "%");
         txtInvestedMoney.setText(FormatDecimal.formatBigDecimalVND(investedInformation.getInvestedMoney()));
         txtStartDate.setText(DateFormat.formatDate(investedInformation.getStartDate()));
         txtEndDate.setText(DateFormat.formatDate(investedInformation.getEndDate()));

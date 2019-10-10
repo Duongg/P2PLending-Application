@@ -3,7 +3,7 @@ package duongdd.se06000.p2plendingapplication.model;
 import com.google.gson.annotations.SerializedName;
 
 import java.math.BigDecimal;
-import java.sql.Date;
+import java.util.Date;
 
 public class InvestedInformation{
 
