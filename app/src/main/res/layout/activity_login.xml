@@ -20,12 +20,13 @@
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:textColorHint="@color/myTextColor"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:singleLine="true"
         android:backgroundTint="@color/myTextColor"
         android:textColor="@color/myTextColor"
-        android:textSize="14dp"/>
+        android:textSize="14dp"
+        android:layout_gravity="center"/>
 
     <EditText
         android:id="@+id/edtPassword"
@@ -33,13 +34,14 @@
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:textColorHint="@color/myTextColor"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:singleLine="true"
         android:backgroundTint="@color/myTextColor"
         android:textColor="@color/myTextColor"
         android:textSize="14dp"
-        android:inputType="textPassword"/>
+        android:inputType="textPassword"
+        android:layout_gravity="center"/>
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="130dp"

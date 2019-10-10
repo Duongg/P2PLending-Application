@@ -10,5 +10,7 @@
     <ListView
         android:id="@+id/lvListInvestmentCalling"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:divider="@color/myTextColor"
+        android:dividerHeight="1px"/>
 </LinearLayout>

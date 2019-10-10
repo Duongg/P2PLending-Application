@@ -19,16 +19,16 @@ import duongdd.se06000.p2plendingapplication.view.WalletInformationView;
 public class InformationUserFragment extends Fragment implements WalletInformationView {
     private WalletInformationPresenters walletInformationPresenters;
     private EditText edtInvestorName, edtInvestorPhone, edtInvestorEmail;
-    private TextView txtInvestorCode;
+    private TextView txtInvestorCode, txtInvestorName, txtInvestorPhone, txtInvestorEmail;
     private String token = "";
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_information_user, container, false);
         walletInformationPresenters = new WalletInformationPresenters(this);
         txtInvestorCode = view.findViewById(R.id.investorCode);
-        edtInvestorName = view.findViewById(R.id.investorName);
-        edtInvestorPhone = view.findViewById(R.id.investorPhone);
-        edtInvestorEmail = view.findViewById(R.id.investorEmail);
+        txtInvestorName = view.findViewById(R.id.investorName);
+        txtInvestorPhone = view.findViewById(R.id.investorPhone);
+        txtInvestorEmail = view.findViewById(R.id.investorEmail);
         initData();
         return view;
     }
@@ -41,9 +41,9 @@ public class InformationUserFragment extends Fragment implements WalletInformati
     @Override
     public void loginSuccess(WalletInformation walletInformation) {
         txtInvestorCode.setText(String.valueOf(walletInformation.getAccountID()));
-        edtInvestorName.setText(walletInformation.getName());
-        edtInvestorPhone.setText(String.valueOf(walletInformation.getPhone()));
-        edtInvestorEmail.setText(walletInformation.getEmail());
+        txtInvestorName.setText(walletInformation.getName());
+        txtInvestorPhone.setText(String.valueOf(walletInformation.getPhone()));
+        txtInvestorEmail.setText(walletInformation.getEmail());
         Intent intent = new Intent(getActivity().getBaseContext(), MainActivity.class);
         intent.putExtra("TOKEN", token);
         intent.putExtra("accountID", walletInformation.getAccountID());

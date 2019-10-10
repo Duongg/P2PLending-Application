@@ -33,10 +33,10 @@
                 <TextView
                     android:singleLine="true"
                     android:text="Tên công ty"
-                    android:textColor="@color/myTextColor"
+                    android:textColor="@color/myBigTextColor"
                     android:textSize="16dp" />
 
-                <EditText
+                <TextView
                     android:layout_marginLeft="20dp"
                     android:text="P2PLending"
                     android:textColor="@color/myTextColor"
@@ -51,10 +51,10 @@
 
                 <TextView
                     android:text="Địa chỉ"
-                    android:textColor="@color/myTextColor"
+                    android:textColor="@color/myBigTextColor"
                     android:textSize="16dp" />
 
-                <EditText
+                <TextView
                     android:layout_marginLeft="20dp"
                     android:backgroundTint="@color/myTextColor"
                     android:text="Khu công nghệ cao quận 9"
@@ -69,10 +69,10 @@
 
                 <TextView
                     android:text="Số điện thoại"
-                    android:textColor="@color/myTextColor"
+                    android:textColor="@color/myBigTextColor"
                     android:textSize="16dp" />
 
-                <EditText
+                <TextView
                     android:layout_marginLeft="20dp"
                     android:backgroundTint="@color/myTextColor"
                     android:text="0987654321"
@@ -87,10 +87,10 @@
 
                 <TextView
                     android:text="Email"
-                    android:textColor="@color/myTextColor"
+                    android:textColor="@color/myBigTextColor"
                     android:textSize="16dp" />
 
-                <EditText
+                <TextView
                     android:layout_marginLeft="20dp"
                     android:backgroundTint="@color/myTextColor"
                     android:singleLine="true"

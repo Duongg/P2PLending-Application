@@ -12,30 +12,33 @@
         android:orientation="horizontal"
         android:layout_marginTop="50dp">
         <TextView
+            android:background="@drawable/cell_border"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tên DN"
             android:textStyle="bold"
-            android:textSize="18dp"
-            android:textColor="@color/myTextColor"
+            android:textSize="20dp"
+            android:textColor="@color/myBigTextColor"
             android:gravity="center"
             android:layout_weight="1"></TextView>
         <TextView
+            android:background="@drawable/cell_border"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Tổng số tiền kêu gọi"
             android:textStyle="bold"
-            android:textSize="18dp"
-            android:textColor="@color/myTextColor"
+            android:textSize="20dp"
+            android:textColor="@color/myBigTextColor"
             android:gravity="center"
             android:layout_weight="1"></TextView>
         <TextView
+            android:background="@drawable/cell_border"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Lợi suất"
             android:textStyle="bold"
-            android:textSize="18dp"
-            android:textColor="@color/myTextColor"
+            android:textSize="20dp"
+            android:textColor="@color/myBigTextColor"
             android:gravity="center"
             android:layout_weight="1"
             ></TextView>
@@ -45,5 +48,7 @@
     <ListView
         android:id="@+id/lvListCompany"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:divider="@color/myTextColor"
+        android:dividerHeight="1px"/>
 </LinearLayout>

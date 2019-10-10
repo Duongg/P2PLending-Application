@@ -39,6 +39,11 @@
         android:label="@string/menu_Statistic"
         tools:layout="@layout/fragment_statistic" />
     <fragment
+        android:id="@+id/nav_contact"
+        android:name="duongdd.se06000.p2plendingapplication.ContactUsFragment"
+        android:label="@string/menu_Contact"
+        tools:layout="@layout/fragment_contact_us" />
+    <fragment
         android:id="@+id/nav_list_investment_calling"
         android:name="duongdd.se06000.p2plendingapplication.ListInvestmentCallingFragment"
         android:label="@string/menu_ListCalledInvestment"
