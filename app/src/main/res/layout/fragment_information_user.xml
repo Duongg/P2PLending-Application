@@ -7,98 +7,100 @@
     android:background="@color/myBackgroundColor"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_marginTop="15dp"
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Thông tin khách hàng"
-        android:textSize="24dp"
-        android:textStyle="bold"
-        android:textColor="@color/myTextColor"/>
+<!--    <TextView-->
+<!--        android:layout_marginTop="15dp"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Thông tin khách hàng"-->
+<!--        android:textSize="24dp"-->
+<!--        android:textStyle="bold"-->
+<!--        android:textColor="@color/myTextColor"/>-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp">
 
         <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="30dp">
+            android:layout_height="wrap_content"
+            android:padding="10dp">
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp">
+                android:layout_height="wrap_content"
+                android:background="@drawable/cell_border">
 
                 <TextView
                     android:singleLine="true"
+                    android:background="@drawable/cell_border"
                     android:text="Mã khách hàng"
-                    android:textColor="@color/myTextColor"
-                    android:textSize="16dp" />
+                    android:padding="10dp"
+                    android:textColor="@color/myBigTextColor"
+                    android:textSize="18dp" />
 
                 <TextView
-                    android:layout_marginLeft="20dp"
+                    android:padding="10dp"
                     android:id="@+id/investorCode"
-
                     android:textColor="@color/myTextColor"
-                    android:textSize="16dp" />
+                    android:textSize="18dp" />
             </TableRow>
 
             <TableRow
+                android:background="@drawable/cell_border"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp">
+                android:layout_height="wrap_content">
 
                 <TextView
+                    android:background="@drawable/cell_border"
                     android:text="Tên khách hàng"
-                    android:textColor="@color/myTextColor"
-                    android:textSize="16dp" />
+                    android:padding="10dp"
+                    android:textColor="@color/myBigTextColor"
+                    android:textSize="18dp" />
 
-                <EditText
-                    android:layout_marginLeft="20dp"
-                    android:backgroundTint="@color/myTextColor"
-
+                <TextView
+                    android:padding="10dp"
                     android:id="@+id/investorName"
                     android:textColor="@color/myTextColor"
-                    android:textSize="16dp" />
+                    android:textSize="18dp" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp">
+                android:layout_height="wrap_content"
+                android:background="@drawable/cell_border">
 
                 <TextView
                     android:text="Số điện thoại"
-                    android:textColor="@color/myTextColor"
-                    android:textSize="16dp" />
+                    android:padding="10dp"
+                    android:background="@drawable/cell_border"
+                    android:textColor="@color/myBigTextColor"
+                    android:textSize="18dp" />
 
-                <EditText
-                    android:layout_marginLeft="20dp"
-                    android:backgroundTint="@color/myTextColor"
-
+                <TextView
+                    android:padding="10dp"
                     android:id="@+id/investorPhone"
                     android:textColor="@color/myTextColor"
-                    android:textSize="16dp" />
+                    android:textSize="18dp" />
             </TableRow>
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp">
+                android:layout_height="wrap_content"
+                android:background="@drawable/cell_border">
 
                 <TextView
+                    android:background="@drawable/cell_border"
                     android:text="Email"
-                    android:textColor="@color/myTextColor"
-                    android:textSize="16dp" />
+                    android:padding="10dp"
+                    android:textColor="@color/myBigTextColor"
+                    android:textSize="18dp" />
 
-                <EditText
-                    android:layout_marginLeft="20dp"
-                    android:backgroundTint="@color/myTextColor"
-                    android:singleLine="true"
+                <TextView
+                    android:padding="10dp"
                     android:id="@+id/investorEmail"
                     android:textColor="@color/myTextColor"
-                    android:textSize="16dp" />
+                    android:textSize="18dp" />
             </TableRow>
 
             <TableRow
@@ -140,24 +142,25 @@
 <!--                    android:textColor="@color/myTextColor"-->
 <!--                    android:textSize="16dp" />-->
 <!--            </TableRow>-->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="100dp">
+
+
+<!--                <Button-->
+<!--                    android:layout_margin="40dp"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="40dp"-->
+<!--                    android:background="@color/myButtonColor"-->
+<!--                    android:text="Cập nhật" />-->
 
                 <Button
+                    android:id="@+id/btnUpdate"
                     android:layout_margin="40dp"
+                    android:gravity="center"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:background="@color/myButtonColor"
-                    android:text="Cập nhật" />
-
-                <Button
-                    android:layout_margin="40dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
+                    android:textColor="@color/myTextColor"
                     android:background="@color/myButtonColor"
                     android:text="Chỉnh sửa" />
-            </LinearLayout>
+
 
         </TableLayout>
 

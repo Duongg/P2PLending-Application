@@ -10,32 +10,33 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="20dp"
+        android:background="@drawable/cell_border">
+
         <TextView
-            android:layout_width="100dp"
+            android:layout_width="122dp"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="Tên dự án"
-            android:textSize="20dp"
-            android:textColor="@color/myTextColor"
-            android:gravity="center"
-            android:padding="5dp"
-            android:layout_weight="1"/>
+            android:textColor="@color/myBigTextColor"
+            android:textSize="20dp" />
+
         <TextView
-            android:layout_width="100dp"
+            android:layout_width="128dp"
             android:layout_height="wrap_content"
-            android:text="Số tiền đã đầu tư (VND)"
-            android:textSize="20dp"
-            android:padding="5dp"
-            android:textColor="@color/myTextColor"
+            android:background="@drawable/cell_border"
             android:gravity="center"
-            android:layout_weight="1"/>
+            android:padding="5dp"
+            android:text="Số tiền đã đầu tư (VND)"
+            android:textColor="@color/myBigTextColor"
+            android:textSize="20dp" />
         <TextView
-            android:layout_width="100dp"
+            android:layout_width="155dp"
             android:layout_height="wrap_content"
             android:text="Ngày đầu tư"
             android:padding="5dp"
             android:textSize="20dp"
-            android:textColor="@color/myTextColor"
+            android:textColor="@color/myBigTextColor"
             android:gravity="center"
             android:layout_weight="1" />
 
@@ -44,5 +45,7 @@
     <ListView
         android:id="@+id/lvListInvestedCompany"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:divider="@color/myTextColor"
+        android:dividerHeight="1px"/>
 </LinearLayout>

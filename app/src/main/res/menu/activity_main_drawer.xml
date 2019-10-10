@@ -7,12 +7,15 @@
         <item android:title="Tài khoản cá nhân">
             <item
                 android:id="@+id/nav_notification"
+                android:icon="@drawable/ic_notification"
                 android:title="@string/menu_notification" />
             <item
                 android:id="@+id/nav_over_view"
+                android:icon="@drawable/ic_home"
                 android:title="@string/menu_OverInformation" />
             <item
                 android:id="@+id/nav_informationuser"
+                android:icon="@drawable/ic_people"
                 android:title="@string/menu_information_user" />
         </item>
 
@@ -20,16 +23,24 @@
         <item android:title="Tra cứu">
             <item
             android:id="@+id/nav_list_invested_company"
+                android:icon="@drawable/list"
             android:title="@string/menu_list_invested_company" />
             <item
             android:id="@+id/nav_list_company"
+                android:icon="@drawable/list"
             android:title="@string/menu_list_company" />
             <item
                 android:id="@+id/nav_statistic"
+                android:icon="@drawable/ic_statistic"
                 android:title="@string/menu_Statistic" />
         </item>
-        <item android:title="Thông tin liên hệ"/>
-        <item android:title="Đăng xuất"/>
+        <item
+            android:id="@+id/nav_contact"
+            android:icon="@drawable/contact"
+            android:title="Thông tin liên hệ"/>
+        <item
+            android:icon="@drawable/logout"
+            android:title="Đăng xuất"/>
 </group>
 
 
