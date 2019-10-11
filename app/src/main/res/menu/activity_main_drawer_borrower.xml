@@ -19,7 +19,7 @@
 
         <item android:title="Tra cứu">
             <item
-                android:id="@+id/nav_list_invested_company"
+                android:id="@+id/nav_list_investment_calling"
                 android:title="@string/menu_ListCalledInvestment" />
             <item
                 android:id="@+id/nav_statistic"

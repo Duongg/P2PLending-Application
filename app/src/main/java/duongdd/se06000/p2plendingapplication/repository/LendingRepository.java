@@ -23,6 +23,8 @@ public interface LendingRepository {
 
     void getWalletInfo(String token, CallBackData<WalletInformation> callBackData);
 
+    void getRoleAccount(String token, CallBackData<String> callBackData);
+
     void getListInvestmentCompany(String token, int page, CallBackData<List<ListInvestmentCompany>> callBackData);
 
     void getInvestorDetail(String token, int investorDetailsID, CallBackData<List<InvestorDetail>> callBackData);

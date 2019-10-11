@@ -29,6 +29,7 @@
             android:id="@+id/nav_list_company"
                 android:icon="@drawable/list"
             android:title="@string/menu_list_company" />
+
             <item
                 android:id="@+id/nav_statistic"
                 android:icon="@drawable/ic_statistic"

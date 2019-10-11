@@ -10,16 +10,21 @@ import android.widget.Toast;
 
 import duongdd.se06000.p2plendingapplication.model.Login;
 import duongdd.se06000.p2plendingapplication.presenters.LoginPresenters;
+import duongdd.se06000.p2plendingapplication.presenters.RoleAccountPresenters;
 import duongdd.se06000.p2plendingapplication.view.LoginView;
+import duongdd.se06000.p2plendingapplication.view.RoleAccountView;
 
-public class LoginActivity extends AppCompatActivity implements LoginView {
+public class LoginActivity extends AppCompatActivity implements LoginView, RoleAccountView {
     private LoginPresenters loginPresenters;
+    private String token;
+    private RoleAccountPresenters roleAccountPresenters;
     EditText username, password;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         loginPresenters = new LoginPresenters(this);
+        roleAccountPresenters = new RoleAccountPresenters(this);
         username = findViewById(R.id.edtUsername);
         password = findViewById(R.id.edtPassword);
     }
@@ -31,14 +36,26 @@ public class LoginActivity extends AppCompatActivity implements LoginView {
 
     @Override
     public void loginSuccess(String s) {
-        Intent intent = new Intent(LoginActivity.this,MainActivity.class);
-        intent.putExtra("TOKEN", s);
-        startActivity(intent);
-        finish();
+        token = s;
+        roleAccountPresenters.getRoleAccount(s);
     }
 
     @Override
     public void loginFail(String messaage) {
         Toast.makeText(this, messaage, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onSuccess(String role) {
+        Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+        intent.putExtra("TOKEN", token);
+        intent.putExtra("ROLE", role);
+        startActivity(intent);
+        finish();
+    }
+
+    @Override
+    public void onFail(String message) {
+
     }
 }
