@@ -105,6 +105,36 @@ public class LendingRepositoryImp implements LendingRepository{
     }
 
     @Override
+    public void getRoleAccount(String token,final CallBackData<String> callBackData) {
+        ClientApi clientApi = new ClientApi();
+        Call<ResponseBody> call = clientApi.LendingService().getRoleAccount(token);
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if(response.code() == 200){
+                    try {
+                        String body = response.body().string();
+                        Type type = new TypeToken<String>(){}.getType();
+                        String role = new Gson().fromJson(body,type);
+                        if(!role.isEmpty()){
+                            callBackData.onSuccess(role);
+                        }else{
+                            callBackData.onFail("Tài khoản không tồn tại");
+                        }
+                    }catch (Exception e){
+                        callBackData.onFail("Tài khoản không tồn tại");
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                callBackData.onFail("Tài khoản không tồn tại");
+            }
+        });
+    }
+
+    @Override
     public void getListInvestmentCompany(String token, int page, final CallBackData<List<ListInvestmentCompany>> callBackData) {
         ClientApi clientApi = new ClientApi();
         Call<ResponseBody> call = clientApi.LendingService().getListInvestment(token, page);

@@ -24,6 +24,7 @@
             <item
             android:id="@+id/nav_list_company"
             android:title="@string/menu_list_company" />
+
             <item
                 android:id="@+id/nav_statistic"
                 android:title="@string/menu_Statistic" />

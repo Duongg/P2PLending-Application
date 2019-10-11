@@ -27,6 +27,9 @@ public interface LendingService {
     @GET(ConfigApi.Api.INFO_WALLET)
     Call<ResponseBody> getWalletInfo(@Header("Authorization") String authorization);
 
+    @GET(ConfigApi.Api.GET_ROLE)
+    Call<ResponseBody> getRoleAccount(@Header("Authorization") String authorization);
+
     @GET(ConfigApi.Api.LIST_INVESTMENT)
     Call<ResponseBody> getListInvestment(@Header("Authorization") String authorization, @Query("page") int page);
 
