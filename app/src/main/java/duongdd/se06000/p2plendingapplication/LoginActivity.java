@@ -2,6 +2,8 @@ package duongdd.se06000.p2plendingapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -19,6 +21,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView, RoleA
     private String token;
     private RoleAccountPresenters roleAccountPresenters;
     EditText username, password;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +50,7 @@ public class LoginActivity extends AppCompatActivity implements LoginView, RoleA
 
     @Override
     public void onSuccess(String role) {
-        Intent intent = new Intent(LoginActivity.this,MainActivity.class);
+        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
         intent.putExtra("TOKEN", token);
         intent.putExtra("ROLE", role);
         startActivity(intent);
@@ -58,4 +61,36 @@ public class LoginActivity extends AppCompatActivity implements LoginView, RoleA
     public void onFail(String message) {
 
     }
+
+    public void clickToRegister(View view) {
+        showAlertDialog();
+    }
+
+    public void showAlertDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Bạn muốn đăng kí với vài trò..");
+        builder.setCancelable(false);
+        builder.setPositiveButton("Doanh nghiệp", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+                Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+                intent.putExtra("ROLE", "BORROWER");
+                startActivity(intent);
+            }
+        });
+        builder.setNegativeButton("Nhà đầu tư", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+                Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+                intent.putExtra("ROLE", "INVESTOR");
+                startActivity(intent);
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+
 }

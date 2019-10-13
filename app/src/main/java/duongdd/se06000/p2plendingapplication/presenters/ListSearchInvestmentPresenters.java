@@ -18,8 +18,8 @@ public class ListSearchInvestmentPresenters {
         this.lendingRepository = new LendingRepositoryImp();
     }
 
-    public void getListSearchInvestment(String token, String keyword, String career, int page){
-        lendingRepository.getListSearchInvestment(token, keyword, career, page, new CallBackData<List<ListSearchInvestment>>() {
+    public void getListSearchInvestment(String token, String keyword, String career){
+        lendingRepository.getListSearchInvestment(token, keyword, career, new CallBackData<List<ListSearchInvestment>>() {
             @Override
             public void onSuccess(List<ListSearchInvestment> listSearchInvestments) {
                 listSearchInvestmentView.onSuccess(listSearchInvestments);

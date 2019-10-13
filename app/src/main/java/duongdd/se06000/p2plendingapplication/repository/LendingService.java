@@ -24,14 +24,25 @@ public interface LendingService {
     @Headers("Content-Type:application/json")
     Call<ResponseBody> loginToken(@Body RequestBody requestBody);
 
+    @POST(ConfigApi.Api.CREATE_ACCOUNT)
+    @Headers("Content-Type:application/json")
+    Call<ResponseBody> createAccount(@Body RequestBody requestBody);
+
+    @POST(ConfigApi.Api.ACCOUNT_UPDATE)
+    @Headers("Content-Type:application/json")
+    Call<ResponseBody> updateAccount(@Header("Authorization") String authorization, @Body RequestBody requestBody);
+
     @GET(ConfigApi.Api.INFO_WALLET)
     Call<ResponseBody> getWalletInfo(@Header("Authorization") String authorization);
+
+    @GET(ConfigApi.Api.ACCOUNT_INFORMATION)
+    Call<ResponseBody> getAccountInformation(@Header("Authorization") String authorization);
 
     @GET(ConfigApi.Api.GET_ROLE)
     Call<ResponseBody> getRoleAccount(@Header("Authorization") String authorization);
 
     @GET(ConfigApi.Api.LIST_INVESTMENT)
-    Call<ResponseBody> getListInvestment(@Header("Authorization") String authorization, @Query("page") int page);
+    Call<ResponseBody> getListInvestment(@Header("Authorization") String authorization);
 
     @GET(ConfigApi.Api.VIEW_INVESTOR_DETAIL)
     Call<ResponseBody> getInvestorDetail(@Header("Authorization") String authorization, @Query("investorDetailsID") int investorDetailsID);
@@ -50,8 +61,8 @@ public interface LendingService {
 
     @GET(ConfigApi.Api.SEARCH_INVESTMENT)
     Call<ResponseBody> getListSearchInvestment(@Header("Authorization") String authorization, @Query("keyword") String keyword,
-                                               @Query("career") String career,
-                                               @Query("page") int page);
+                                               @Query("career") String career
+                                               );
 
     @PUT(ConfigApi.Api.PAYMENT_ALL)
     Call<ResponseBody> paymentAllDisbursement(@Header("Authorization") String authorization, @Query("borrowerID") int borrowerID,
@@ -75,6 +86,6 @@ public interface LendingService {
                                            @Query("money") BigDecimal money);
 
     @GET(ConfigApi.Api.LIST_INVESTED)
-    Call<ResponseBody> getListInvested(@Header("Authorization") String authorization, @Query("page") int page);
+    Call<ResponseBody> getListInvested(@Header("Authorization") String authorization);
 
 }

@@ -10,6 +10,7 @@ import java.lang.reflect.Type;
 import java.math.BigDecimal;
 import java.util.List;
 
+import duongdd.se06000.p2plendingapplication.model.Account;
 import duongdd.se06000.p2plendingapplication.model.InvestedInformation;
 import duongdd.se06000.p2plendingapplication.model.InvestorInvest;
 import duongdd.se06000.p2plendingapplication.model.ListInvestedCompany;
@@ -73,6 +74,88 @@ public class LendingRepositoryImp implements LendingRepository{
         });
     }
 
+    @Override
+    public void createAccount(final Account account, final CallBackData<Account> callBackData) {
+        JSONObject customer = new JSONObject();
+        try {
+            customer.put("account", account);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        ClientApi clientApi = new ClientApi();
+        RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), customer.toString());
+        Call<ResponseBody> call = clientApi.LendingService().createAccount(body);
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                try {
+                    if(response.code() == 200){
+                        String body = response.body().string();
+                        Type type = new TypeToken<Account>(){}.getType();
+                        Account accountCreate = new Gson().fromJson(body,type);
+                        if(accountCreate != null){
+                            callBackData.onSuccess(accountCreate);
+                        }
+
+
+                    }else{
+                        callBackData.onFail("Không thể tạo tài khoản");
+                    }
+
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                t.printStackTrace();
+            }
+        });
+    }
+
+    @Override
+    public void updateAccount(String token, Account account,final CallBackData<Account> callBackData) {
+        JSONObject customer = new JSONObject();
+        try {
+            customer.put("account", account);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        ClientApi clientApi = new ClientApi();
+        RequestBody body = RequestBody.create(MediaType.parse("application/json; charset=utf-8"), customer.toString());
+        Call<ResponseBody> call = clientApi.LendingService().updateAccount(token, body);
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                try {
+                    if(response.code() == 200){
+                        String body = response.body().string();
+                        Type type = new TypeToken<Account>(){}.getType();
+                        Account accountUpdate = new Gson().fromJson(body,type);
+                        if(accountUpdate != null){
+                            callBackData.onSuccess(accountUpdate);
+                        }
+
+
+                    }else{
+                        callBackData.onFail("Không thể sửa tài khoản");
+                    }
+
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                t.printStackTrace();
+            }
+        });
+    }
+
 
     @Override
     public void getWalletInfo(String token,final CallBackData<WalletInformation> callBackData) {
@@ -88,6 +171,36 @@ public class LendingRepositoryImp implements LendingRepository{
                         WalletInformation walletInformation = new Gson().fromJson(body,type);
                         if(walletInformation != null){
                             callBackData.onSuccess(walletInformation);
+                        }else{
+                            callBackData.onFail("Tài khoản không tồn tại");
+                        }
+                    }catch (Exception e){
+                        callBackData.onFail("Tài khoản không tồn tại");
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                callBackData.onFail("Tài khoản không tồn tại");
+            }
+        });
+    }
+
+    @Override
+    public void getAccountInformation(String token,final CallBackData<Account> callBackData) {
+        ClientApi clientApi = new ClientApi();
+        Call<ResponseBody> call = clientApi.LendingService().getAccountInformation(token);
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if(response.code() == 200){
+                    try {
+                        String body = response.body().string();
+                        Type type = new TypeToken<Account>(){}.getType();
+                        Account account = new Gson().fromJson(body,type);
+                        if(account != null){
+                            callBackData.onSuccess(account);
                         }else{
                             callBackData.onFail("Tài khoản không tồn tại");
                         }
@@ -135,9 +248,9 @@ public class LendingRepositoryImp implements LendingRepository{
     }
 
     @Override
-    public void getListInvestmentCompany(String token, int page, final CallBackData<List<ListInvestmentCompany>> callBackData) {
+    public void getListInvestmentCompany(String token, final CallBackData<List<ListInvestmentCompany>> callBackData) {
         ClientApi clientApi = new ClientApi();
-        Call<ResponseBody> call = clientApi.LendingService().getListInvestment(token, page);
+        Call<ResponseBody> call = clientApi.LendingService().getListInvestment(token);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
@@ -290,9 +403,9 @@ public class LendingRepositoryImp implements LendingRepository{
     }
 
     @Override
-    public void getListSearchInvestment(String token, String keyword, String career, int page,final CallBackData<List<ListSearchInvestment>> callBackData) {
+    public void getListSearchInvestment(String token, String keyword, String career,final CallBackData<List<ListSearchInvestment>> callBackData) {
         ClientApi clientApi = new ClientApi();
-        Call<ResponseBody> call = clientApi.LendingService().getListSearchInvestment(token, keyword,career, page);
+        Call<ResponseBody> call = clientApi.LendingService().getListSearchInvestment(token, keyword,career);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
@@ -441,9 +554,9 @@ public class LendingRepositoryImp implements LendingRepository{
     }
 
     @Override
-    public void getListInvestedCompany(String token, int page,final CallBackData<List<ListInvestedCompany>> callBackData) {
+    public void getListInvestedCompany(String token,final CallBackData<List<ListInvestedCompany>> callBackData) {
         ClientApi clientApi = new ClientApi();
-        Call<ResponseBody> call = clientApi.LendingService().getListInvested(token, page);
+        Call<ResponseBody> call = clientApi.LendingService().getListInvested(token);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {

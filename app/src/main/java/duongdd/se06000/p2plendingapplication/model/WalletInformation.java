@@ -4,9 +4,10 @@ package duongdd.se06000.p2plendingapplication.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class WalletInformation {
+public class WalletInformation implements Serializable {
 
     @SerializedName("accountID")
     private int accountID;

@@ -44,11 +44,11 @@ public class OverViewFragment extends Fragment implements WalletInformationView 
 
     @Override
     public void loginSuccess(WalletInformation walletInformation) {
-//        txtInvestorID.setText(String.valueOf(walletInformation.getAccountID()));
-//        txtName.setText(walletInformation.getName());
-//        txtTotalAsset.setText(FormatDecimal.formatBigDecimalVND(walletInformation.getAsset()));
-//        txtInvested.setText(FormatDecimal.formatBigDecimalVND(walletInformation.getInvestedMoney()));
-//        txtLoan.setText(FormatDecimal.formatBigDecimalVND(walletInformation.getLoan()));
+        txtInvestorID.setText(String.valueOf(walletInformation.getAccountID()));
+        txtName.setText(walletInformation.getName());
+        txtTotalAsset.setText(FormatDecimal.formatBigDecimalVND(walletInformation.getAsset()));
+        txtInvested.setText(FormatDecimal.formatBigDecimalVND(walletInformation.getInvestedMoney()));
+        txtLoan.setText(FormatDecimal.formatBigDecimalVND(walletInformation.getLoan()));
         //onMoveNextFragment.onClick(walletInformation.getAccountID());
         Intent intent = new Intent(getActivity().getBaseContext(), MainActivity.class);
        // String account = String.valueOf(walletInformation.getAccountID());

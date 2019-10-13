@@ -17,8 +17,8 @@ public class ListInvestedPresenters {
         this.lendingRepository = new LendingRepositoryImp();
     }
 
-    public void getListInvestedCompany(String token, int page){
-        lendingRepository.getListInvestedCompany(token, page, new CallBackData<List<ListInvestedCompany>>() {
+    public void getListInvestedCompany(String token){
+        lendingRepository.getListInvestedCompany(token, new CallBackData<List<ListInvestedCompany>>() {
 
             @Override
             public void onSuccess(List<ListInvestedCompany> listInvestedCompanies) {
