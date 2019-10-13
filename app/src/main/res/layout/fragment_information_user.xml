@@ -152,7 +152,7 @@
 <!--                    android:text="Cập nhật" />-->
 
                 <Button
-                    android:id="@+id/btnUpdate"
+                    android:id="@+id/btnUpdateProfile"
                     android:layout_margin="40dp"
                     android:gravity="center"
                     android:layout_width="wrap_content"

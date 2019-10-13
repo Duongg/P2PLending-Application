@@ -67,7 +67,7 @@ public class ListCompanyFragment extends Fragment implements ListInvestmentCompa
         accountID = bundle.getInt("INVESTOR_ID");
 //        token = intent.getStringExtra("TOKEN");
 //        accountID = intent.getIntExtra("INVESTOR_ID", 3);
-        listInvestmentCompanyPresenters.getListInvestmentCompany(token, 1);
+        listInvestmentCompanyPresenters.getListInvestmentCompany(token);
     }
 
     @Override

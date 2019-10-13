@@ -10,22 +10,36 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="150dp"
         android:layout_gravity="center"
         android:src="@drawable/logo_p2p" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Tên Doanh Nghiệp"
-        android:textSize="20dp"
+        android:text="Tên Tài Khoản"
+        android:textSize="16dp"
         android:textColor="@color/myTextColor"
         android:layout_marginLeft="10dp"
         android:padding="7dp"/>
     <EditText
-        android:id="@+id/edtCompanyName"
+        android:id="@+id/edtUsername"
         android:layout_width="380dp"
-        android:layout_height="35dp"
+        android:layout_height="30dp"
+        android:background="@color/myTextColor"
+        android:layout_gravity="center"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tên Doanh Nghiệp"
+        android:textSize="16dp"
+        android:textColor="@color/myTextColor"
+        android:layout_marginLeft="10dp"
+        android:padding="7dp"/>
+    <EditText
+        android:id="@+id/edtName"
+        android:layout_width="380dp"
+        android:layout_height="30dp"
         android:background="@color/myTextColor"
         android:layout_gravity="center"/>
 
@@ -33,42 +47,42 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Số điện thoại"
-        android:textSize="20dp"
+        android:textSize="16dp"
         android:textColor="@color/myTextColor"
         android:layout_marginLeft="10dp"
         android:padding="7dp"/>
     <EditText
         android:id="@+id/edtPhoneNumber"
         android:layout_width="380dp"
-        android:layout_height="35dp"
+        android:layout_height="30dp"
         android:background="@color/myTextColor"
         android:layout_gravity="center"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Email"
-        android:textSize="20dp"
+        android:textSize="16dp"
         android:textColor="@color/myTextColor"
         android:layout_marginLeft="10dp"
         android:padding="7dp"/>
     <EditText
         android:id="@+id/edtEmail"
         android:layout_width="380dp"
-        android:layout_height="35dp"
+        android:layout_height="30dp"
         android:background="@color/myTextColor"
         android:layout_gravity="center"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Mật khẩu"
-        android:textSize="20dp"
+        android:textSize="16dp"
         android:textColor="@color/myTextColor"
         android:layout_marginLeft="10dp"
         android:padding="7dp"/>
     <EditText
         android:id="@+id/edtPassword"
         android:layout_width="380dp"
-        android:layout_height="35dp"
+        android:layout_height="30dp"
         android:background="@color/myTextColor"
         android:layout_gravity="center"
         android:inputType="textPassword"/>
@@ -76,14 +90,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Nhập lại mật khẩu"
-        android:textSize="20dp"
+        android:textSize="16dp"
         android:textColor="@color/myTextColor"
         android:layout_marginLeft="10dp"
         android:padding="7dp"/>
     <EditText
         android:id="@+id/edtConfirmPassword"
         android:layout_width="380dp"
-        android:layout_height="35dp"
+        android:layout_height="30dp"
         android:background="@color/myTextColor"
         android:layout_gravity="center"
         android:inputType="textPassword"/>
@@ -95,5 +109,8 @@
         android:textColor="@color/myTextColor"
         android:layout_marginTop="35dp"
         android:layout_gravity="center"
-        android:text="Đăng ký"/>
+        android:text="Đăng ký"
+        android:onClick="clickToRegisterAccount"
+        />
+
 </LinearLayout>

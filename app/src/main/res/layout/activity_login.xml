@@ -72,6 +72,7 @@
         android:layout_gravity="center"
         android:textSize="14dp"
         android:text="@string/register"
+        android:onClick="clickToRegister"
         android:textColorHighlight="@color/myTextColor"
         android:textColor="@color/myTextColor"/>
 </LinearLayout>
