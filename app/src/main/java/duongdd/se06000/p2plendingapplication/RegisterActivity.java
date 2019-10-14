@@ -51,6 +51,7 @@ public class RegisterActivity extends AppCompatActivity implements CreateAccount
         Intent intent = getIntent();
         String role = intent.getStringExtra("ROLE");
         Account account = new Account();
+        account.setAccountID(0);
         account.setName(edtName.getText().toString());
         account.setEmail(edtEmail.getText().toString());
         account.setPassword(edtPassword.getText().toString());
@@ -83,6 +84,9 @@ public class RegisterActivity extends AppCompatActivity implements CreateAccount
                 edtConfirmPassword.setText("");
             }
         });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
     }
 
     public void showAlertDialogSuccess() {
@@ -94,8 +98,12 @@ public class RegisterActivity extends AppCompatActivity implements CreateAccount
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();
                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
             }
         });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
     }
 
     public void showAlertDialogFail() {
@@ -109,5 +117,8 @@ public class RegisterActivity extends AppCompatActivity implements CreateAccount
                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
             }
         });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
     }
 }

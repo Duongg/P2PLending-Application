@@ -78,7 +78,13 @@ public class LendingRepositoryImp implements LendingRepository{
     public void createAccount(final Account account, final CallBackData<Account> callBackData) {
         JSONObject customer = new JSONObject();
         try {
-            customer.put("account", account);
+            customer.put("accountID", account.getAccountID());
+            customer.put("email", account.getEmail());
+            customer.put("name", account.getName());
+            customer.put("password", account.getPassword());
+            customer.put("phone", account.getPhone());
+            customer.put("role", account.getRole());
+            customer.put("username", account.getUsername());
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -119,7 +125,13 @@ public class LendingRepositoryImp implements LendingRepository{
     public void updateAccount(String token, Account account,final CallBackData<Account> callBackData) {
         JSONObject customer = new JSONObject();
         try {
-            customer.put("account", account);
+            customer.put("accountID", account.getAccountID());
+            customer.put("email", account.getEmail());
+            customer.put("name", account.getName());
+            customer.put("password", account.getPassword());
+            customer.put("phone", account.getPhone());
+            customer.put("role", account.getRole());
+            customer.put("username", account.getUsername());
         } catch (Exception e) {
             e.printStackTrace();
         }
