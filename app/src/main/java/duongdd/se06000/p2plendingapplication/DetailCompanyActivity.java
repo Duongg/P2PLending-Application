@@ -31,7 +31,7 @@ public class DetailCompanyActivity extends AppCompatActivity implements Investme
     private Button btnInvest;
     private EditText edtMoney;
     private String token = "";
-    private int investorID = 1;
+    private int investorID;
     private ListInvestmentCompany investmentCompany = null;
     private InvestmentCompanyDetail investmentCompanyDetail = null;
 
@@ -94,8 +94,12 @@ public class DetailCompanyActivity extends AppCompatActivity implements Investme
     }
 
     public void clickToInvest(View view) {
-        investorInvestPresenters.investorInvest(token,
-                investmentCompany.getAccountID(), investmentCompany.getInvestmentCompanyID(), new BigDecimal(edtMoney.getText().toString().trim()));
+        if(edtMoney.getText().toString().trim().isEmpty()){
+            showAlertDialogNotNullMoney();
+        }else{
+            investorInvestPresenters.investorInvest(token,
+                    investmentCompany.getAccountID(), investmentCompany.getInvestmentCompanyID(), new BigDecimal(edtMoney.getText().toString().trim()));
+        }
 
     }
 
@@ -110,6 +114,21 @@ public class DetailCompanyActivity extends AppCompatActivity implements Investme
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 intent.putExtra("TOKEN", token);
                 startActivity(intent);
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
+    }
+
+    public void showAlertDialogNotNullMoney(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Vui lòng điền số tiền vào !!");
+        builder.setCancelable(false);
+        builder.setPositiveButton("Xác nhận", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
             }
         });
         AlertDialog alertDialog = builder.create();
