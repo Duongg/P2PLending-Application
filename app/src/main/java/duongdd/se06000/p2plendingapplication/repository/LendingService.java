@@ -44,8 +44,7 @@ public interface LendingService {
                                                   @Query("investmentCompanyID") int investmentCompanyID);
 
     @GET(ConfigApi.Api.LIST_CALLING_INVESTMENT)
-    Call<ResponseBody> getListCallingInvestment(@Header("Authorization") String authorization, @Query("id") int id,
-                                                @Query("page") int page);
+    Call<ResponseBody> getListCallingInvestment(@Header("Authorization") String authorization);
 
 
     @GET(ConfigApi.Api.SEARCH_INVESTMENT)
@@ -75,6 +74,19 @@ public interface LendingService {
                                            @Query("money") BigDecimal money);
 
     @GET(ConfigApi.Api.LIST_INVESTED)
-    Call<ResponseBody> getListInvested(@Header("Authorization") String authorization, @Query("page") int page);
+    Call<ResponseBody> getListInvested(@Header("Authorization") String authorization,
+                                       @Query("page") int page);
 
+    @GET(ConfigApi.Api.DETAIL_CALLING_INVESTMENT)
+    Call<ResponseBody> detailInvestmentCallingCompany(@Header("Authorization")String authorization,
+                                                      @Query("investmentCompanyID") int investmentCompanyID);
+
+
+    @GET(ConfigApi.Api.CALLING_INVESTMENT_DETAIL_INFORMATION)
+    Call<ResponseBody> getCallingInvestmentDetailsInformation(@Header("Authorization") String authorization,
+                                                              @Query("investmentCompanyID") int investmentCompanyID);
+
+    @GET(ConfigApi.Api.LIST_DISBURSEMENT_MONEY)
+    Call<ResponseBody> getListDisbursementMoney(@Header("Authorization") String authorization,
+                                                @Query("investmentCompanyID") int investmentCompanyID);
 }

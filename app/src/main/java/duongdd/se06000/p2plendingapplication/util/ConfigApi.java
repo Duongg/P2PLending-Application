@@ -23,14 +23,15 @@ public class ConfigApi {
         String INVESTOR_INVEST = "/api/investor-detail/investor-invest";
         String LIST_INVESTED = "/api/investor-detail/list-invested-company";
         //company disbursement
-        String CALLING_INVESTMENT_DETAIL = "/api/company-disbursement/calling-investment-detail";
+        String DETAIL_CALLING_INVESTMENT = "/api/investment-company/detail-calling-investment";
         String INFO_MONEY_INVESTMENT = "/api/company-disbursement/information_money_investment";
         String PAYMENT_DISBURSEMENT = "/api/company-disbursement/payment-disbursement";
         String PAYMENT_DEBT = "/api/company-disbursement/payment-debt";
         String PAYMENT_ALL = "/api/company-disbursement/payment-all";
 
         String LOGIN_TOKEN = "/login";
-
+        String CALLING_INVESTMENT_DETAIL_INFORMATION = "api/company-disbursement/calling-investment-detail-information";
+        String LIST_DISBURSEMENT_MONEY="api/company-disbursement/list-disbursement-money";
 
     }
 }

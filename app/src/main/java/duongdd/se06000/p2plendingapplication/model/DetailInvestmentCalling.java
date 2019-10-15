@@ -6,16 +6,25 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
 
-public class ListCallingInvestment implements Serializable {
+public class DetailInvestmentCalling implements Serializable {
 
     @SerializedName("investmentCompanyID")
     private int investmentCompanyID;
 
+    @SerializedName("accountID")
+    private int accountID;
+
     @SerializedName("investmentName")
     private String investmentName;
 
-    @SerializedName("accountID")
-    private int accountID;
+    @SerializedName("career")
+    private String career;
+
+    @SerializedName("period")
+    private int period;
+
+    @SerializedName("interestRateInvestor")
+    private float interestRateInvestor;
 
     @SerializedName("investMoney")
     private BigDecimal investMoney;
@@ -23,14 +32,8 @@ public class ListCallingInvestment implements Serializable {
     @SerializedName("investedMoney")
     private BigDecimal investedMoney;
 
-    @SerializedName("interestRateInvestor")
-    private float interestRateInvestor;
-
-    @SerializedName("interestRatePlatform")
-    private float interestRatePlatform;
-
-    @SerializedName("period")
-    private int period;
+    @SerializedName("investorInvestMoney")
+    private BigDecimal investorInvestMoney;
 
     @SerializedName("investedDate")
     private Date investedDate;
@@ -41,28 +44,22 @@ public class ListCallingInvestment implements Serializable {
     @SerializedName("status")
     private String status;
 
-    @SerializedName("career")
-    private String career;
+    public DetailInvestmentCalling() {
+    }
 
-    public ListCallingInvestment(int investmentCompanyID, String investmentName,
-                                 int accountID, BigDecimal investMoney, BigDecimal investedMoney,
-                                 float interestRateInvestor, float interestRatePlatform, int period,
-                                 Date investedDate, Date investedEndDate, String status, String career) {
+    public DetailInvestmentCalling(int investmentCompanyID, int accountID, String investmentName, String career, int period, float interestRateInvestor, BigDecimal investMoney, BigDecimal investedMoney, BigDecimal investorInvestMoney, Date investedDate, Date investedEndDate, String status) {
         this.investmentCompanyID = investmentCompanyID;
-        this.investmentName = investmentName;
         this.accountID = accountID;
+        this.investmentName = investmentName;
+        this.career = career;
+        this.period = period;
+        this.interestRateInvestor = interestRateInvestor;
         this.investMoney = investMoney;
         this.investedMoney = investedMoney;
-        this.interestRateInvestor = interestRateInvestor;
-        this.interestRatePlatform = interestRatePlatform;
-        this.period = period;
+        this.investorInvestMoney = investorInvestMoney;
         this.investedDate = investedDate;
         this.investedEndDate = investedEndDate;
         this.status = status;
-        this.career = career;
-    }
-
-    public ListCallingInvestment() {
     }
 
     public int getInvestmentCompanyID() {
@@ -73,6 +70,14 @@ public class ListCallingInvestment implements Serializable {
         this.investmentCompanyID = investmentCompanyID;
     }
 
+    public int getAccountID() {
+        return accountID;
+    }
+
+    public void setAccountID(int accountID) {
+        this.accountID = accountID;
+    }
+
     public String getInvestmentName() {
         return investmentName;
     }
@@ -81,12 +86,28 @@ public class ListCallingInvestment implements Serializable {
         this.investmentName = investmentName;
     }
 
-    public int getAccountID() {
-        return accountID;
+    public String getCareer() {
+        return career;
     }
 
-    public void setAccountID(int accountID) {
-        this.accountID = accountID;
+    public void setCareer(String career) {
+        this.career = career;
+    }
+
+    public int getPeriod() {
+        return period;
+    }
+
+    public void setPeriod(int period) {
+        this.period = period;
+    }
+
+    public float getInterestRateInvestor() {
+        return interestRateInvestor;
+    }
+
+    public void setInterestRateInvestor(float interestRateInvestor) {
+        this.interestRateInvestor = interestRateInvestor;
     }
 
     public BigDecimal getInvestMoney() {
@@ -105,28 +126,12 @@ public class ListCallingInvestment implements Serializable {
         this.investedMoney = investedMoney;
     }
 
-    public float getInterestRateInvestor() {
-        return interestRateInvestor;
+    public BigDecimal getInvestorInvestMoney() {
+        return investorInvestMoney;
     }
 
-    public void setInterestRateInvestor(float interestRateInvestor) {
-        this.interestRateInvestor = interestRateInvestor;
-    }
-
-    public float getInterestRatePlatform() {
-        return interestRatePlatform;
-    }
-
-    public void setInterestRatePlatform(float interestRatePlatform) {
-        this.interestRatePlatform = interestRatePlatform;
-    }
-
-    public int getPeriod() {
-        return period;
-    }
-
-    public void setPeriod(int period) {
-        this.period = period;
+    public void setInvestorInvestMoney(BigDecimal investorInvestMoney) {
+        this.investorInvestMoney = investorInvestMoney;
     }
 
     public Date getInvestedDate() {
@@ -151,13 +156,5 @@ public class ListCallingInvestment implements Serializable {
 
     public void setStatus(String status) {
         this.status = status;
-    }
-
-    public String getCareer() {
-        return career;
-    }
-
-    public void setCareer(String career) {
-        this.career = career;
     }
 }

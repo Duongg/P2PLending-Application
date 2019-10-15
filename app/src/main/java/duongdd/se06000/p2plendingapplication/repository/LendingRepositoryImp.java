@@ -10,7 +10,9 @@ import java.lang.reflect.Type;
 import java.math.BigDecimal;
 import java.util.List;
 
+import duongdd.se06000.p2plendingapplication.model.DetailInvestmentCalling;
 import duongdd.se06000.p2plendingapplication.model.InvestedInformation;
+import duongdd.se06000.p2plendingapplication.model.InvestmentCallingDetailsInformation;
 import duongdd.se06000.p2plendingapplication.model.InvestorInvest;
 import duongdd.se06000.p2plendingapplication.model.ListInvestedCompany;
 import duongdd.se06000.p2plendingapplication.model.CompanyDisbursement;
@@ -78,6 +80,7 @@ public class LendingRepositoryImp implements LendingRepository{
     public void getWalletInfo(String token,final CallBackData<WalletInformation> callBackData) {
         ClientApi clientApi = new ClientApi();
         Call<ResponseBody> call = clientApi.LendingService().getWalletInfo(token);
+
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
@@ -92,7 +95,7 @@ public class LendingRepositoryImp implements LendingRepository{
                             callBackData.onFail("Tài khoản không tồn tại");
                         }
                     }catch (Exception e){
-                        callBackData.onFail("Tài khoản không tồn tại");
+                        e.printStackTrace();
                     }
                 }
             }
@@ -259,9 +262,9 @@ public class LendingRepositoryImp implements LendingRepository{
     }
 
     @Override
-    public void getListCallingInvestment(String token, int id, int page,final CallBackData<List<ListCallingInvestment>> callBackData) {
+    public void getListCallingInvestment(String token,final CallBackData<List<ListCallingInvestment>> callBackData) {
         ClientApi clientApi = new ClientApi();
-        Call<ResponseBody> call = clientApi.LendingService().getListCallingInvestment(token, id, page);
+        Call<ResponseBody> call = clientApi.LendingService().getListCallingInvestment(token);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
@@ -470,4 +473,97 @@ public class LendingRepositoryImp implements LendingRepository{
             }
         });
     }
+
+    @Override
+    public void getCallingInvestmentDetailsInformation(String token, int investmentCompanyID, final CallBackData<InvestmentCallingDetailsInformation> callBackData) {
+        ClientApi clientApi = new ClientApi();
+        Call<ResponseBody> call =clientApi.LendingService().getCallingInvestmentDetailsInformation(token, investmentCompanyID);
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if(response.code() == 200){
+                    try{
+                        String body = response.body().string();
+                        Type type = new TypeToken<InvestmentCallingDetailsInformation>(){}.getType();
+                        InvestmentCallingDetailsInformation investmentCallingDetailsInformation = new Gson().fromJson(body, type);
+                        if(investmentCallingDetailsInformation != null){
+                            callBackData.onSuccess(investmentCallingDetailsInformation);
+                        }else{
+                            callBackData.onFail("Thương vụ không tồn tại");
+                        }
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+            }
+        });
+    }
+
+    @Override
+    public void getListDisbursementMoney(String token, int investmentCompanyID, final CallBackData<List<CompanyDisbursement>> callBackData) {
+        ClientApi clientApi = new ClientApi();
+        Call<ResponseBody> call = clientApi.LendingService().getListDisbursementMoney(token, investmentCompanyID);
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if(response.code() == 200){
+                    try{
+                        String body = response.body().string();
+                        Type type = new TypeToken<List<CompanyDisbursement>>(){}.getType();
+                        List<CompanyDisbursement> companyDisbursementList =new Gson().fromJson(body,type);
+                        if(companyDisbursementList != null){
+                            callBackData.onSuccess(companyDisbursementList);
+                        }else {
+                            callBackData.onFail("Không có thương vụ nào");
+                        }
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                callBackData.onFail("Không có thương vụ nào");
+            }
+        });
+    }
+
+    @Override
+    public void getDetailCallingInvestment(String token, int investmentCompanyID, final CallBackData<DetailInvestmentCalling> callBackData) {
+        ClientApi clientApi = new ClientApi();
+        Call<ResponseBody> call = clientApi.LendingService().detailInvestmentCallingCompany(token, investmentCompanyID );
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if(response.code() == 200){
+                    try{
+                        String body = response.body().string();
+                        Type type = new TypeToken<DetailInvestmentCalling>(){}.getType();
+                       DetailInvestmentCalling detailInvestmentCalling = new Gson().fromJson(body,type);
+
+                        if(detailInvestmentCalling !=  null){
+                            callBackData.onSuccess(detailInvestmentCalling);
+                        }else {
+                            callBackData.onFail("Không có thương vụ nào kêu gọi");
+                        }
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                    t.printStackTrace();
+            }
+        });
+
+    }
+
 }

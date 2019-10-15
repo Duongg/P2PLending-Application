@@ -18,8 +18,8 @@ public class ListCallingInvestmentPresenters {
         this.lendingRepository = new LendingRepositoryImp();
     }
 
-    public void getListCallingInvestment(String token, int id, int page){
-        lendingRepository.getListCallingInvestment(token, id, page, new CallBackData<List<ListCallingInvestment>>() {
+    public void getListCallingInvestment(String token){
+        lendingRepository.getListCallingInvestment(token, new CallBackData<List<ListCallingInvestment>>() {
             @Override
             public void onSuccess(List<ListCallingInvestment> listCallingInvestments) {
                 listCallingInvestmentView.onSuccess(listCallingInvestments);

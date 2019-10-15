@@ -4,7 +4,9 @@ import java.math.BigDecimal;
 import java.util.List;
 
 import duongdd.se06000.p2plendingapplication.model.CompanyDisbursement;
+import duongdd.se06000.p2plendingapplication.model.DetailInvestmentCalling;
 import duongdd.se06000.p2plendingapplication.model.InvestedInformation;
+import duongdd.se06000.p2plendingapplication.model.InvestmentCallingDetailsInformation;
 import duongdd.se06000.p2plendingapplication.model.InvestmentCompanyDetail;
 import duongdd.se06000.p2plendingapplication.model.InvestorDetail;
 import duongdd.se06000.p2plendingapplication.model.InvestorInvest;
@@ -14,6 +16,7 @@ import duongdd.se06000.p2plendingapplication.model.ListInvestmentCompany;
 import duongdd.se06000.p2plendingapplication.model.ListSearchInvestment;
 import duongdd.se06000.p2plendingapplication.model.WalletInformation;
 import duongdd.se06000.p2plendingapplication.util.CallBackData;
+import retrofit2.Call;
 
 public interface LendingRepository {
 
@@ -33,7 +36,7 @@ public interface LendingRepository {
 
     void getInvestmentCompanyDetail(String token, int investmentCompanyID, CallBackData<InvestmentCompanyDetail> callBackData);
 
-    void getListCallingInvestment(String token, int id, int page, CallBackData<List<ListCallingInvestment>> callBackData);
+    void getListCallingInvestment(String token, CallBackData<List<ListCallingInvestment>> callBackData);
 
     void getListSearchInvestment(String token, String keyword, String career, int page, CallBackData<List<ListSearchInvestment>> callBackData);
 
@@ -46,4 +49,10 @@ public interface LendingRepository {
     void investorInvest(String token, int borrowerID, int investmentCompanyID, BigDecimal money, CallBackData<InvestorInvest> callBackData);
 
     void getListInvestedCompany(String token, int page, CallBackData<List<ListInvestedCompany>> callBackData);
+
+    void getDetailCallingInvestment(String token, int investmentCompanyID, CallBackData<DetailInvestmentCalling> callBackData);
+
+    void getCallingInvestmentDetailsInformation(String token, int investmentCompanyID, CallBackData<InvestmentCallingDetailsInformation> callBackData);
+
+    void getListDisbursementMoney(String token, int investmentCompanyID, CallBackData<List<CompanyDisbursement>> callBackData);
 }

@@ -26,14 +26,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@drawable/cell_border">
+
                 <TextView
-                    android:padding="20dp"
+                    android:layout_width="35dp"
+                    android:background="@drawable/cell_border"
+                    android:padding="10dp"
                     android:text="Tên dự án"
-                    android:background="@drawable/cell_border"
                     android:textColor="@color/myBigTextColor"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp" />
                 <TextView
-                    android:padding="20dp"
+                    android:id="@+id/txtInvestmentName"
+                    android:padding="10dp"
                     android:textSize="18dp"
                     android:textColor="@color/myTextColor"/>
             </TableRow>
@@ -41,14 +44,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@drawable/cell_border">
+
                 <TextView
-                    android:padding="20dp"
+                    android:layout_width="109dp"
+                    android:background="@drawable/cell_border"
+                    android:padding="10dp"
                     android:text="Kỳ hạn"
-                    android:background="@drawable/cell_border"
                     android:textColor="@color/myBigTextColor"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp" />
                 <TextView
-                    android:padding="20dp"
+                    android:id="@+id/txtPeriod"
+                    android:padding="10dp"
                     android:textSize="18dp"
                     android:textColor="@color/myTextColor"/>
             </TableRow>
@@ -57,13 +63,14 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/cell_border">
                 <TextView
-                    android:padding="20dp"
+                    android:padding="10dp"
                     android:text="Ngành nghề"
                     android:background="@drawable/cell_border"
                     android:textColor="@color/myBigTextColor"
                     android:textSize="18dp"/>
                 <TextView
-                    android:padding="20dp"
+                    android:id="@+id/txtCareer"
+                    android:padding="10dp"
                     android:textSize="18dp"
                     android:textColor="@color/myTextColor"/>
             </TableRow>
@@ -72,13 +79,14 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/cell_border">
                 <TextView
-                    android:padding="20dp"
+                    android:padding="10dp"
                     android:text="Số tiền kêu gọi"
                     android:background="@drawable/cell_border"
                     android:textColor="@color/myBigTextColor"
                     android:textSize="18dp"/>
                 <TextView
-                    android:padding="20dp"
+                    android:id="@+id/txtInvestMoney"
+                    android:padding="10dp"
                     android:textSize="18dp"
                     android:textColor="@color/myTextColor"/>
             </TableRow>
@@ -86,14 +94,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@drawable/cell_border">
+
                 <TextView
-                    android:padding="20dp"
-                    android:text="Lợi suất"
+                    android:layout_width="114dp"
                     android:background="@drawable/cell_border"
+                    android:padding="10dp"
+                    android:text="Lợi suất (%) "
                     android:textColor="@color/myBigTextColor"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp" />
                 <TextView
-                    android:padding="20dp"
+                    android:id="@+id/txtRate"
+                    android:padding="10dp"
                     android:textSize="18dp"
                     android:textColor="@color/myTextColor"/>
             </TableRow>
@@ -101,14 +112,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@drawable/cell_border">
+
                 <TextView
-                    android:padding="20dp"
+                    android:layout_width="102dp"
+                    android:background="@drawable/cell_border"
+                    android:padding="10dp"
                     android:text="Số tiền đã nhận đầu tư"
-                    android:background="@drawable/cell_border"
                     android:textColor="@color/myBigTextColor"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp" />
                 <TextView
-                    android:padding="20dp"
+                    android:id="@+id/txtInvestedMoney"
+                    android:padding="10dp"
                     android:textSize="18dp"
                     android:textColor="@color/myTextColor"/>
             </TableRow>
@@ -116,14 +130,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:background="@drawable/cell_border">
+
                 <TextView
-                    android:padding="20dp"
+                    android:layout_width="106dp"
+                    android:background="@drawable/cell_border"
+                    android:padding="10dp"
                     android:text="Ngày bắt đầu đầu tư"
-                    android:background="@drawable/cell_border"
                     android:textColor="@color/myBigTextColor"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp" />
                 <TextView
-                    android:padding="20dp"
+                    android:id="@+id/txtStartDate"
+                    android:padding="10dp"
                     android:textSize="18dp"
                     android:textColor="@color/myTextColor"/>
             </TableRow>
@@ -132,13 +149,14 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/cell_border">
                 <TextView
-                    android:padding="20dp"
+                    android:padding="10dp"
                     android:text="Ngày kết thúc đầu tư"
                     android:background="@drawable/cell_border"
                     android:textColor="@color/myBigTextColor"
                     android:textSize="18dp"/>
                 <TextView
-                    android:padding="20dp"
+                    android:id="@+id/txtEndDate"
+                    android:padding="10dp"
                     android:textSize="18dp"
                     android:textColor="@color/myTextColor"/>
             </TableRow>
@@ -147,13 +165,14 @@
                 android:layout_height="match_parent"
                 android:background="@drawable/cell_border">
                 <TextView
-                    android:padding="20dp"
+                    android:padding="10dp"
                     android:text="Trạng thái"
                     android:background="@drawable/cell_border"
                     android:textColor="@color/myBigTextColor"
                     android:textSize="18dp"/>
                 <TextView
-                    android:padding="20dp"
+                    android:id="@+id/txtStatus"
+                    android:padding="10dp"
                     android:textSize="18dp"
                     android:textColor="@color/myTextColor"/>
             </TableRow>
