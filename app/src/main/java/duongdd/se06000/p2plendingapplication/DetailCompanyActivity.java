@@ -85,9 +85,7 @@ public class DetailCompanyActivity extends AppCompatActivity implements Investme
 
     @Override
     public void onSuccess(InvestorInvest investorInvest) {
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra("TOKEN", token);
-        startActivity(intent);
+        showAlertDialog();
     }
 
     @Override
@@ -98,7 +96,7 @@ public class DetailCompanyActivity extends AppCompatActivity implements Investme
     public void clickToInvest(View view) {
         investorInvestPresenters.investorInvest(token,
                 investmentCompany.getAccountID(), investmentCompany.getInvestmentCompanyID(), new BigDecimal(edtMoney.getText().toString().trim()));
-        showAlertDialog();
+
     }
 
     public void showAlertDialog(){

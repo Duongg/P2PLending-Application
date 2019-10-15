@@ -3,6 +3,7 @@ package duongdd.se06000.p2plendingapplication.repository;
 import java.math.BigDecimal;
 import java.util.List;
 
+import duongdd.se06000.p2plendingapplication.model.Account;
 import duongdd.se06000.p2plendingapplication.model.CompanyDisbursement;
 import duongdd.se06000.p2plendingapplication.model.DetailInvestmentCalling;
 import duongdd.se06000.p2plendingapplication.model.InvestedInformation;
@@ -22,13 +23,19 @@ public interface LendingRepository {
 
     void login(String username, String password, CallBackData<String> callBackData);
 
+    void createAccount(Account account, CallBackData<Account> callBackData);
+
+    void updateAccount(String token, Account account, CallBackData<Account> callBackData);
+
    // void login(String username, String password, CallBackData<Login> callBackData);
 
     void getWalletInfo(String token, CallBackData<WalletInformation> callBackData);
 
+    void getAccountInformation(String token, CallBackData<Account> callBackData);
+
     void getRoleAccount(String token, CallBackData<String> callBackData);
 
-    void getListInvestmentCompany(String token, int page, CallBackData<List<ListInvestmentCompany>> callBackData);
+    void getListInvestmentCompany(String token, CallBackData<List<ListInvestmentCompany>> callBackData);
 
     void getInvestorDetail(String token, int investorDetailsID, CallBackData<List<InvestorDetail>> callBackData);
 
@@ -38,7 +45,7 @@ public interface LendingRepository {
 
     void getListCallingInvestment(String token, CallBackData<List<ListCallingInvestment>> callBackData);
 
-    void getListSearchInvestment(String token, String keyword, String career, int page, CallBackData<List<ListSearchInvestment>> callBackData);
+    void getListSearchInvestment(String token, String keyword, String career, CallBackData<List<ListSearchInvestment>> callBackData);
 
     void getPaymentAllDisbursement(String token, int borrowerID, int investmentCompanyID, int companyDisbursementID, CallBackData<CompanyDisbursement> callBackData);
 
@@ -48,11 +55,15 @@ public interface LendingRepository {
 
     void investorInvest(String token, int borrowerID, int investmentCompanyID, BigDecimal money, CallBackData<InvestorInvest> callBackData);
 
-    void getListInvestedCompany(String token, int page, CallBackData<List<ListInvestedCompany>> callBackData);
+// <<<<<<< duongdd/over-view-borrower
+//     void getListInvestedCompany(String token, int page, CallBackData<List<ListInvestedCompany>> callBackData);
 
     void getDetailCallingInvestment(String token, int investmentCompanyID, CallBackData<DetailInvestmentCalling> callBackData);
 
     void getCallingInvestmentDetailsInformation(String token, int investmentCompanyID, CallBackData<InvestmentCallingDetailsInformation> callBackData);
 
     void getListDisbursementMoney(String token, int investmentCompanyID, CallBackData<List<CompanyDisbursement>> callBackData);
+// =======
+    void getListInvestedCompany(String token, CallBackData<List<ListInvestedCompany>> callBackData);
+// >>>>>>> master
 }

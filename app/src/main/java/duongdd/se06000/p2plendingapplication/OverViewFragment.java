@@ -57,6 +57,7 @@ public class OverViewFragment extends Fragment implements WalletInformationView 
     }
     @Override
     public void loginSuccess(WalletInformation walletInformation) {
+// <<<<<<< duongdd/over-view-borrower
         Intent intent = getActivity().getIntent();
         token = intent.getStringExtra("TOKEN");
         String role = intent.getStringExtra("ROLE");
@@ -75,9 +76,16 @@ public class OverViewFragment extends Fragment implements WalletInformationView 
         }
 
 
-        //txtTotalMoney.setText(FormatDecimal.formatBigDecimalVND(walletInformation.getAsset()));
+//         //txtTotalMoney.setText(FormatDecimal.formatBigDecimalVND(walletInformation.getAsset()));
 
 
+// =======
+// //         txtInvestorID.setText(String.valueOf(walletInformation.getAccountID()));
+// //         txtName.setText(walletInformation.getName());
+// //         txtTotalAsset.setText(FormatDecimal.formatBigDecimalVND(walletInformation.getAsset()));
+// //         txtInvested.setText(FormatDecimal.formatBigDecimalVND(walletInformation.getInvestedMoney()));
+// //         txtLoan.setText(FormatDecimal.formatBigDecimalVND(walletInformation.getLoan()));
+// >>>>>>> master
         //onMoveNextFragment.onClick(walletInformation.getAccountID());
          intent = new Intent(getActivity().getBaseContext(), MainActivity.class);
         // String account = String.valueOf(walletInformation.getAccountID());

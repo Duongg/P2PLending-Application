@@ -8,7 +8,8 @@ public class ConfigApi {
         //account
         String LOGIN = "/api/account/login";
         String CREATE_ACCOUNT = "/api/account/create";
-       String GET_ROLE = "/api/account/get-role";
+        String GET_ROLE = "/api/account/get-role";
+        String ACCOUNT_INFORMATION = "/api/account/information";
         String ACCOUNT_UPDATE = "/api/account/update";
         //wallet
         String INFO_WALLET = "/api/wallet/info";
