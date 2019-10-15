@@ -116,6 +116,8 @@
                     android:padding="10dp"
                     android:singleLine="true"
                     android:id="@+id/edtPassword"
+                    android:text="aaaaaa"
+                    android:inputType="textPassword"
                     android:backgroundTint="@color/myTextColor"
                     android:textColor="@color/myTextColor"
                     android:textSize="18dp" />
@@ -133,6 +135,8 @@
 
                 <EditText
                     android:id="@+id/edtConfirmPassword"
+                    android:text="aaaaaa"
+                    android:inputType="textPassword"
                     android:layout_width="188dp"
                     android:backgroundTint="@color/myTextColor"
                     android:padding="10dp"

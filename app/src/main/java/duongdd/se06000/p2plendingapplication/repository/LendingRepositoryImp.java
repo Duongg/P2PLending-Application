@@ -187,7 +187,7 @@ public class LendingRepositoryImp implements LendingRepository{
                             callBackData.onFail("Tài khoản không tồn tại");
                         }
                     }catch (Exception e){
-                        callBackData.onFail("Tài khoản không tồn tại");
+                        e.printStackTrace();
                     }
                 }
             }
