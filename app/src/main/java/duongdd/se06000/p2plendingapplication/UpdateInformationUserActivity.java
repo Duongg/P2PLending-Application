@@ -45,7 +45,6 @@ public class UpdateInformationUserActivity extends AppCompatActivity implements 
         edtInvestorName.setText(account.getName().toString());
         edtInvestorEmail.setText(account.getEmail().toString());
         edtInvestorPhone.setText(String.valueOf(account.getPhone()));
-        edtPassword.setText(account.getPassword().toString());
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,13 +55,24 @@ public class UpdateInformationUserActivity extends AppCompatActivity implements 
     }
 
     private void confirmPassword(){
-        if(!edtPassword.getText().toString().equals(edtConfirmPassword.getText().toString())){
+        if(!edtPassword.getText().toString().trim().equals(edtConfirmPassword.getText().toString().trim())){
             showAlertDialogCheckPassword();
+
         }else{
-            initData();
+            if(edtPassword.getText().toString().trim().length() < 5){
+                    showAlertDialogWeakPassword();
+            }else{
+                if(edtPassword.getText().toString().trim().equals("aaaaaa")){
+                    initDataNotChangePassword();
+                }else{
+                    initDataChangePassword();
+                }
+
+            }
+
         }
     }
-    private void initData(){
+    private void initDataChangePassword(){
         Account account = new Account();
         account.setAccountID(accountDTO.getAccountID());
         account.setRole(accountDTO.getRole());
@@ -74,9 +84,37 @@ public class UpdateInformationUserActivity extends AppCompatActivity implements 
         updateAccountPresenters.updateAccount(token,account);
 
     }
+
+    private void initDataNotChangePassword(){
+        Account account = new Account();
+        account.setAccountID(accountDTO.getAccountID());
+        account.setRole(accountDTO.getRole());
+        account.setUsername(accountDTO.getUsername());
+        account.setPhone(edtInvestorPhone.getText().toString());
+        account.setPassword(accountDTO.getPassword());
+        account.setEmail(edtInvestorEmail.getText().toString());
+        account.setName(edtInvestorName.getText().toString());
+        updateAccountPresenters.updateAccount(token,account);
+
+    }
     public void showAlertDialogCheckPassword() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Mật khẩu nhập lại không đúng");
+        builder.setCancelable(false);
+        builder.setPositiveButton("Xác nhận", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+                edtPassword.setText("");
+                edtConfirmPassword.setText("");
+            }
+        });
+    }
+
+
+    public void showAlertDialogWeakPassword() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Mật khẩu yếu, vui lòng chọn mật khẩu khác");
         builder.setCancelable(false);
         builder.setPositiveButton("Xác nhận", new DialogInterface.OnClickListener() {
             @Override

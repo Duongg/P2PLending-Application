@@ -110,7 +110,6 @@
         android:layout_marginTop="35dp"
         android:layout_gravity="center"
         android:text="Đăng ký"
-        android:onClick="clickToRegisterAccount"
         />
 
 </LinearLayout>

@@ -28,7 +28,7 @@ public interface LendingService {
     @Headers("Content-Type:application/json")
     Call<ResponseBody> createAccount(@Body RequestBody requestBody);
 
-    @POST(ConfigApi.Api.ACCOUNT_UPDATE)
+    @PUT(ConfigApi.Api.ACCOUNT_UPDATE)
     @Headers("Content-Type:application/json")
     Call<ResponseBody> updateAccount(@Header("Authorization") String authorization, @Body RequestBody requestBody);
 
