@@ -16,8 +16,8 @@ public class PaymentAllDisbursementPresenters {
         this.lendingRepository = new LendingRepositoryImp();
     }
 
-    public void getPaymentAllDisbursement(String token, int borrowerID, int investmentCompanyID, int companyDisbursementID){
-        lendingRepository.getPaymentAllDisbursement(token, borrowerID, investmentCompanyID, companyDisbursementID, new CallBackData<CompanyDisbursement>() {
+    public void getPaymentAllDisbursement(String token, int investmentCompanyID, int companyDisbursementID){
+        lendingRepository.getPaymentAllDisbursement(token, investmentCompanyID, companyDisbursementID, new CallBackData<CompanyDisbursement>() {
             @Override
             public void onSuccess(CompanyDisbursement companyDisbursement) {
                 paymentAllDisbursementView.onSuccess(companyDisbursement);

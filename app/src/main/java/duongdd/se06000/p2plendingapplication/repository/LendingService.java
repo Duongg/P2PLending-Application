@@ -60,20 +60,19 @@ public interface LendingService {
 
     @GET(ConfigApi.Api.SEARCH_INVESTMENT)
     Call<ResponseBody> getListSearchInvestment(@Header("Authorization") String authorization, @Query("keyword") String keyword,
-                                               @Query("career") String career
-                                               );
+                                               @Query("career") String career);
 
     @PUT(ConfigApi.Api.PAYMENT_ALL)
-    Call<ResponseBody> paymentAllDisbursement(@Header("Authorization") String authorization, @Query("borrowerID") int borrowerID,
+    Call<ResponseBody> paymentAllDisbursement(@Header("Authorization") String authorization,
                                               @Query("investmentCompanyID") int investmentCompanyID,
                                               @Query("companyDisbursementID") int companyDisbursementID);
     @PUT(ConfigApi.Api.PAYMENT_DEBT)
-    Call<ResponseBody> paymentDebtDisbursement(@Header("Authorization") String authorization, @Query("borrowerID") int borrowerID,
+    Call<ResponseBody> paymentDebtDisbursement(@Header("Authorization") String authorization,
                                                @Query("investmentCompanyID") int investmentCompanyID,
                                                @Query("companyDisbursementID") int companyDisbursementID);
 
     @PUT(ConfigApi.Api.PAYMENT_DISBURSEMENT)
-    Call<ResponseBody> paymentDisbursement(@Header("Authorization") String authorization, @Query("borrowerID") int borrowerID,
+    Call<ResponseBody> paymentDisbursement(@Header("Authorization") String authorization,
                                            @Query("investmentCompanyID") int investmentCompanyID,
                                            @Query("money") BigDecimal money,
                                            @Query("companyDisbursementID") int companyDisbursementID);

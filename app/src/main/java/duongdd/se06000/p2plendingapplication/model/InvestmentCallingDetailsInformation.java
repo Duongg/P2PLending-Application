@@ -13,6 +13,9 @@ public class InvestmentCallingDetailsInformation implements Serializable {
     @SerializedName("investmentCompanyID")
     private int investmentCompanyID;
 
+    @SerializedName("disbursementCompanyID")
+    private int disbursementCompanyID;
+
     @SerializedName("investmentName")
     private String investmentName;
 
@@ -34,15 +37,24 @@ public class InvestmentCallingDetailsInformation implements Serializable {
     public InvestmentCallingDetailsInformation() {
     }
 
-    public InvestmentCallingDetailsInformation(int borrowerID, int investmentCompanyID, String investmentName, BigDecimal investmentMoneyMonthly, BigDecimal totalDebt, BigDecimal totalPayment, String status, Date disbursementDate) {
+    public InvestmentCallingDetailsInformation(int borrowerID, int investmentCompanyID, int disbursementCompanyID, String investmentName, BigDecimal investmentMoneyMonthly, BigDecimal totalDebt, BigDecimal totalPayment, String status, Date disbursementDate) {
         this.borrowerID = borrowerID;
         this.investmentCompanyID = investmentCompanyID;
+        this.disbursementCompanyID = disbursementCompanyID;
         this.investmentName = investmentName;
         this.investmentMoneyMonthly = investmentMoneyMonthly;
         this.totalDebt = totalDebt;
         this.totalPayment = totalPayment;
         this.status = status;
         this.disbursementDate = disbursementDate;
+    }
+
+    public int getDisbursementCompanyID() {
+        return disbursementCompanyID;
+    }
+
+    public void setDisbursementCompanyID(int disbursementCompanyID) {
+        this.disbursementCompanyID = disbursementCompanyID;
     }
 
     public int getBorrowerID() {

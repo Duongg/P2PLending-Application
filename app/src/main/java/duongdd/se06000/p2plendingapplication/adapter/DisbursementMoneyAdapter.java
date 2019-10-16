@@ -18,7 +18,6 @@ import duongdd.se06000.p2plendingapplication.model.CompanyDisbursement;
 
 public class DisbursementMoneyAdapter extends BaseAdapter {
     private List<CompanyDisbursement> companyDisbursementList;
-
     public void setCompanyDisbursementList(List<CompanyDisbursement> companyDisbursementList) {
         this.companyDisbursementList = companyDisbursementList;
     }
@@ -48,11 +47,14 @@ public class DisbursementMoneyAdapter extends BaseAdapter {
         TextView txtMonth = view.findViewById(R.id.txtMonth);
         TextView txtPayMonthly = view.findViewById(R.id.txtPayMonthly);
         TextView txtDeptMonth = view.findViewById(R.id.txtDeptMonth);
-        Button btnPayToMonth = view.findViewById(R.id.btnPay);
+//        TextView txtDisbursementID= view.findViewById(R.id.txtDisbursementID);
+        Button btnPayDept = view.findViewById(R.id.btnPay);
+
 
         txtMonth.setText(DateFormat.formatDate(companyDisbursement.getDisbursementDate()));
         txtPayMonthly.setText(FormatDecimal.formatBigDecimal(companyDisbursement.getDisbursementMoney()));
         txtDeptMonth.setText(FormatDecimal.formatBigDecimal(companyDisbursement.getDebt()));
+//        txtDisbursementID.setText(String.valueOf(companyDisbursement.getCompanyDisbursementID()));
 
         return view;
     }

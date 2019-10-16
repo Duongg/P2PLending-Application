@@ -64,7 +64,6 @@ public class DetailInvestmentCallingActivity extends AppCompatActivity implement
         txtRate.setText(String.valueOf(detailInvestmentCalling.getInterestRateInvestor()));
         txtInvestedDate.setText(DateFormat.formatDate(detailInvestmentCalling.getInvestedDate()));
         txtInvestEndDate.setText(DateFormat.formatDate(detailInvestmentCalling.getInvestedEndDate()));
-        finish();
     }
 
     @Override

@@ -47,11 +47,11 @@ public interface LendingRepository {
 
     void getListSearchInvestment(String token, String keyword, String career, CallBackData<List<ListSearchInvestment>> callBackData);
 
-    void getPaymentAllDisbursement(String token, int borrowerID, int investmentCompanyID, int companyDisbursementID, CallBackData<CompanyDisbursement> callBackData);
+    void getPaymentAllDisbursement(String token,int investmentCompanyID, int companyDisbursementID, CallBackData<CompanyDisbursement> callBackData);
 
-    void getPaymentDebtDisbursement(String token, int borrowerID, int investmentCompanyID, int companyDisbursementID, CallBackData<CompanyDisbursement> callBackData);
+    void getPaymentDebtDisbursement(String token,int investmentCompanyID, int companyDisbursementID, CallBackData<CompanyDisbursement> callBackData);
 
-    void getPaymentDisbursement(String token, int borrowerID, int investmentCompanyID, BigDecimal money, int companyDisbursementID, CallBackData<CompanyDisbursement> callBackData);
+    void getPaymentDisbursement(String token,int investmentCompanyID, BigDecimal money, int companyDisbursementID, CallBackData<CompanyDisbursement> callBackData);
 
     void investorInvest(String token, int borrowerID, int investmentCompanyID, BigDecimal money, CallBackData<InvestorInvest> callBackData);
 
