@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import java.math.BigDecimal;
 
+import duongdd.se06000.p2plendingapplication.formatter.DateFormat;
 import duongdd.se06000.p2plendingapplication.formatter.FormatDecimal;
 import duongdd.se06000.p2plendingapplication.model.InvestmentCompanyDetail;
 import duongdd.se06000.p2plendingapplication.model.InvestorInvest;
@@ -69,6 +70,14 @@ public class DetailCompanyActivity extends AppCompatActivity implements Investme
     }
 
     @Override
+    public void finish() {
+        Intent intent = new Intent();
+        intent.putExtra("token", token);
+        this.setResult(RESULT_OK, intent);
+        super.finish();
+    }
+
+    @Override
     public void onSuccess(InvestmentCompanyDetail investmentCompanyDetail) {
         investmentCompanyDetail = investmentCompanyDetail;
         txtBorrowerName.setText(investmentCompanyDetail.getName());
@@ -77,7 +86,7 @@ public class DetailCompanyActivity extends AppCompatActivity implements Investme
         txtPeriod.setText(investmentCompanyDetail.getPeriod() + "");
         txtProfit.setText(investmentCompanyDetail.getInterestRateInvestor() + "%");
         txtInvestMoney.setText(FormatDecimal.formatBigDecimalVND(investmentCompanyDetail.getInvestMoney()));
-        txtStartDate.setText((CharSequence) investmentCompanyDetail.getInvestedDate());
+        txtStartDate.setText(DateFormat.formatDate(investmentCompanyDetail.getInvestedDate()));
         txtInvestorInvestMoney.setText(FormatDecimal.formatBigDecimalVND(investmentCompanyDetail.getInvestorInvestMoney()));
         txtAvailableMoney.setText(FormatDecimal.formatBigDecimalVND(investmentCompanyDetail.getAvailableMoney()));
 
@@ -90,7 +99,7 @@ public class DetailCompanyActivity extends AppCompatActivity implements Investme
 
     @Override
     public void onFail(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+        showAlertDialogInvalidMoney(message);
     }
 
     public void clickToInvest(View view) {
@@ -103,7 +112,7 @@ public class DetailCompanyActivity extends AppCompatActivity implements Investme
 
     }
 
-    public void showAlertDialog(){
+    private void showAlertDialog(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Đầu tư thành công !!");
         builder.setCancelable(false);
@@ -111,9 +120,7 @@ public class DetailCompanyActivity extends AppCompatActivity implements Investme
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                intent.putExtra("TOKEN", token);
-                startActivity(intent);
+                finish();
             }
         });
         AlertDialog alertDialog = builder.create();
@@ -121,7 +128,22 @@ public class DetailCompanyActivity extends AppCompatActivity implements Investme
 
     }
 
-    public void showAlertDialogNotNullMoney(){
+    private void showAlertDialogInvalidMoney(String message){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(message);
+        builder.setCancelable(false);
+        builder.setPositiveButton("Xác nhận", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
+    }
+
+    private void showAlertDialogNotNullMoney(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Vui lòng điền số tiền vào !!");
         builder.setCancelable(false);

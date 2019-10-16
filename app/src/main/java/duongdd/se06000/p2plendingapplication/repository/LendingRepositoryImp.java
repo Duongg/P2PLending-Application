@@ -346,7 +346,7 @@ public class LendingRepositoryImp implements LendingRepository{
                             callBackData.onFail("Thương vụ không tồn tại");
                         }
                     }catch (Exception e){
-                        callBackData.onFail("Thương vụ không tồn tại");
+                        e.printStackTrace();
                     }
                 }
             }

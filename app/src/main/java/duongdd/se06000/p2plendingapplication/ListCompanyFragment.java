@@ -4,6 +4,7 @@ package duongdd.se06000.p2plendingapplication;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -27,6 +28,7 @@ import duongdd.se06000.p2plendingapplication.view.ListInvestmentCompanyView;
  * A simple {@link Fragment} subclass.
  */
 public class ListCompanyFragment extends Fragment implements ListInvestmentCompanyView {
+    private final int REQUEST_CODE = 1000;
     private ListInvestmentCompanyPresenters listInvestmentCompanyPresenters;
     private TextView txtName, txtInvestMoney, txtProfit;
     private List<ListInvestmentCompany> listInvestmentCompanies;
@@ -55,7 +57,7 @@ public class ListCompanyFragment extends Fragment implements ListInvestmentCompa
 //                intent.putExtra("INVESTOR_ID", accountID);
 //                intent.putExtra("TOKEN", token);
                 intent.putExtras(bundle);
-                startActivity(intent);
+                startActivityForResult(intent, REQUEST_CODE);
             }
         });
         return view;
@@ -83,5 +85,11 @@ public class ListCompanyFragment extends Fragment implements ListInvestmentCompa
         Toast.makeText(getActivity().getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }
 
-
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == REQUEST_CODE && resultCode == getActivity().RESULT_OK){
+            listInvestmentCompanyPresenters.getListInvestmentCompany(token);
+        }
+    }
 }

@@ -1,5 +1,6 @@
 package duongdd.se06000.p2plendingapplication.adapter;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,14 +43,34 @@ public class InformationInvestedAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.item_investor_details, parent, false);
         }
         InvestorDetail company = listInvestorDetails.get(position);
-        TextView txtDateReceive = convertView.findViewById(R.id.txtDateReceive);
-        TextView txtPrincipleMoney = convertView.findViewById(R.id.txtPrincipleMoney);
-        TextView txtLoan = convertView.findViewById(R.id.txtLoan);
-        TextView txtReceiveMoney = convertView.findViewById(R.id.txtReceiveMoney);
-        txtDateReceive.setText(DateFormat.formatDate(company.getDisbursementDate()));
-        txtPrincipleMoney.setText(FormatDecimal.formatBigDecimal(company.getPrincipleMoneyLeft()));
-        txtLoan.setText(FormatDecimal.formatBigDecimal(company.getInterestMoney()));
-        txtReceiveMoney.setText(FormatDecimal.formatBigDecimal(company.getDisbursementMoney()));
+        if(company.getStatus().equals("PENDING")){
+            TextView txtDateReceive = convertView.findViewById(R.id.txtDateReceive);
+            txtDateReceive.setTextColor(Color.rgb(247,0,0));
+            TextView txtPrincipleMoney = convertView.findViewById(R.id.txtPrincipleMoney);
+            txtPrincipleMoney.setTextColor(Color.rgb(247,0,0));
+            TextView txtLoan = convertView.findViewById(R.id.txtLoan);
+            txtLoan.setTextColor(Color.rgb(247,0,0));
+            TextView txtReceiveMoney = convertView.findViewById(R.id.txtReceiveMoney);
+            txtReceiveMoney.setTextColor(Color.rgb(247,0,0));
+            txtDateReceive.setText(DateFormat.formatDate(company.getDisbursementDate()));
+            txtPrincipleMoney.setText(FormatDecimal.formatBigDecimal(company.getPrincipleMoneyLeft()));
+            txtLoan.setText(FormatDecimal.formatBigDecimal(company.getInterestMoney()));
+            txtReceiveMoney.setText(FormatDecimal.formatBigDecimal(company.getDisbursementMoney()));
+        }else if(company.getStatus().equals("COMPLETE")){
+            TextView txtDateReceive = convertView.findViewById(R.id.txtDateReceive);
+            txtDateReceive.setTextColor(Color.rgb(76,175,80));
+            TextView txtPrincipleMoney = convertView.findViewById(R.id.txtPrincipleMoney);
+            txtPrincipleMoney.setTextColor(Color.rgb(76,175,80));
+            TextView txtLoan = convertView.findViewById(R.id.txtLoan);
+            txtLoan.setTextColor(Color.rgb(76,175,80));
+            TextView txtReceiveMoney = convertView.findViewById(R.id.txtReceiveMoney);
+            txtReceiveMoney.setTextColor(Color.rgb(76,175,80));
+            txtDateReceive.setText(DateFormat.formatDate(company.getDisbursementDate()));
+            txtPrincipleMoney.setText(FormatDecimal.formatBigDecimal(company.getPrincipleMoneyLeft()));
+            txtLoan.setText(FormatDecimal.formatBigDecimal(company.getInterestMoney()));
+            txtReceiveMoney.setText(FormatDecimal.formatBigDecimal(company.getDisbursementMoney()));
+        }
+
         return convertView;
     }
 }
