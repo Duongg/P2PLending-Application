@@ -6,17 +6,17 @@
     android:layout_height="match_parent"
     android:background="@color/myBackgroundColor"
     android:orientation="vertical">
-    <TextView
-        android:layout_width="150dp"
-        android:layout_height="35dp"
-        android:text="Xem chi tiết >>>"
-        android:layout_gravity="right"
-        android:textSize="18dp"
-        android:gravity="center_vertical"
-        android:layout_marginTop="20dp"
-        android:textStyle="bold"
-        android:textColor="@color/myBigTextColor"
-        android:onClick="clickToView"/>
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="35dp"
+            android:text="Xem chi tiết >>>"
+            android:layout_gravity="right"
+            android:textSize="18dp"
+            android:gravity="center_vertical"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:textColor="@color/myBigTextColor"
+            android:onClick="clickToView"/>
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -55,6 +55,7 @@
         android:id="@+id/edtPhoneNumber"
         android:layout_width="380dp"
         android:layout_height="30dp"
+        android:inputType="phone"
         android:background="@color/myTextColor"
         android:layout_gravity="center"/>
     <TextView
@@ -69,6 +70,7 @@
         android:id="@+id/edtEmail"
         android:layout_width="380dp"
         android:layout_height="30dp"
+        android:inputType="textEmailAddress"
         android:background="@color/myTextColor"
         android:layout_gravity="center"/>
     <TextView
