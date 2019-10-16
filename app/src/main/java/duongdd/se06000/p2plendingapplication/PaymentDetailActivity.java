@@ -2,13 +2,22 @@ package duongdd.se06000.p2plendingapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.math.BigDecimal;
 import java.sql.SQLOutput;
 import java.util.List;
 
@@ -30,17 +39,31 @@ import duongdd.se06000.p2plendingapplication.view.PaymentAllDisbursementView;
 import duongdd.se06000.p2plendingapplication.view.PaymentDebtDisbursementView;
 import duongdd.se06000.p2plendingapplication.view.PaymentDisbursementView;
 
-public class PaymentDetailActivity extends AppCompatActivity implements InvestmentCallingDetailInformationView, ListDisbursementMoneyView {
+public class PaymentDetailActivity extends AppCompatActivity implements InvestmentCallingDetailInformationView,
+                                                                        ListDisbursementMoneyView,
+                                                                        PaymentDisbursementView,
+                                                                        PaymentAllDisbursementView,
+                                                                        PaymentDebtDisbursementView {
     private TextView txtInvestmentName, txtMoneyToPay, txtDept, txtTotalMoneyToPay;
-    private TextView txtMonth, txtDeptMonth,txtPayMonthly, txtTotalMoney, txtDisbursementDate;
+    private TextView txtMonth, txtDeptMonth,txtPayMonthly, txtDisbursementDate, txtCompanyDisbursementID;
+    private EditText edtMoney;
+    private RadioButton rbPaybyMonth, rbPayAll;
+    private Button btnPay, btnPayDept;
     private InvestmentCallingDetailInformationPresenters investmentCallingDetailInformationPresenters;
+    private PaymentAllDisbursementPresenters paymentAllDisbursementPresenters;
+    private PaymentDebtDisbursementPresenters paymentDebtDisbursementPresenters;
+    private PaymentDisbursementPresenters paymentDisbursementPresenters;
+    private CompanyDisbursement companyDisbursement;
     private List<CompanyDisbursement> companyDisbursementsList;
     private DisbursementMoneyAdapter adapter;
     private ListView listView;
     private ListDisbursementMoneyPresenters listDisbursementMoneyPresenters;
     private ListCallingInvestment listCallingInvestment = null;
-    private String token;
-    private int accountID, investmentCompanyID;
+    private String token, status;
+
+    private int accountID, companyDisbursementID, disbursementIDforDebt;
+
+    private InvestmentCallingDetailsInformation investmentCallingDetailsInformationAA;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,7 +71,12 @@ public class PaymentDetailActivity extends AppCompatActivity implements Investme
 
         investmentCallingDetailInformationPresenters = new InvestmentCallingDetailInformationPresenters(this);
         listDisbursementMoneyPresenters = new ListDisbursementMoneyPresenters(this);
+        paymentDisbursementPresenters = new PaymentDisbursementPresenters(this);
+        paymentAllDisbursementPresenters = new PaymentAllDisbursementPresenters(this);
+        paymentDebtDisbursementPresenters = new PaymentDebtDisbursementPresenters(this);
+
         listView= findViewById(R.id.lvDisbursementMoney);
+
         initData();
         txtInvestmentName = findViewById(R.id.txtInvestmentName);
         txtMoneyToPay = findViewById(R.id.txtMoneyToPay);
@@ -59,43 +87,63 @@ public class PaymentDetailActivity extends AppCompatActivity implements Investme
         txtMonth = findViewById(R.id.txtMonth);
         txtDeptMonth = findViewById(R.id.txtDeptMonth);
         txtPayMonthly = findViewById(R.id.txtPayMonthly);
+       // txtCompanyDisbursementID =findViewById(R.id.txtDisbursementID);
+
+        rbPaybyMonth = findViewById(R.id.rbPaybymonth);
+        rbPayAll = findViewById(R.id.rbPayAll);
+        edtMoney = findViewById(R.id.edtMoney);
+        btnPay = findViewById(R.id.btnPay);
 
 
+        paymentDetail();
+//        paydebt();
+
+
+// ------------------PAY DEPT DISBURSEMENT---
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                companyDisbursement = (CompanyDisbursement) adapterView.getItemAtPosition(i);
+                disbursementIDforDebt = companyDisbursement.getCompanyDisbursementID();
+                status = companyDisbursement.getStatus();
+                btnPayDept = view.findViewById(R.id.btnPayDept);
+            }
+        });
     }
+
     private void initData(){
         Intent intent = getIntent();
         Bundle bundle = getIntent().getExtras();
         listCallingInvestment = (ListCallingInvestment) bundle.getSerializable("borrower");
         token = bundle.getString("TOKEN");
-
-        System.out.println("Token 123: " + token);
-
         accountID = bundle.getInt("BORROWER_ID");
-
-        System.out.println("INVESTMENT COMPANY ID: " + listCallingInvestment.getInvestmentCompanyID());
         investmentCallingDetailInformationPresenters.getCallingInvestmentDetailsInformation(token, listCallingInvestment.getInvestmentCompanyID());
         listDisbursementMoneyPresenters.getListDisbursementMoney(token, listCallingInvestment.getInvestmentCompanyID());
-        System.out.println("TOKEN " + token);
-        System.out.println("ID " + listCallingInvestment.getInvestmentCompanyID());
     }
 
     @Override
     public void onSuccess(InvestmentCallingDetailsInformation investmentCallingDetailsInformation) {
         txtInvestmentName.setText(investmentCallingDetailsInformation.getInvestmentName());
-        txtMoneyToPay.setText(FormatDecimal.formatBigDecimalVND(investmentCallingDetailsInformation.getInvestmentMoneyMonthly()));
-        txtDept.setText(FormatDecimal.formatBigDecimalVND(investmentCallingDetailsInformation.getTotalDebt()));
-        txtTotalMoneyToPay.setText(FormatDecimal.formatBigDecimalVND(investmentCallingDetailsInformation.getTotalPayment()));
+        txtMoneyToPay.setText(FormatDecimal.formatBigDecimal(investmentCallingDetailsInformation.getInvestmentMoneyMonthly()));
+        txtDept.setText(FormatDecimal.formatBigDecimal(investmentCallingDetailsInformation.getTotalDebt()));
+        txtTotalMoneyToPay.setText(FormatDecimal.formatBigDecimal(investmentCallingDetailsInformation.getTotalPayment()));
         txtDisbursementDate.setText(DateFormat.formatDate(investmentCallingDetailsInformation.getDisbursementDate()));
+        companyDisbursementID = investmentCallingDetailsInformation.getDisbursementCompanyID();
     }
 
 
     @Override
     public void onSuccess(List<CompanyDisbursement> companyDisbursementList) {
-         companyDisbursementsList = companyDisbursementList;
-        System.out.println(companyDisbursementList.size() + " SIZE");
+        companyDisbursementsList = companyDisbursementList;
         adapter = new DisbursementMoneyAdapter();
         adapter.setCompanyDisbursementList(companyDisbursementList);
         listView.setAdapter(adapter);
+    }
+
+    @Override
+    public void onSuccess(CompanyDisbursement companyDisbursement) {
+
     }
 
     @Override
@@ -111,6 +159,54 @@ public class PaymentDetailActivity extends AppCompatActivity implements Investme
        bundle.putInt("borrower", listCallingInvestment.getInvestmentCompanyID());
         intent.putExtras(bundle);
         startActivity(intent);
-        finish();
+    }
+
+//--------------PAY ALL AND DISBURSEMENT ------------------
+    private void paymentDetail(){
+        btnPay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                if(rbPaybyMonth.isChecked()){
+                    // do pay by month
+                    paymentDisbursementPresenters.getPaymentDisbursement(
+                            token,
+                            listCallingInvestment.getInvestmentCompanyID(),
+                            new BigDecimal(edtMoney.getText().toString().trim()),
+                            companyDisbursementID);
+                    Toast.makeText(PaymentDetailActivity.this,"Pay Monthly Successfully", Toast.LENGTH_SHORT).show();
+                }else if(rbPayAll.isChecked()){
+                    //do pay all
+                    paymentAllDisbursementPresenters.getPaymentAllDisbursement(
+                            token,
+                            listCallingInvestment.getInvestmentCompanyID(),
+                            companyDisbursementID);
+                    Toast.makeText(PaymentDetailActivity.this,"Pay All Successfully", Toast.LENGTH_SHORT).show();
+                }
+
+
+            }
+        });
+    }
+//    private void paydebt(){
+//        btnPayDept.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                paymentDebtDisbursementPresenters.getPaymentDebtDisbursement(
+//                        token,
+//                        listCallingInvestment.getInvestmentCompanyID(),
+//                        disbursementID);
+//                System.out.println("abc");
+//                Toast.makeText(PaymentDetailActivity.this,"Pay Debt Successfully", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//    }
+
+    public void clickToPayDebt(View view) {
+        paymentDebtDisbursementPresenters.getPaymentDebtDisbursement(
+                        token,
+                        listCallingInvestment.getInvestmentCompanyID(),
+                       disbursementIDforDebt);
+        Toast.makeText(PaymentDetailActivity.this,"Pay Debt Successfully", Toast.LENGTH_SHORT).show();
     }
 }

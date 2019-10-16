@@ -11,4 +11,6 @@
     <color name="myButtonColor">#2a92b7</color>
     <color name="colorMenu">#FFFFFF</color>
     <color name="TextViewColor">#16D1BB</color>
+    <color name="Complete">#FC0000</color>
+    <color name="Pending">#049725</color>
 </resources>

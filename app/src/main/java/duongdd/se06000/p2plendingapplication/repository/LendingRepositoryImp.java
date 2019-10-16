@@ -452,9 +452,9 @@ public class LendingRepositoryImp implements LendingRepository{
     }
 
     @Override
-    public void getPaymentAllDisbursement(String token, int borrowerID, int investmentCompanyID, int companyDisbursementID,final CallBackData<CompanyDisbursement> callBackData) {
+    public void getPaymentAllDisbursement(String token,int investmentCompanyID, int companyDisbursementID,final CallBackData<CompanyDisbursement> callBackData) {
         ClientApi clientApi = new ClientApi();
-        Call<ResponseBody> call = clientApi.LendingService().paymentAllDisbursement(token, borrowerID, investmentCompanyID, companyDisbursementID);
+        Call<ResponseBody> call = clientApi.LendingService().paymentAllDisbursement(token,investmentCompanyID, companyDisbursementID);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
@@ -482,9 +482,9 @@ public class LendingRepositoryImp implements LendingRepository{
     }
 
     @Override
-    public void getPaymentDebtDisbursement(String token, int borrowerID, int investmentCompanyID, int companyDisbursementID,final CallBackData<CompanyDisbursement> callBackData) {
+    public void getPaymentDebtDisbursement(String token,int investmentCompanyID, int companyDisbursementID,final CallBackData<CompanyDisbursement> callBackData) {
         ClientApi clientApi = new ClientApi();
-        Call<ResponseBody> call = clientApi.LendingService().paymentDebtDisbursement(token, borrowerID, investmentCompanyID, companyDisbursementID);
+        Call<ResponseBody> call = clientApi.LendingService().paymentDebtDisbursement(token, investmentCompanyID, companyDisbursementID);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
@@ -512,9 +512,9 @@ public class LendingRepositoryImp implements LendingRepository{
     }
 
     @Override
-    public void getPaymentDisbursement(String token, int borrowerID, int investmentCompanyID, BigDecimal money, int companyDisbursementID,final CallBackData<CompanyDisbursement> callBackData) {
+    public void getPaymentDisbursement(String token,int investmentCompanyID, BigDecimal money, int companyDisbursementID,final CallBackData<CompanyDisbursement> callBackData) {
         ClientApi clientApi = new ClientApi();
-        Call<ResponseBody> call = clientApi.LendingService().paymentDisbursement(token, borrowerID, investmentCompanyID, money, companyDisbursementID);
+        Call<ResponseBody> call = clientApi.LendingService().paymentDisbursement(token, investmentCompanyID, money, companyDisbursementID);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {

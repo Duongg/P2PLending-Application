@@ -9,6 +9,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import duongdd.se06000.p2plendingapplication.R;
+import duongdd.se06000.p2plendingapplication.formatter.DateFormat;
 import duongdd.se06000.p2plendingapplication.formatter.FormatDecimal;
 import duongdd.se06000.p2plendingapplication.model.ListCallingInvestment;
 
@@ -47,7 +48,7 @@ public class CallingInvestmentAdapter extends BaseAdapter {
         TextView txtStartDate = converView.findViewById(R.id.txtStartDate);
         txtNameInvestment.setText(callingInvestment.getInvestmentName());
         txtInvestedMoney.setText(FormatDecimal.formatBigDecimal(callingInvestment.getInvestedMoney()));
-        txtStartDate.setText((CharSequence) callingInvestment.getInvestedDate());
+        txtStartDate.setText(DateFormat.formatDate(callingInvestment.getInvestedDate()));
         return converView;
     }
 }
