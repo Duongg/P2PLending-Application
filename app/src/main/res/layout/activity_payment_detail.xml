@@ -152,6 +152,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp">
+
         <EditText
             android:id="@+id/edtMoney"
             android:layout_width="240dp"
@@ -176,12 +177,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:orientation="horizontal">
+
         <RadioButton
-            android:layout_marginLeft="50dp"
             android:id="@+id/rbPaybymonth"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
             android:buttonTint="#FFFFFF"
+            android:checked="true"
             android:text="Trả tháng này"
             android:textColor="@color/myTextColor"
             android:textSize="14dp" />

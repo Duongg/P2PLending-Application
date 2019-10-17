@@ -45,7 +45,7 @@ public class PaymentDetailActivity extends AppCompatActivity implements Investme
                                                                         PaymentAllDisbursementView,
                                                                         PaymentDebtDisbursementView {
     private TextView txtInvestmentName, txtMoneyToPay, txtDept, txtTotalMoneyToPay;
-    private TextView txtMonth, txtDeptMonth,txtPayMonthly, txtDisbursementDate, txtCompanyDisbursementID;
+    private TextView txtMonth, txtDeptMonth, txtPayMonthly, txtDisbursementDate, txtCompanyDisbursementID;
     private EditText edtMoney;
     private RadioButton rbPaybyMonth, rbPayAll;
     private Button btnPay, btnPayDept;
@@ -60,10 +60,11 @@ public class PaymentDetailActivity extends AppCompatActivity implements Investme
     private ListDisbursementMoneyPresenters listDisbursementMoneyPresenters;
     private ListCallingInvestment listCallingInvestment = null;
     private String token, status;
-
+    private int position;
     private int accountID, companyDisbursementID, disbursementIDforDebt;
 
     private InvestmentCallingDetailsInformation investmentCallingDetailsInformationAA;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,9 +76,21 @@ public class PaymentDetailActivity extends AppCompatActivity implements Investme
         paymentAllDisbursementPresenters = new PaymentAllDisbursementPresenters(this);
         paymentDebtDisbursementPresenters = new PaymentDebtDisbursementPresenters(this);
 
-        listView= findViewById(R.id.lvDisbursementMoney);
-
+        listView = findViewById(R.id.lvDisbursementMoney);
         initData();
+        // ------------------PAY DEPT DISBURSEMENT---
+        btnPayDept = findViewById(R.id.btnPayDept);
+//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                System.out.println("123456789");
+//                companyDisbursement = (CompanyDisbursement) adapterView.getItemAtPosition(i);
+//                disbursementIDforDebt = companyDisbursement.getCompanyDisbursementID();
+//                System.out.println("ID DISBURSEMENT " +disbursementIDforDebt);
+//            }
+//        });
+
+
         txtInvestmentName = findViewById(R.id.txtInvestmentName);
         txtMoneyToPay = findViewById(R.id.txtMoneyToPay);
         txtDept = findViewById(R.id.txtDept);
@@ -87,7 +100,7 @@ public class PaymentDetailActivity extends AppCompatActivity implements Investme
         txtMonth = findViewById(R.id.txtMonth);
         txtDeptMonth = findViewById(R.id.txtDeptMonth);
         txtPayMonthly = findViewById(R.id.txtPayMonthly);
-       // txtCompanyDisbursementID =findViewById(R.id.txtDisbursementID);
+        // txtCompanyDisbursementID =findViewById(R.id.txtDisbursementID);
 
         rbPaybyMonth = findViewById(R.id.rbPaybymonth);
         rbPayAll = findViewById(R.id.rbPayAll);
@@ -96,23 +109,12 @@ public class PaymentDetailActivity extends AppCompatActivity implements Investme
 
 
         paymentDetail();
-//        paydebt();
 
 
-// ------------------PAY DEPT DISBURSEMENT---
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                companyDisbursement = (CompanyDisbursement) adapterView.getItemAtPosition(i);
-                disbursementIDforDebt = companyDisbursement.getCompanyDisbursementID();
-                status = companyDisbursement.getStatus();
-                btnPayDept = view.findViewById(R.id.btnPayDept);
-            }
-        });
     }
 
-    private void initData(){
+    private void initData() {
         Intent intent = getIntent();
         Bundle bundle = getIntent().getExtras();
         listCallingInvestment = (ListCallingInvestment) bundle.getSerializable("borrower");
@@ -143,45 +145,49 @@ public class PaymentDetailActivity extends AppCompatActivity implements Investme
 
     @Override
     public void onSuccess(CompanyDisbursement companyDisbursement) {
-
+        showAlertDialog();
     }
 
     @Override
     public void onFail(String message) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+        showAlertDialogInvalidMoney(message);
     }
 
     public void clickToDetail(View view) {
         Intent intent = new Intent(getApplicationContext(), DetailInvestmentCallingActivity.class);
         Bundle bundle = new Bundle();
         bundle.putString("TOKEN", token);
-       //bundle.putSerializable("borrower", listCallingInvestment.getInvestmentCompanyID());
-       bundle.putInt("borrower", listCallingInvestment.getInvestmentCompanyID());
+        //bundle.putSerializable("borrower", listCallingInvestment.getInvestmentCompanyID());
+        bundle.putInt("borrower", listCallingInvestment.getInvestmentCompanyID());
         intent.putExtras(bundle);
         startActivity(intent);
     }
 
-//--------------PAY ALL AND DISBURSEMENT ------------------
-    private void paymentDetail(){
+    //--------------PAY ALL AND DISBURSEMENT ------------------
+    private void paymentDetail() {
+
         btnPay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if(rbPaybyMonth.isChecked()){
+                if (rbPaybyMonth.isChecked()) {
                     // do pay by month
-                    paymentDisbursementPresenters.getPaymentDisbursement(
-                            token,
-                            listCallingInvestment.getInvestmentCompanyID(),
-                            new BigDecimal(edtMoney.getText().toString().trim()),
-                            companyDisbursementID);
-                    Toast.makeText(PaymentDetailActivity.this,"Pay Monthly Successfully", Toast.LENGTH_SHORT).show();
-                }else if(rbPayAll.isChecked()){
+                    if(edtMoney.getText().toString().trim().isEmpty()){
+                        showAlertDialogNotNullMoney();
+                    }else {
+                        paymentDisbursementPresenters.getPaymentDisbursement(
+                                token,
+                                listCallingInvestment.getInvestmentCompanyID(),
+                                new BigDecimal(edtMoney.getText().toString().trim()),
+                                companyDisbursementID);
+                    }
+                } else if (rbPayAll.isChecked()) {
                     //do pay all
+                    edtMoney.setFocusable(false);
                     paymentAllDisbursementPresenters.getPaymentAllDisbursement(
                             token,
                             listCallingInvestment.getInvestmentCompanyID(),
                             companyDisbursementID);
-                    Toast.makeText(PaymentDetailActivity.this,"Pay All Successfully", Toast.LENGTH_SHORT).show();
                 }
 
 
@@ -195,7 +201,7 @@ public class PaymentDetailActivity extends AppCompatActivity implements Investme
 //                paymentDebtDisbursementPresenters.getPaymentDebtDisbursement(
 //                        token,
 //                        listCallingInvestment.getInvestmentCompanyID(),
-//                        disbursementID);
+//                        disbursementIDforDebt);
 //                System.out.println("abc");
 //                Toast.makeText(PaymentDetailActivity.this,"Pay Debt Successfully", Toast.LENGTH_SHORT).show();
 //            }
@@ -203,10 +209,60 @@ public class PaymentDetailActivity extends AppCompatActivity implements Investme
 //    }
 
     public void clickToPayDebt(View view) {
+        System.out.println("Duong oi");
+        position = (int) view.getTag();
         paymentDebtDisbursementPresenters.getPaymentDebtDisbursement(
-                        token,
-                        listCallingInvestment.getInvestmentCompanyID(),
-                       disbursementIDforDebt);
-        Toast.makeText(PaymentDetailActivity.this,"Pay Debt Successfully", Toast.LENGTH_SHORT).show();
+                token,
+                listCallingInvestment.getInvestmentCompanyID(),
+                disbursementIDforDebt);
+        System.out.println("DEPT " + disbursementIDforDebt);
+        Toast.makeText(PaymentDetailActivity.this, "Pay Debt Successfully", Toast.LENGTH_SHORT).show();
     }
+    private void showAlertDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Trả tiền thành công !!");
+        builder.setCancelable(false);
+        builder.setPositiveButton("Xác nhận", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+                finish();
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
+    }
+
+    private void showAlertDialogInvalidMoney(String message){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(message);
+        builder.setCancelable(false);
+        builder.setPositiveButton("Xác nhận", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+
+    }
+
+    private void showAlertDialogNotNullMoney(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Vui lòng điền số tiền vào ô nhập tiền !!");
+        builder.setCancelable(false);
+        builder.setPositiveButton("Xác nhận", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+
+
 }
