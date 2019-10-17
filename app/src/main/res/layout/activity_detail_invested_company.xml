@@ -107,7 +107,7 @@
             android:background="@drawable/cell_border">
             <TextView
                 android:background="@drawable/cell_border"
-                android:text="Số tiền đầu tư"
+                android:text="Số tiền đầu tư (VND)"
                 android:textColor="@color/myBigTextColor"
                 android:padding="10dp"
                 android:textSize="16dp"/>
@@ -153,12 +153,14 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@drawable/cell_border">
+
             <TextView
-                android:padding="10dp"
-                android:text="Lợi nhuận dự kiến"
+                android:layout_width="176dp"
                 android:background="@drawable/cell_border"
+                android:padding="10dp"
+                android:text="Lợi nhuận dự kiến (VND)"
                 android:textColor="@color/myBigTextColor"
-                android:textSize="16dp"/>
+                android:textSize="16dp" />
             <TextView
                android:padding="10dp"
                 android:id="@+id/txtLoan"
@@ -169,12 +171,14 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@drawable/cell_border">
+
             <TextView
-                android:padding="10dp"
-                android:text="Lợi nhuận đã nhận được"
+                android:layout_width="200dp"
                 android:background="@drawable/cell_border"
+                android:padding="10dp"
+                android:text="Lợi nhuận đã nhận được (VND)"
                 android:textColor="@color/myBigTextColor"
-                android:textSize="16dp"/>
+                android:textSize="16dp" />
             <TextView
                 android:padding="10dp"
                 android:id="@+id/txtLoanReceive"

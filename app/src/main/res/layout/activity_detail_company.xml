@@ -13,25 +13,26 @@
         android:textColor="@color/myTextColor"
         android:textStyle="bold"
         android:textSize="24dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Chi tiết đầu tư" />
 
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="5dp">
+        android:layout_height="wrap_content">
         <TableRow
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@drawable/cell_border">
+
             <TextView
-               android:background="@drawable/cell_border"
+                android:layout_width="170dp"
+                android:background="@drawable/cell_border"
                 android:padding="10dp"
                 android:text="Tên doanh nghiệp"
                 android:textColor="@color/myBigTextColor"
-                android:textSize="18dp"/>
+                android:textSize="18dp" />
             <TextView
                 android:padding="10dp"
                 android:id="@+id/txtBorrowerName"
@@ -43,6 +44,7 @@
             android:layout_height="match_parent"
             android:background="@drawable/cell_border">
             <TextView
+                android:layout_width="170dp"
                 android:background="@drawable/cell_border"
                 android:text="Tên dự án"
                 android:padding="10dp"
@@ -59,6 +61,7 @@
             android:layout_height="match_parent"
             android:background="@drawable/cell_border">
             <TextView
+                android:layout_width="170dp"
                 android:background="@drawable/cell_border"
                 android:text="Ngành nghề"
                 android:padding="10dp"
@@ -75,6 +78,7 @@
             android:layout_height="match_parent"
             android:background="@drawable/cell_border">
             <TextView
+                android:layout_width="170dp"
                 android:background="@drawable/cell_border"
                 android:text="Kỳ hạn"
                 android:padding="10dp"
@@ -90,12 +94,14 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@drawable/cell_border">
+
             <TextView
+                android:layout_width="170dp"
                 android:background="@drawable/cell_border"
-                android:text="Lợi suất"
                 android:padding="10dp"
+                android:text="Lợi suất"
                 android:textColor="@color/myBigTextColor"
-                android:textSize="18dp"/>
+                android:textSize="18dp" />
             <TextView
                 android:padding="10dp"
                 android:id="@+id/txtProfit"
@@ -107,8 +113,9 @@
             android:layout_height="match_parent"
             android:background="@drawable/cell_border">
             <TextView
+                android:layout_width="170dp"
                 android:background="@drawable/cell_border"
-                android:text="Số tiền đầu tư"
+                android:text="Số tiền đầu tư (VND)"
                 android:padding="10dp"
                 android:textColor="@color/myBigTextColor"
                 android:textSize="18dp"/>
@@ -123,6 +130,7 @@
             android:layout_height="match_parent"
             android:background="@drawable/cell_border">
             <TextView
+                android:layout_width="170dp"
                 android:background="@drawable/cell_border"
                 android:text="Ngày kêu gọi"
                 android:padding="10dp"
@@ -138,13 +146,14 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@drawable/cell_border">
+
             <TextView
+                android:layout_width="170dp"
                 android:background="@drawable/cell_border"
-                android:layout_width="190dp"
                 android:padding="10dp"
-                android:text="Số tiền còn lại có thể đầu tư"
+                android:text="Số tiền còn lại có thể đầu tư (VND)"
                 android:textColor="@color/myBigTextColor"
-                android:textSize="18dp"/>
+                android:textSize="18dp" />
             <TextView
                 android:padding="10dp"
                 android:id="@+id/txtInvestorInvestMoney"
@@ -156,8 +165,9 @@
             android:layout_height="match_parent"
             android:background="@drawable/cell_border">
             <TextView
+                android:layout_width="170dp"
                 android:background="@drawable/cell_border"
-                android:text="Số dư có thể đầu tư"
+                android:text="Số dư có thể đầu tư (VND)"
                 android:padding="10dp"
                 android:textColor="@color/myBigTextColor"
                 android:textSize="18dp"/>
@@ -169,7 +179,7 @@
         </TableRow>
     </TableLayout>
     <EditText
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="7dp"
         android:layout_gravity="center"
         android:layout_width="250dp"
         android:layout_height="30dp"
@@ -178,7 +188,7 @@
         android:background="@color/myTextColor"
         android:hint="Nhập số tiền đầu tư"/>
     <Button
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="5dp"
         android:layout_width="150dp"
         android:layout_height="40dp"
         android:background="@color/myButtonColor"
