@@ -7,8 +7,6 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.math.BigDecimal;
-import java.text.DecimalFormat;
 import java.util.List;
 
 import duongdd.se06000.p2plendingapplication.R;
@@ -43,19 +41,27 @@ public class DisbursementMoneyAdapter extends BaseAdapter {
             LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
             view = inflater.inflate(R.layout.item_list_disbursement_money, viewGroup, false);
         }
+
        CompanyDisbursement companyDisbursement = companyDisbursementList.get(i);
         TextView txtMonth = view.findViewById(R.id.txtMonth);
         TextView txtPayMonthly = view.findViewById(R.id.txtPayMonthly);
         TextView txtDeptMonth = view.findViewById(R.id.txtDeptMonth);
 //        TextView txtDisbursementID= view.findViewById(R.id.txtDisbursementID);
-        Button btnPayDept = view.findViewById(R.id.btnPay);
-
 
         txtMonth.setText(DateFormat.formatDate(companyDisbursement.getDisbursementDate()));
         txtPayMonthly.setText(FormatDecimal.formatBigDecimal(companyDisbursement.getDisbursementMoney()));
         txtDeptMonth.setText(FormatDecimal.formatBigDecimal(companyDisbursement.getDebt()));
 //        txtDisbursementID.setText(String.valueOf(companyDisbursement.getCompanyDisbursementID()));
+//
+//        Button btnPayDept = (Button) view.findViewById(R.id.btnPayDept);
+//        btnPayDept.setTag(i);
+//        btnPayDept.setOnClickListener(new View.OnClickListener() {
+//            public void onClick(View view) {
+//                int position = (int) view.getTag();
+//            }
+//        });
 
         return view;
     }
+
 }
