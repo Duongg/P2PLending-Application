@@ -18,26 +18,27 @@
         android:textColor="@color/myTextColor"/>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="30dp">
+            android:padding="20dp">
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp">
+                android:layout_height="wrap_content"
+                android:padding="10dp">
 
                 <TextView
+                    android:padding="10dp"
                     android:singleLine="true"
                     android:text="Tên công ty"
                     android:textColor="@color/myBigTextColor"
                     android:textSize="16dp" />
 
                 <TextView
-                    android:layout_marginLeft="20dp"
+                    android:padding="10dp"
                     android:text="P2PLending"
                     android:textColor="@color/myTextColor"
                     android:backgroundTint="@color/myTextColor"
@@ -46,16 +47,17 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp">
+                android:layout_height="wrap_content"
+                android:padding="10dp">
 
                 <TextView
+                    android:padding="10dp"
                     android:text="Địa chỉ"
                     android:textColor="@color/myBigTextColor"
                     android:textSize="16dp" />
 
                 <TextView
-                    android:layout_marginLeft="20dp"
+                    android:padding="10dp"
                     android:backgroundTint="@color/myTextColor"
                     android:text="Khu công nghệ cao quận 9"
                     android:textColor="@color/myTextColor"
@@ -65,15 +67,16 @@
             <TableRow
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp">
+                android:padding="10dp">
 
                 <TextView
+                    android:padding="10dp"
                     android:text="Số điện thoại"
                     android:textColor="@color/myBigTextColor"
                     android:textSize="16dp" />
 
                 <TextView
-                    android:layout_marginLeft="20dp"
+                    android:padding="10dp"
                     android:backgroundTint="@color/myTextColor"
                     android:text="0987654321"
                     android:textColor="@color/myTextColor"
@@ -82,17 +85,20 @@
 
             <TableRow
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp">
+                android:layout_height="wrap_content"
+                android:padding="10dp">
 
                 <TextView
+                    android:padding="10dp"
                     android:text="Email"
                     android:textColor="@color/myBigTextColor"
                     android:textSize="16dp" />
 
                 <TextView
-                    android:layout_marginLeft="20dp"
+                    android:layout_width="225dp"
+                    android:layout_height="wrap_content"
                     android:backgroundTint="@color/myTextColor"
+                    android:padding="10dp"
                     android:singleLine="true"
                     android:text="p2plending@lending.com"
                     android:textColor="@color/myTextColor"

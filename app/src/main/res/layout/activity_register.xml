@@ -10,7 +10,7 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="90dp"
         android:layout_gravity="center"
         android:src="@drawable/logo_p2p" />
 
@@ -109,7 +109,7 @@
         android:layout_height="40dp"
         android:background="@color/myButtonColor"
         android:textColor="@color/myTextColor"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="10dp"
         android:layout_gravity="center"
         android:text="Đăng ký"
         />
