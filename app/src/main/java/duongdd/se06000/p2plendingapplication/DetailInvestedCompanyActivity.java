@@ -50,11 +50,11 @@ public class DetailInvestedCompanyActivity extends AppCompatActivity implements 
         txtCareer.setText(investedInformation.getCareer());
         txtPeriod.setText(String.valueOf(investedInformation.getPeriod()));
         txtProfit.setText(investedInformation.getInterestRateInvestor() + "%");
-        txtInvestedMoney.setText(FormatDecimal.formatBigDecimalVND(investedInformation.getInvestedMoney()));
+        txtInvestedMoney.setText(FormatDecimal.formatBigDecimal(investedInformation.getInvestedMoney()));
         txtStartDate.setText(DateFormat.formatDate(investedInformation.getStartDate()));
         txtEndDate.setText(DateFormat.formatDate(investedInformation.getEndDate()));
-        txtLoan.setText(FormatDecimal.formatBigDecimalVND(investedInformation.getProfit()));
-        txtLoanReceive.setText(FormatDecimal.formatBigDecimalVND(investedInformation.getProfitReveive()));
+        txtLoan.setText(FormatDecimal.formatBigDecimal(investedInformation.getProfit()));
+        txtLoanReceive.setText(FormatDecimal.formatBigDecimal(investedInformation.getProfitReveive()));
     }
 
     @Override

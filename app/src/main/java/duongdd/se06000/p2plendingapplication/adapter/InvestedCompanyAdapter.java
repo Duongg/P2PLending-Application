@@ -47,7 +47,7 @@ public class InvestedCompanyAdapter extends BaseAdapter {
         TextView txtInvestedMoney = convertView.findViewById(R.id.txtInvestedMoney);
         TextView txtDate = convertView.findViewById(R.id.txtDate);
         txtInvestmentName.setText(company.getInvestmentName());
-        txtInvestedMoney.setText(FormatDecimal.formatBigDecimalVND(company.getInvestedMoney()));
+        txtInvestedMoney.setText(FormatDecimal.formatBigDecimal(company.getInvestedMoney()));
         txtDate.setText(DateFormat.formatDate(company.getInvestedDate()));
         return convertView;
     }

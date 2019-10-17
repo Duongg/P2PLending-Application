@@ -21,15 +21,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
     <Button
-        android:layout_width="80dp"
-        android:layout_height="35dp"
-        android:text="Đã nhận"
-        android:background="@color/myBigTextColor"/>
+        android:layout_marginLeft="10dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@color/TextViewColor"/>
+        <TextView
+            android:layout_width="100dp"
+            android:layout_marginLeft="5dp"
+            android:layout_height="wrap_content"
+            android:text="Đã nhận"
+            android:textColor="@color/myTextColor"/>
     <Button
-        android:layout_width="100dp"
-        android:layout_height="35dp"
-        android:text="Chưa nhận"
-        android:background="@color/Complete"/>
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@color/myTextColor"/>
+        <TextView
+            android:layout_marginLeft="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chưa nhận"
+            android:textColor="@color/myTextColor"/>
     </LinearLayout>
     <TableLayout
         android:layout_width="match_parent"
@@ -129,5 +140,7 @@
     <ListView
         android:id="@+id/lvListInvested"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:divider="@color/myTextColor"
+        android:dividerHeight="1px"/>
 </LinearLayout>

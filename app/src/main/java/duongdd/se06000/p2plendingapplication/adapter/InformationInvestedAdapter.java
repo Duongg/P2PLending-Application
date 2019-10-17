@@ -45,26 +45,26 @@ public class InformationInvestedAdapter extends BaseAdapter {
         InvestorDetail company = listInvestorDetails.get(position);
         if(company.getStatus().equals("PENDING")){
             TextView txtDateReceive = convertView.findViewById(R.id.txtDateReceive);
-            txtDateReceive.setTextColor(Color.rgb(247,0,0));
+            txtDateReceive.setTextColor(Color.rgb(255,255,255));
             TextView txtPrincipleMoney = convertView.findViewById(R.id.txtPrincipleMoney);
-            txtPrincipleMoney.setTextColor(Color.rgb(247,0,0));
+            txtPrincipleMoney.setTextColor(Color.rgb(255,255,255));
             TextView txtLoan = convertView.findViewById(R.id.txtLoan);
-            txtLoan.setTextColor(Color.rgb(247,0,0));
+            txtLoan.setTextColor(Color.rgb(255,255,255));
             TextView txtReceiveMoney = convertView.findViewById(R.id.txtReceiveMoney);
-            txtReceiveMoney.setTextColor(Color.rgb(247,0,0));
+            txtReceiveMoney.setTextColor(Color.rgb(255,255,255));
             txtDateReceive.setText(DateFormat.formatDate(company.getDisbursementDate()));
             txtPrincipleMoney.setText(FormatDecimal.formatBigDecimal(company.getPrincipleMoneyLeft()));
             txtLoan.setText(FormatDecimal.formatBigDecimal(company.getInterestMoney()));
             txtReceiveMoney.setText(FormatDecimal.formatBigDecimal(company.getDisbursementMoney()));
         }else if(company.getStatus().equals("COMPLETE")){
             TextView txtDateReceive = convertView.findViewById(R.id.txtDateReceive);
-            txtDateReceive.setTextColor(Color.rgb(76,175,80));
+            txtDateReceive.setTextColor(Color.rgb(22, 209, 219));
             TextView txtPrincipleMoney = convertView.findViewById(R.id.txtPrincipleMoney);
-            txtPrincipleMoney.setTextColor(Color.rgb(76,175,80));
+            txtPrincipleMoney.setTextColor(Color.rgb(22, 209, 219));
             TextView txtLoan = convertView.findViewById(R.id.txtLoan);
-            txtLoan.setTextColor(Color.rgb(76,175,80));
+            txtLoan.setTextColor(Color.rgb(22, 209, 219));
             TextView txtReceiveMoney = convertView.findViewById(R.id.txtReceiveMoney);
-            txtReceiveMoney.setTextColor(Color.rgb(76,175,80));
+            txtReceiveMoney.setTextColor(Color.rgb(22, 209, 219));
             txtDateReceive.setText(DateFormat.formatDate(company.getDisbursementDate()));
             txtPrincipleMoney.setText(FormatDecimal.formatBigDecimal(company.getPrincipleMoneyLeft()));
             txtLoan.setText(FormatDecimal.formatBigDecimal(company.getInterestMoney()));

@@ -5,46 +5,46 @@
     android:layout_height="match_parent"
     android:background="@color/myBackgroundColor">
 
-<LinearLayout
+<TableLayout
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:layout_marginTop="15dp">
-
+    android:layout_height="wrap_content">
+    <TableRow android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="27dp"
+        android:layout_height="70dp"
         android:id="@+id/txtDateReceive"
-        android:textColor="@color/myTextColor"
-        android:textSize="14dp"
+        android:textSize="16dp"
         android:layout_weight="1"
-        android:maxLength="15"
-        android:paddingLeft="15dp"></TextView>
+        android:padding="10dp"></TextView>
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:background="@drawable/cell_border"
+        android:layout_width="50dp"
+        android:layout_height="70dp"
         android:id="@+id/txtPrincipleMoney"
-        android:textColor="@color/myTextColor"
-        android:textSize="15dp"
+        android:textSize="16dp"
         android:gravity="center"
-        android:layout_weight="1"></TextView>
-    <TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/txtLoan"
-    android:textColor="@color/myTextColor"
-    android:textSize="15dp"
-    android:layout_weight="1"
-    android:gravity="center"></TextView>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/txtReceiveMoney"
-        android:textColor="@color/myTextColor"
-        android:textSize="15dp"
         android:layout_weight="1"
-        android:layout_marginRight="10dp"
-        android:gravity="center"></TextView>
-</LinearLayout>
+        android:padding="10dp"></TextView>
+    <TextView
+        android:background="@drawable/cell_border"
+    android:layout_width="50dp"
+    android:layout_height="70dp"
+    android:id="@+id/txtLoan"
+    android:textSize="16dp"
+    android:layout_weight="1"
+    android:gravity="center"
+        android:padding="10dp"></TextView>
+    <TextView
+        android:background="@drawable/cell_border"
+        android:layout_width="50dp"
+        android:layout_height="70dp"
+        android:id="@+id/txtReceiveMoney"
+        android:textSize="16dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="10dp"></TextView>
+    </TableRow>
+</TableLayout>
 
 </LinearLayout>

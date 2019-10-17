@@ -22,7 +22,7 @@
             android:textSize="20dp" />
 
         <TextView
-            android:layout_width="128dp"
+            android:layout_width="125dp"
             android:layout_height="wrap_content"
             android:background="@drawable/cell_border"
             android:gravity="center"

@@ -85,10 +85,10 @@ public class DetailCompanyActivity extends AppCompatActivity implements Investme
         txtCareer.setText(investmentCompanyDetail.getCareer());
         txtPeriod.setText(investmentCompanyDetail.getPeriod() + "");
         txtProfit.setText(investmentCompanyDetail.getInterestRateInvestor() + "%");
-        txtInvestMoney.setText(FormatDecimal.formatBigDecimalVND(investmentCompanyDetail.getInvestMoney()));
+        txtInvestMoney.setText(FormatDecimal.formatBigDecimal(investmentCompanyDetail.getInvestMoney()));
         txtStartDate.setText(DateFormat.formatDate(investmentCompanyDetail.getInvestedDate()));
-        txtInvestorInvestMoney.setText(FormatDecimal.formatBigDecimalVND(investmentCompanyDetail.getInvestorInvestMoney()));
-        txtAvailableMoney.setText(FormatDecimal.formatBigDecimalVND(investmentCompanyDetail.getAvailableMoney()));
+        txtInvestorInvestMoney.setText(FormatDecimal.formatBigDecimal(investmentCompanyDetail.getInvestorInvestMoney()));
+        txtAvailableMoney.setText(FormatDecimal.formatBigDecimal(investmentCompanyDetail.getAvailableMoney()));
 
     }
 
