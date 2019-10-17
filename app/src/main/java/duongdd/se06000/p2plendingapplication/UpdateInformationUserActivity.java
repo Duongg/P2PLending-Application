@@ -20,6 +20,7 @@ public class UpdateInformationUserActivity extends AppCompatActivity implements 
     private EditText edtInvestorName, edtInvestorPhone, edtInvestorEmail,edtPassword, edtConfirmPassword;
     private TextView txtInvestorCode;
     private Button btnUpdate;
+    private Account accountAfterUpdate;
     private Account accountDTO;
     private String token;
     private UpdateAccountPresenters updateAccountPresenters;
@@ -58,20 +59,17 @@ public class UpdateInformationUserActivity extends AppCompatActivity implements 
         if(!edtPassword.getText().toString().trim().equals(edtConfirmPassword.getText().toString().trim())){
             showAlertDialogCheckPassword();
 
+        }else if(edtPassword.getText().toString().trim().equals("aaaaa")){
+            initDataNotChangePassword();
+        }else if(edtPassword.getText().toString().trim().length() < 6){
+            showAlertDialogWeakPassword();
         }else{
-            if(edtPassword.getText().toString().trim().length() < 5){
-                    showAlertDialogWeakPassword();
-            }else{
-                if(edtPassword.getText().toString().trim().equals("aaaaaa")){
-                    initDataNotChangePassword();
-                }else{
-                    initDataChangePassword();
-                }
-
-            }
-
+            initDataChangePassword();
         }
+
     }
+
+
     private void initDataChangePassword(){
         Account account = new Account();
         account.setAccountID(accountDTO.getAccountID());
@@ -105,10 +103,12 @@ public class UpdateInformationUserActivity extends AppCompatActivity implements 
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();
-                edtPassword.setText("");
-                edtConfirmPassword.setText("");
+                edtPassword.setText("aaaaa");
+                edtConfirmPassword.setText("aaaaa");
             }
         });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 
 
@@ -120,10 +120,23 @@ public class UpdateInformationUserActivity extends AppCompatActivity implements 
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();
-                edtPassword.setText("");
-                edtConfirmPassword.setText("");
+                edtPassword.setText("aaaaa");
+                edtConfirmPassword.setText("aaaaa");
             }
         });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+    @Override
+    public void finish() {
+        Intent intent = new Intent();
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("accountDTO", accountAfterUpdate);
+        bundle.putSerializable("TOKEN", token);
+        intent.putExtras(bundle);
+        this.setResult(RESULT_OK, intent);
+        super.finish();
     }
 
     public void showAlertDialogSuccess() {
@@ -134,12 +147,11 @@ public class UpdateInformationUserActivity extends AppCompatActivity implements 
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();
-                Intent intent = new Intent(getApplicationContext(), InformationUserFragment.class);
-                intent.putExtra("TOKEN", token);
-                startActivity(intent);
                 finish();
             }
         });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 
     public void showAlertDialogFail() {
@@ -150,12 +162,16 @@ public class UpdateInformationUserActivity extends AppCompatActivity implements 
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();
+
             }
         });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 
     @Override
     public void onSuccess(Account account) {
+        accountAfterUpdate = account;
         showAlertDialogSuccess();
     }
 

@@ -1,5 +1,6 @@
 package duongdd.se06000.p2plendingapplication;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import java.io.Serializable;
@@ -29,6 +31,8 @@ public class InformationUserFragment extends Fragment implements AccountInformat
     private String token = "";
     private Button btnUpdate;
     private Account accountDTO;
+    private final int REQUEST_CODE = 9999;
+
     public View onCreateView(final LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_information_user, container, false);
@@ -46,7 +50,8 @@ public class InformationUserFragment extends Fragment implements AccountInformat
                 bundle.putSerializable("accountDTO", (Serializable) accountDTO);
                 bundle.putString("TOKEN", token);
                 intent.putExtras(bundle);
-                startActivity(intent);
+                startActivityForResult(intent, REQUEST_CODE);
+
             }
         });
         initData();
@@ -58,7 +63,17 @@ public class InformationUserFragment extends Fragment implements AccountInformat
         accountInformationPresenters.getAccountInformation(token);
     }
 
-
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK){
+            accountDTO = (Account) data.getSerializableExtra("accountDTO");
+            txtInvestorCode.setText(String.valueOf(accountDTO.getAccountID()));
+            txtInvestorName.setText(accountDTO.getName());
+            txtInvestorPhone.setText(String.valueOf(accountDTO.getPhone()));
+            txtInvestorEmail.setText(accountDTO.getEmail());
+        }
+    }
 
     @Override
     public void onSuccess(Account account) {
