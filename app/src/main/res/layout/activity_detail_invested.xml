@@ -17,6 +17,20 @@
             android:textStyle="bold"
             android:textColor="@color/myBigTextColor"
             android:onClick="clickToView"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    <Button
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:text="Đã nhận"
+        android:background="@color/myBigTextColor"/>
+    <Button
+        android:layout_width="100dp"
+        android:layout_height="35dp"
+        android:text="Chưa nhận"
+        android:background="@color/Complete"/>
+    </LinearLayout>
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

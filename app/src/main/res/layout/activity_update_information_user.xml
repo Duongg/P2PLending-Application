@@ -34,13 +34,13 @@
                     android:singleLine="true"
                     android:text="Mã khách hàng"
                     android:padding="10dp"
-                    android:textColor="@color/myTextColor"
+                    android:textColor="@color/myBigTextColor"
                     android:textSize="18dp" />
 
                 <TextView
                     android:padding="10dp"
                     android:id="@+id/investorCode"
-                    android:textColor="@color/myTextColor"
+                    android:textColor="@color/myBigTextColor"
                     android:textSize="18dp" />
             </TableRow>
 
@@ -52,7 +52,7 @@
                 <TextView
                     android:padding="10dp"
                     android:text="Tên khách hàng"
-                    android:textColor="@color/myTextColor"
+                    android:textColor="@color/myBigTextColor"
                     android:textSize="18dp" />
 
                 <EditText
@@ -71,7 +71,7 @@
                 <TextView
                     android:text="Số điện thoại"
                     android:padding="10dp"
-                    android:textColor="@color/myTextColor"
+                    android:textColor="@color/myBigTextColor"
                     android:textSize="18dp" />
 
                 <EditText
@@ -90,7 +90,7 @@
                 <TextView
                     android:text="Email"
                     android:padding="10dp"
-                    android:textColor="@color/myTextColor"
+                    android:textColor="@color/myBigTextColor"
                     android:textSize="18dp" />
 
                 <EditText
@@ -109,7 +109,7 @@
                 <TextView
                     android:text="Mật khẩu"
                     android:padding="10dp"
-                    android:textColor="@color/myTextColor"
+                    android:textColor="@color/myBigTextColor"
                     android:textSize="18dp" />
 
                 <EditText
@@ -130,7 +130,7 @@
                 <TextView
                     android:text="Nhập lại mật khẩu"
                     android:padding="10dp"
-                    android:textColor="@color/myTextColor"
+                    android:textColor="@color/myBigTextColor"
                     android:textSize="18dp" />
 
                 <EditText
@@ -145,10 +145,10 @@
                     android:textSize="18dp" />
             </TableRow>
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp">
+<!--            <TableRow-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_margin="10dp">-->
 
                 <!--                <TextView-->
                 <!--                    android:text="Mật khẩu"-->
@@ -163,13 +163,14 @@
                 <!--                    android:text="1234"-->
                 <!--                    android:textColor="@color/myTextColor"-->
                 <!--                    android:textSize="16dp" />-->
-            </TableRow>
+<!--    </TableRow>-->
 
             <Button
                 android:id="@+id/btnUpdate"
-                android:layout_margin="40dp"
+                android:layout_margin="30dp"
                 android:layout_width="wrap_content"
-                android:layout_height="40dp"
+                android:layout_height="37dp"
+                android:textColor="@color/myTextColor"
                 android:background="@color/myButtonColor"
                 android:text="Cập nhật" />
 
