@@ -52,9 +52,10 @@ public class MainActivity extends AppCompatActivity {
                     R.id.nav_notification,
                     R.id.nav_list_company,
                     R.id.nav_list_invested_company,
-                    R.id.nav_statistic)
+                    R.id.nav_logout)
                     .setDrawerLayout(drawer)
                     .build();
+
             NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
             NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
             NavigationUI.setupWithNavController(navigationView, navController);
@@ -71,12 +72,14 @@ public class MainActivity extends AppCompatActivity {
                     R.id.nav_informationuser,
                     R.id.nav_notification,
                     R.id.nav_list_investment_calling,
-                    R.id.nav_statistic)
+                    R.id.nav_logout)
                     .setDrawerLayout(drawer)
                     .build();
+
             NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
             NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
             NavigationUI.setupWithNavController(navigationView, navController);
+
         }
 
 
@@ -107,4 +110,13 @@ public class MainActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+//    private void logout(){
+//        sendToLogin();
+//    }
+//    private void sendToLogin(){
+//        Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
+//        startActivity(loginIntent);
+//        finish();
+//    }
 }

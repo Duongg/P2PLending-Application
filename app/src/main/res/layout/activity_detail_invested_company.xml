@@ -31,7 +31,6 @@
                 android:background="@drawable/cell_border"
                 android:padding="10dp"/>
             <TextView
-                android:layout_marginLeft="30dp"
                 android:id="@+id/txtName"
                 android:textSize="16dp"
                 android:padding="10dp"

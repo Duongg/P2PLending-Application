@@ -33,6 +33,6 @@ public class ConfigApi {
         String LOGIN_TOKEN = "/login";
         String CALLING_INVESTMENT_DETAIL_INFORMATION = "api/company-disbursement/calling-investment-detail-information";
         String LIST_DISBURSEMENT_MONEY="api/company-disbursement/list-disbursement-money";
-
+        String NOTIFICATION_INFORMATION = "api/notification/information";
     }
 }

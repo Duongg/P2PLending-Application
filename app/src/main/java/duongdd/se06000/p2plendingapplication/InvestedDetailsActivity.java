@@ -15,6 +15,7 @@ import duongdd.se06000.p2plendingapplication.R;
 import duongdd.se06000.p2plendingapplication.adapter.InformationInvestedAdapter;
 import duongdd.se06000.p2plendingapplication.model.InvestorDetail;
 import duongdd.se06000.p2plendingapplication.model.ListInvestedCompany;
+import duongdd.se06000.p2plendingapplication.model.Notification;
 import duongdd.se06000.p2plendingapplication.presenters.InvestorDetailPresenters;
 import duongdd.se06000.p2plendingapplication.view.InvestorDetailView;
 
@@ -24,7 +25,7 @@ public class InvestedDetailsActivity extends AppCompatActivity implements Invest
     private int investorDetailsID;
     private InformationInvestedAdapter adapter;
     private ListView listView;
-
+    private Notification notification;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,8 +38,16 @@ public class InvestedDetailsActivity extends AppCompatActivity implements Invest
     private void initData(){
         Bundle bundle = getIntent().getExtras();
         token = bundle.getString("TOKEN");
+
         ListInvestedCompany listInvestedCompany = (ListInvestedCompany) bundle.getSerializable("invested");
-        investorDetailPresenters.investorDetailInformation(token, listInvestedCompany.getInvestorDetailsID());
+        if(listInvestedCompany == null){
+            Notification notification = (Notification) bundle.getSerializable("investordetailID");
+            investorDetailPresenters.investorDetailInformation(token, notification.getInvestorDetailsID());
+        }else{
+            investorDetailPresenters.investorDetailInformation(token, listInvestedCompany.getInvestorDetailsID());
+        }
+
+
     }
 
     @Override

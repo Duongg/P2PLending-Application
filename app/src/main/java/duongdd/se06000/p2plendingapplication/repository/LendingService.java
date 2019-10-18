@@ -103,4 +103,7 @@ public interface LendingService {
     @GET(ConfigApi.Api.LIST_DISBURSEMENT_MONEY)
     Call<ResponseBody> getListDisbursementMoney(@Header("Authorization") String authorization,
                                                 @Query("investmentCompanyID") int investmentCompanyID);
+
+    @GET(ConfigApi.Api.NOTIFICATION_INFORMATION)
+    Call<ResponseBody> getNotification(@Header("Authorization") String authorization);
 }
