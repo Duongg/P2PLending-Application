@@ -99,6 +99,7 @@ public class RegisterActivity extends AppCompatActivity implements CreateAccount
                 dialogInterface.dismiss();
                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         AlertDialog alertDialog = builder.create();

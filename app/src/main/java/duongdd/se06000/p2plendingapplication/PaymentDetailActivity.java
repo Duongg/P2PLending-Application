@@ -209,14 +209,14 @@ public class PaymentDetailActivity extends AppCompatActivity implements Investme
 //    }
 
     public void clickToPayDebt(View view) {
-        System.out.println("Duong oi");
-        position = (int) view.getTag();
-        paymentDebtDisbursementPresenters.getPaymentDebtDisbursement(
-                token,
-                listCallingInvestment.getInvestmentCompanyID(),
-                disbursementIDforDebt);
-        System.out.println("DEPT " + disbursementIDforDebt);
-        Toast.makeText(PaymentDetailActivity.this, "Pay Debt Successfully", Toast.LENGTH_SHORT).show();
+//        System.out.println("Duong oi");
+//        position = (int) view.getTag();
+//        paymentDebtDisbursementPresenters.getPaymentDebtDisbursement(
+//                token,
+//                listCallingInvestment.getInvestmentCompanyID(),
+//                disbursementIDforDebt);
+//        System.out.println("DEPT " + disbursementIDforDebt);
+//        Toast.makeText(PaymentDetailActivity.this, "Pay Debt Successfully", Toast.LENGTH_SHORT).show();
     }
     private void showAlertDialog(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

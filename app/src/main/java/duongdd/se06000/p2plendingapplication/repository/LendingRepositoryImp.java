@@ -1,5 +1,7 @@
 package duongdd.se06000.p2plendingapplication.repository;
 
+import androidx.navigation.Navigation;
+
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -25,6 +27,7 @@ import duongdd.se06000.p2plendingapplication.model.InvestorDetail;
 import duongdd.se06000.p2plendingapplication.model.ListCallingInvestment;
 import duongdd.se06000.p2plendingapplication.model.ListInvestmentCompany;
 import duongdd.se06000.p2plendingapplication.model.ListSearchInvestment;
+import duongdd.se06000.p2plendingapplication.model.Notification;
 import duongdd.se06000.p2plendingapplication.model.WalletInformation;
 import duongdd.se06000.p2plendingapplication.util.CallBackData;
 import duongdd.se06000.p2plendingapplication.util.ClientApi;
@@ -598,6 +601,36 @@ public class LendingRepositoryImp implements LendingRepository{
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
                 t.printStackTrace();
+            }
+        });
+    }
+
+    @Override
+    public void getNotification(String token, final CallBackData<List<Notification>> callBackData) {
+        ClientApi clientApi = new ClientApi();
+        Call<ResponseBody> call =clientApi.LendingService().getNotification(token);
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                if(response.code() == 200){
+                    try{
+                        String body = response.body().string();
+                        Type type = new TypeToken<List<Notification>>(){}.getType();
+                        List<Notification> notificationList = new Gson().fromJson(body,type);
+                        if(notificationList != null){
+                            callBackData.onSuccess(notificationList);
+                        }else {
+                            callBackData.onFail("Thông báo không tồn tại");
+                        }
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+
             }
         });
     }

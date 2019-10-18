@@ -15,6 +15,7 @@ import duongdd.se06000.p2plendingapplication.model.ListCallingInvestment;
 import duongdd.se06000.p2plendingapplication.model.ListInvestedCompany;
 import duongdd.se06000.p2plendingapplication.model.ListInvestmentCompany;
 import duongdd.se06000.p2plendingapplication.model.ListSearchInvestment;
+import duongdd.se06000.p2plendingapplication.model.Notification;
 import duongdd.se06000.p2plendingapplication.model.WalletInformation;
 import duongdd.se06000.p2plendingapplication.util.CallBackData;
 import retrofit2.Call;
@@ -66,4 +67,6 @@ public interface LendingRepository {
 // =======
     void getListInvestedCompany(String token, CallBackData<List<ListInvestedCompany>> callBackData);
 // >>>>>>> master
+
+    void getNotification(String token, CallBackData<List<Notification>> callBackData);
 }

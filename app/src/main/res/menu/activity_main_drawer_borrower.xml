@@ -26,15 +26,15 @@
                 android:icon="@drawable/list"
                 android:title="@string/menu_ListCalledInvestment" />
             <item
-                android:id="@+id/nav_statistic"
-                android:icon="@drawable/ic_statistic"
-                android:title="@string/menu_Statistic" />
+                android:icon="@drawable/ic_wallet"
+                android:title="@string/menu_Addwallet" />
         </item>
         <item
               android:id="@+id/nav_contact"
             android:icon="@drawable/contact"
               android:title="Thông tin liên hệ"/>
         <item
+            android:id="@+id/nav_logout"
             android:icon="@drawable/logout"
             android:title="Đăng xuất"/>
     </group>

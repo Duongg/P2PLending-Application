@@ -21,6 +21,7 @@
     <string name="menu_ListCompany">Đầu tư doanh nghiệp</string>
     <string name="menu_ListCalledInvestment">Danh sách kêu gọi đầu tư</string>
     <string name="menu_Statistic">Thống kê</string>
+    <string name="menu_Addwallet">Nạp tiền vào ví</string>
     <string name="menu_Contact">Thông tin liên hệ</string>
     <string name="menu_Logout">Đăng xuất</string>
     <string name="forgot">Quên tài khoản ?</string>

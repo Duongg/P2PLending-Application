@@ -14,6 +14,7 @@ import duongdd.se06000.p2plendingapplication.formatter.DateFormat;
 import duongdd.se06000.p2plendingapplication.formatter.FormatDecimal;
 import duongdd.se06000.p2plendingapplication.model.DetailInvestmentCalling;
 import duongdd.se06000.p2plendingapplication.model.ListCallingInvestment;
+import duongdd.se06000.p2plendingapplication.model.Notification;
 import duongdd.se06000.p2plendingapplication.presenters.DetailInvestmentCallingPresenters;
 import duongdd.se06000.p2plendingapplication.presenters.ListCallingInvestmentPresenters;
 import duongdd.se06000.p2plendingapplication.view.DetailInvestmentCallingView;
@@ -26,6 +27,7 @@ public class DetailInvestmentCallingActivity extends AppCompatActivity implement
     private String token;
     private int borrowerID;
     private ListCallingInvestment listCallingInvestment = null;
+    private Notification notification;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,7 +52,13 @@ public class DetailInvestmentCallingActivity extends AppCompatActivity implement
         System.out.println("Tokennnnn 123 " + token);
         System.out.println("ID 123" + investmentCompanyID);
        // borrowerID = bundle.getInt("BORROWER_ID");
-        detailInvestmentCallingPresenters.getDetailInvestmentCalling(token, investmentCompanyID);
+        notification = (Notification) bundle.getSerializable("investordetailID");
+     //   detailInvestmentCallingPresenters.getDetailInvestmentCalling(token, notification.getInvestmentCompanyID());
+        if(notification != null){
+            detailInvestmentCallingPresenters.getDetailInvestmentCalling(token, notification.getInvestmentCompanyID());
+        }else {
+            detailInvestmentCallingPresenters.getDetailInvestmentCalling(token, investmentCompanyID);
+        }
      }
 
     @Override
