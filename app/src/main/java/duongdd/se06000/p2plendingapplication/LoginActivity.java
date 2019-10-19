@@ -93,4 +93,17 @@ public class LoginActivity extends AppCompatActivity implements LoginView, RoleA
     }
 
 
+    public void clickToShow(View view) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Vui lòng liên hệ với P2P Lending support qua số điện thoại 0987654321 để được hỗ trợ.");
+        builder.setCancelable(false);
+        builder.setPositiveButton("Thoát", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
 }

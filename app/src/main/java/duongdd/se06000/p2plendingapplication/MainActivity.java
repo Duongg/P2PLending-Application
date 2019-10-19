@@ -55,10 +55,10 @@ public class MainActivity extends AppCompatActivity {
                     R.id.nav_logout)
                     .setDrawerLayout(drawer)
                     .build();
-
             NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
             NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
             NavigationUI.setupWithNavController(navigationView, navController);
+
         }else if(role.equals("BORROWER")){
             setContentView(R.layout.activity_main_borrower);
             Toolbar toolbar = findViewById(R.id.toolbar);
@@ -111,12 +111,6 @@ public class MainActivity extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-//    private void logout(){
-//        sendToLogin();
-//    }
-//    private void sendToLogin(){
-//        Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
-//        startActivity(loginIntent);
-//        finish();
-//    }
+
+
 }
