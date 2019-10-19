@@ -79,14 +79,13 @@ public class PaymentDetailActivity extends AppCompatActivity implements Investme
         listView = findViewById(R.id.lvDisbursementMoney);
         initData();
         // ------------------PAY DEPT DISBURSEMENT---
-        btnPayDept = findViewById(R.id.btnPayDept);
+//        btnPayDept = findViewById(R.id.btnPayDept);
 //        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 //            @Override
 //            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                System.out.println("123456789");
+//                System.out.println("12345667");
 //                companyDisbursement = (CompanyDisbursement) adapterView.getItemAtPosition(i);
 //                disbursementIDforDebt = companyDisbursement.getCompanyDisbursementID();
-//                System.out.println("ID DISBURSEMENT " +disbursementIDforDebt);
 //            }
 //        });
 
@@ -209,14 +208,15 @@ public class PaymentDetailActivity extends AppCompatActivity implements Investme
 //    }
 
     public void clickToPayDebt(View view) {
-//        System.out.println("Duong oi");
-//        position = (int) view.getTag();
-//        paymentDebtDisbursementPresenters.getPaymentDebtDisbursement(
-//                token,
-//                listCallingInvestment.getInvestmentCompanyID(),
-//                disbursementIDforDebt);
-//        System.out.println("DEPT " + disbursementIDforDebt);
-//        Toast.makeText(PaymentDetailActivity.this, "Pay Debt Successfully", Toast.LENGTH_SHORT).show();
+        System.out.println("Duong oi");
+       View item = (View) view.getParent();
+       int pos = listView.getPositionForView(item);
+       companyDisbursement = (CompanyDisbursement) listView.getItemAtPosition(pos);
+       disbursementIDforDebt = companyDisbursement.getCompanyDisbursementID();
+        paymentDebtDisbursementPresenters.getPaymentDebtDisbursement(
+                token,
+                listCallingInvestment.getInvestmentCompanyID(),
+                disbursementIDforDebt);
     }
     private void showAlertDialog(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

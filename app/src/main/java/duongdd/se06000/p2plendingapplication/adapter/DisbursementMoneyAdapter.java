@@ -16,6 +16,7 @@ import duongdd.se06000.p2plendingapplication.model.CompanyDisbursement;
 
 public class DisbursementMoneyAdapter extends BaseAdapter {
     private List<CompanyDisbursement> companyDisbursementList;
+    private int companyDisbursementID;
     public void setCompanyDisbursementList(List<CompanyDisbursement> companyDisbursementList) {
         this.companyDisbursementList = companyDisbursementList;
     }
@@ -42,24 +43,16 @@ public class DisbursementMoneyAdapter extends BaseAdapter {
             view = inflater.inflate(R.layout.item_list_disbursement_money, viewGroup, false);
         }
 
-       CompanyDisbursement companyDisbursement = companyDisbursementList.get(i);
+       final CompanyDisbursement companyDisbursement = companyDisbursementList.get(i);
         TextView txtMonth = view.findViewById(R.id.txtMonth);
         TextView txtPayMonthly = view.findViewById(R.id.txtPayMonthly);
         TextView txtDeptMonth = view.findViewById(R.id.txtDeptMonth);
+        Button btnPayDept = view.findViewById(R.id.btnPayDept);
 //        TextView txtDisbursementID= view.findViewById(R.id.txtDisbursementID);
 
         txtMonth.setText(DateFormat.formatDate(companyDisbursement.getDisbursementDate()));
         txtPayMonthly.setText(FormatDecimal.formatBigDecimal(companyDisbursement.getDisbursementMoney()));
         txtDeptMonth.setText(FormatDecimal.formatBigDecimal(companyDisbursement.getDebt()));
-//        txtDisbursementID.setText(String.valueOf(companyDisbursement.getCompanyDisbursementID()));
-//
-//        Button btnPayDept = (Button) view.findViewById(R.id.btnPayDept);
-//        btnPayDept.setTag(i);
-//        btnPayDept.setOnClickListener(new View.OnClickListener() {
-//            public void onClick(View view) {
-//                int position = (int) view.getTag();
-//            }
-//        });
 
         return view;
     }
