@@ -64,15 +64,15 @@ public class OverViewFragment extends Fragment implements WalletInformationView 
         if(role.equals("BORROWER")){
             txtInvestorID.setText(String.valueOf(walletInformation.getAccountID()));
             txtName.setText(walletInformation.getName());
-            txtTotalAsset.setText(FormatDecimal.formatBigDecimalVND(walletInformation.getAsset()));
-            txtTotalDept.setText(FormatDecimal.formatBigDecimalVND(walletInformation.getDebt()));//borrow
-            txtReceiveMoney.setText(FormatDecimal.formatBigDecimalVND(walletInformation.getInvestMoneyCompany()));//borrow
+            txtTotalAsset.setText(FormatDecimal.formatBigDecimal(walletInformation.getAsset()));
+            txtTotalDept.setText(FormatDecimal.formatBigDecimal(walletInformation.getDebt()));//borrow
+            txtReceiveMoney.setText(FormatDecimal.formatBigDecimal(walletInformation.getInvestMoneyCompany()));//borrow
         }else if(role.equals("INVESTOR")){
             txtInvestorID.setText(String.valueOf(walletInformation.getAccountID()));
             txtName.setText(walletInformation.getName());
-            txtTotalAsset.setText(FormatDecimal.formatBigDecimalVND(walletInformation.getAsset()));
-            txtInvested.setText(FormatDecimal.formatBigDecimalVND(walletInformation.getInvestedMoney()));//invest
-            txtLoan.setText(FormatDecimal.formatBigDecimalVND(walletInformation.getLoan()));//invest
+            txtTotalAsset.setText(FormatDecimal.formatBigDecimal(walletInformation.getAsset()));
+            txtInvested.setText(FormatDecimal.formatBigDecimal(walletInformation.getInvestedMoney()));//invest
+            txtLoan.setText(FormatDecimal.formatBigDecimal(walletInformation.getLoan()));//invest
         }
 
 

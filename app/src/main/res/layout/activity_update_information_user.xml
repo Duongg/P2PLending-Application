@@ -18,7 +18,7 @@
         android:textColor="@color/myTextColor"/>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <TableLayout
             android:layout_width="match_parent"
@@ -165,17 +165,19 @@
                 <!--                    android:textSize="16dp" />-->
 <!--    </TableRow>-->
 
-            <Button
-                android:id="@+id/btnUpdate"
-                android:layout_margin="30dp"
-                android:layout_width="wrap_content"
-                android:layout_height="37dp"
-                android:textColor="@color/myTextColor"
-                android:background="@color/myButtonColor"
-                android:text="Cập nhật" />
 
 
         </TableLayout>
 
     </LinearLayout>
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_margin="30dp"
+        android:layout_width="120dp"
+        android:layout_gravity="center"
+        android:layout_height="30dp"
+        android:textColor="@color/myTextColor"
+        android:background="@color/myButtonColor"
+        android:text="Cập nhật" />
+
 </LinearLayout>

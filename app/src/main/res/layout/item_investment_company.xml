@@ -14,16 +14,17 @@
         <TextView
             android:id="@+id/txtName"
             android:layout_width="100dp"
-            android:layout_height="70dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:padding="10dp"
             android:textColor="@color/myTextColor"
+            android:background="@drawable/cell_border"
             android:textSize="16dp"></TextView>
 
         <TextView
             android:background="@drawable/cell_border"
         android:layout_width="100dp"
-        android:layout_height="70dp"
+        android:layout_height="match_parent"
         android:id="@+id/txtInvestMoney"
         android:textColor="@color/myTextColor"
         android:textSize="16dp"
@@ -33,7 +34,7 @@
     <TextView
         android:background="@drawable/cell_border"
         android:layout_width="80dp"
-        android:layout_height="70dp"
+        android:layout_height="match_parent"
         android:id="@+id/txtProfit"
         android:textColor="@color/myTextColor"
         android:textSize="16dp"
