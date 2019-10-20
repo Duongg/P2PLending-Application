@@ -69,6 +69,12 @@ public class UpdateInformationUserActivity extends AppCompatActivity implements 
 
     }
 
+//    @Override
+//    public void finishActivity(int requestCode) {
+//        Intent intent = new Intent(UpdateInformationUserActivity.this, InformationUserFragment.class);
+//        this.setResult(RESULT_OK, intent);
+//        super.finishActivity(requestCode);
+//    }
 
     private void initDataChangePassword(){
         Account account = new Account();
@@ -130,12 +136,6 @@ public class UpdateInformationUserActivity extends AppCompatActivity implements 
 
     @Override
     public void finish() {
-        Intent intent = new Intent();
-        Bundle bundle = new Bundle();
-        bundle.putSerializable("accountDTO", accountAfterUpdate);
-        bundle.putSerializable("TOKEN", token);
-        intent.putExtras(bundle);
-        this.setResult(RESULT_OK, intent);
         super.finish();
     }
 
@@ -147,6 +147,12 @@ public class UpdateInformationUserActivity extends AppCompatActivity implements 
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();
+                Intent intent = new Intent();
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("accountDTO", accountAfterUpdate);
+                bundle.putSerializable("TOKEN", token);
+                intent.putExtras(bundle);
+                setResult(RESULT_OK, intent);
                 finish();
             }
         });
