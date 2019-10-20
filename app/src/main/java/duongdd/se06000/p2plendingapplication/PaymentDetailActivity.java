@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -179,14 +180,17 @@ public class PaymentDetailActivity extends AppCompatActivity implements Investme
                                 listCallingInvestment.getInvestmentCompanyID(),
                                 new BigDecimal(edtMoney.getText().toString().trim()),
                                 companyDisbursementID);
+                        System.out.println(companyDisbursementID + "ID ");
                     }
                 } else if (rbPayAll.isChecked()) {
                     //do pay all
-                    edtMoney.setFocusable(false);
                     paymentAllDisbursementPresenters.getPaymentAllDisbursement(
                             token,
                             listCallingInvestment.getInvestmentCompanyID(),
                             companyDisbursementID);
+                    System.out.println("ID INVESTMENT " + listCallingInvestment.getInvestmentCompanyID());
+                    System.out.println(companyDisbursementID + " DEF");
+                    System.out.println("TOKEN " +token);
                 }
 
 
@@ -213,10 +217,12 @@ public class PaymentDetailActivity extends AppCompatActivity implements Investme
        int pos = listView.getPositionForView(item);
        companyDisbursement = (CompanyDisbursement) listView.getItemAtPosition(pos);
        disbursementIDforDebt = companyDisbursement.getCompanyDisbursementID();
+       String status = companyDisbursement.getStatus();
         paymentDebtDisbursementPresenters.getPaymentDebtDisbursement(
                 token,
                 listCallingInvestment.getInvestmentCompanyID(),
                 disbursementIDforDebt);
+
     }
     private void showAlertDialog(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

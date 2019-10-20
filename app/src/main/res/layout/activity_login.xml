@@ -45,7 +45,7 @@
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="130dp"
-        android:layout_height="33dp"
+        android:layout_height="30dp"
         android:layout_marginTop="40dp"
         android:text="Đăng Nhập"
         android:textColor="@color/myTextColor"
@@ -62,7 +62,8 @@
         android:layout_gravity="center"
         android:textSize="14dp"
         android:text="@string/forgot"
-        android:textColor="@color/myTextColor"/>
+        android:textColor="@color/myTextColor"
+        android:onClick="clickToShow"/>
     <TextView
         android:id="@+id/txtRegister"
         android:layout_width="150dp"

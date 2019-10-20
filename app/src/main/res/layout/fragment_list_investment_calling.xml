@@ -11,12 +11,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="20dp"
         android:background="@drawable/cell_border">
 
         <TextView
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
+            android:layout_width="125dp"
+            android:layout_height="match_parent"
             android:gravity="center"
             android:text="Tên dự án"
             android:textColor="@color/myBigTextColor"
@@ -24,18 +23,16 @@
 
         <TextView
             android:layout_width="120dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:background="@drawable/cell_border"
             android:gravity="center"
-            android:padding="5dp"
             android:text="Số tiền đã được đầu tư (VND)"
             android:textColor="@color/myBigTextColor"
             android:textSize="20dp" />
         <TextView
             android:layout_width="155dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:text="Ngày kêu gọi"
-            android:padding="5dp"
             android:textSize="20dp"
             android:textColor="@color/myBigTextColor"
             android:gravity="center"

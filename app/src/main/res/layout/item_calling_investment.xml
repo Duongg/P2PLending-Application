@@ -21,7 +21,7 @@
             android:textSize="16dp"></TextView>
 
         <TextView
-            android:layout_width="80dp"
+            android:layout_width="85dp"
             android:layout_height="match_parent"
             android:padding="10dp"
             android:background="@drawable/cell_border"
@@ -31,7 +31,7 @@
             android:gravity="center"
             android:layout_weight="1"></TextView>
         <TextView
-            android:layout_width="80dp"
+            android:layout_width="85dp"
             android:layout_height="match_parent"
             android:padding="10dp"
             android:background="@drawable/cell_border"

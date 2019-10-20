@@ -73,7 +73,7 @@
             <TextView
                 android:background="@drawable/cell_border"
                 android:padding="10dp"
-                android:text="Tổng tài sản"
+                android:text="Tổng tài sản (VND)"
                 android:layout_width="170dp"
                 android:textColor="@color/myBigTextColor"
                 android:textSize="18dp" />
@@ -88,7 +88,7 @@
         <TableRow
             android:background="@drawable/cell_border">
             <TextView
-                android:text="Số tiền đã đầu tư"
+                android:text="Số tiền đã đầu tư (VND)"
                 android:textColor="@color/myBigTextColor"
                 android:layout_width="170dp"
                 android:padding="10dp"
@@ -105,7 +105,7 @@
         <TableRow
             android:background="@drawable/cell_border">
             <TextView
-                android:text="Lợi tức đã nhận được"
+                android:text="Lợi tức đã nhận được (VND)"
                 android:textColor="@color/myBigTextColor"
                 android:layout_width="170dp"
                 android:padding="10dp"

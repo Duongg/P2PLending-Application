@@ -18,7 +18,7 @@
 <!--        android:textColor="@color/myTextColor"/>-->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="40dp">
 
         <TableLayout
@@ -151,18 +151,21 @@
 <!--                    android:background="@color/myButtonColor"-->
 <!--                    android:text="Cập nhật" />-->
 
-                <Button
-                    android:id="@+id/btnUpdateProfile"
-                    android:layout_margin="40dp"
-                    android:gravity="center"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:textColor="@color/myTextColor"
-                    android:background="@color/myButtonColor"
-                    android:text="Chỉnh sửa" />
 
 
         </TableLayout>
 
     </LinearLayout>
+    <Button
+        android:id="@+id/btnUpdateProfile"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:textColor="@color/myTextColor"
+        android:background="@color/myButtonColor"
+        android:text="Chỉnh sửa" />
+
+
 </LinearLayout>
