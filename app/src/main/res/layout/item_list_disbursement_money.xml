@@ -59,7 +59,7 @@
 <!--                android:id="@+id/txtDisbursementID"-->
 <!--                android:textColor="@color/myTextColor"/>-->
             <TextView
-                android:layout_width="70dp"
+                android:layout_width="67dp"
                 android:layout_height="match_parent"
                 android:layout_column="0"
                 android:gravity="center"
@@ -68,7 +68,7 @@
                 android:textSize="14dp" />
 
             <TextView
-                android:layout_width="85dp"
+                android:layout_width="82dp"
                 android:layout_height="match_parent"
                 android:layout_column="1"
                 android:background="@drawable/cell_border"
@@ -78,7 +78,7 @@
                 android:textSize="14dp" />
 
             <TextView
-                android:layout_width="85dp"
+                android:layout_width="82dp"
                 android:layout_height="match_parent"
                 android:layout_column="2"
                 android:gravity="center"
@@ -93,8 +93,8 @@
                 android:textStyle="bold"
                 android:textColor="@color/myTextColor"
                 android:id="@+id/btnPayDept"
-                android:layout_width ="50dp"
-                android:layout_height="40dp"
+                android:layout_width ="40dp"
+                android:layout_height="match_parent"
                 android:text="Trả" />
 
         </TableRow>

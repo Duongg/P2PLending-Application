@@ -59,7 +59,7 @@
                 android:background="@drawable/cell_border"
                 android:gravity="left"
                 android:padding="5dp"
-                android:text="Số tiền cần trả kỳ tới (VND):"
+                android:text="Số tiền cần trả kỳ này (VND):"
                 android:textColor="@color/myBigTextColor"
                 android:textSize="16dp" />
 

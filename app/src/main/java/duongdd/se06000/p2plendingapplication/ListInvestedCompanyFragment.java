@@ -53,6 +53,7 @@ public class ListInvestedCompanyFragment extends Fragment implements ListInveste
         Bundle bundle = getActivity().getIntent().getExtras();
         token = bundle.getString("TOKEN");
         listInvestedPresenters.getListInvestedCompany(token);
+        System.out.println("TOKEN INVEST " +token);
     }
 
     @Override

@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -15,6 +16,7 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -79,17 +81,6 @@ public class PaymentDetailActivity extends AppCompatActivity implements Investme
 
         listView = findViewById(R.id.lvDisbursementMoney);
         initData();
-        // ------------------PAY DEPT DISBURSEMENT---
-//        btnPayDept = findViewById(R.id.btnPayDept);
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                System.out.println("12345667");
-//                companyDisbursement = (CompanyDisbursement) adapterView.getItemAtPosition(i);
-//                disbursementIDforDebt = companyDisbursement.getCompanyDisbursementID();
-//            }
-//        });
-
 
         txtInvestmentName = findViewById(R.id.txtInvestmentName);
         txtMoneyToPay = findViewById(R.id.txtMoneyToPay);
@@ -102,12 +93,27 @@ public class PaymentDetailActivity extends AppCompatActivity implements Investme
         txtPayMonthly = findViewById(R.id.txtPayMonthly);
         // txtCompanyDisbursementID =findViewById(R.id.txtDisbursementID);
 
-        rbPaybyMonth = findViewById(R.id.rbPaybymonth);
+        rbPaybyMonth =(RadioButton) findViewById(R.id.rbPaybymonth);
         rbPayAll = findViewById(R.id.rbPayAll);
         edtMoney = findViewById(R.id.edtMoney);
         btnPay = findViewById(R.id.btnPay);
+       rbPaybyMonth.setOnCheckedChangeListener(new RadioButton.OnCheckedChangeListener() {
 
-
+           @Override
+           public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+               if(rbPaybyMonth.isChecked()){
+                   edtMoney.setEnabled(true);
+               }
+           }
+       });
+        rbPayAll.setOnCheckedChangeListener(new RadioButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(rbPayAll.isChecked()){
+                    edtMoney.setEnabled(false);
+                }
+            }
+        });
         paymentDetail();
 
 
@@ -141,6 +147,7 @@ public class PaymentDetailActivity extends AppCompatActivity implements Investme
         adapter = new DisbursementMoneyAdapter();
         adapter.setCompanyDisbursementList(companyDisbursementList);
         listView.setAdapter(adapter);
+
     }
 
     @Override
@@ -169,7 +176,6 @@ public class PaymentDetailActivity extends AppCompatActivity implements Investme
         btnPay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 if (rbPaybyMonth.isChecked()) {
                     // do pay by month
                     if(edtMoney.getText().toString().trim().isEmpty()){
@@ -180,7 +186,6 @@ public class PaymentDetailActivity extends AppCompatActivity implements Investme
                                 listCallingInvestment.getInvestmentCompanyID(),
                                 new BigDecimal(edtMoney.getText().toString().trim()),
                                 companyDisbursementID);
-                        System.out.println(companyDisbursementID + "ID ");
                     }
                 } else if (rbPayAll.isChecked()) {
                     //do pay all
@@ -188,11 +193,7 @@ public class PaymentDetailActivity extends AppCompatActivity implements Investme
                             token,
                             listCallingInvestment.getInvestmentCompanyID(),
                             companyDisbursementID);
-                    System.out.println("ID INVESTMENT " + listCallingInvestment.getInvestmentCompanyID());
-                    System.out.println(companyDisbursementID + " DEF");
-                    System.out.println("TOKEN " +token);
                 }
-
 
             }
         });
@@ -212,16 +213,16 @@ public class PaymentDetailActivity extends AppCompatActivity implements Investme
 //    }
 
     public void clickToPayDebt(View view) {
-        System.out.println("Duong oi");
        View item = (View) view.getParent();
        int pos = listView.getPositionForView(item);
        companyDisbursement = (CompanyDisbursement) listView.getItemAtPosition(pos);
        disbursementIDforDebt = companyDisbursement.getCompanyDisbursementID();
        String status = companyDisbursement.getStatus();
-        paymentDebtDisbursementPresenters.getPaymentDebtDisbursement(
-                token,
-                listCallingInvestment.getInvestmentCompanyID(),
-                disbursementIDforDebt);
+       paymentDebtDisbursementPresenters.getPaymentDebtDisbursement(
+                   token,
+                   listCallingInvestment.getInvestmentCompanyID(),
+                   disbursementIDforDebt);
+
 
     }
     private void showAlertDialog(){
