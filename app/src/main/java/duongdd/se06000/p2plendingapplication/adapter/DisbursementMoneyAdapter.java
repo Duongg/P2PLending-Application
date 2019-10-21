@@ -1,5 +1,6 @@
 package duongdd.se06000.p2plendingapplication.adapter;
 
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import duongdd.se06000.p2plendingapplication.R;
@@ -49,7 +51,14 @@ public class DisbursementMoneyAdapter extends BaseAdapter {
         TextView txtDeptMonth = view.findViewById(R.id.txtDeptMonth);
         Button btnPayDept = view.findViewById(R.id.btnPayDept);
 //        TextView txtDisbursementID= view.findViewById(R.id.txtDisbursementID);
+        if(companyDisbursement.getStatus().equals("PENDING") || companyDisbursement.getStatus().equals("COMPLETE")){
+            btnPayDept.setEnabled(false);
+            btnPayDept.setBackgroundColor(Color.rgb(128,128,128));
+        }else if(companyDisbursement.getStatus().equals("DEBT")) {
+            btnPayDept.setEnabled(true);
+            btnPayDept.setBackgroundColor(Color.rgb(110,225,255));
 
+        }
         txtMonth.setText(DateFormat.formatDate(companyDisbursement.getDisbursementDate()));
         txtPayMonthly.setText(FormatDecimal.formatBigDecimal(companyDisbursement.getDisbursementMoney()));
         txtDeptMonth.setText(FormatDecimal.formatBigDecimal(companyDisbursement.getDebt()));

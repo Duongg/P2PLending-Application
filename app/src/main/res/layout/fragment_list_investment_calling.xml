@@ -14,7 +14,7 @@
         android:background="@drawable/cell_border">
 
         <TextView
-            android:layout_width="125dp"
+            android:layout_width="120dp"
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="Tên dự án"
